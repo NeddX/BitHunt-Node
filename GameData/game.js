@@ -38,7 +38,8 @@ class BitHuntScene extends Core.Scene
     constructor(width, height, backgroundColour = 0, pixelSize = 8, gameObjects = [])
     {
         super(width, height, backgroundColour, pixelSize, gameObjects);
-    }
+		console.log(`Width: ${width} Height: ${height}`);
+	}
 
 	wgen()
 	{
@@ -207,7 +208,7 @@ class Grass extends BitHuntObject
             if (freeCells.length > 0 && freeCells)
             {
                 let cell = freeCells[Util.randInt(freeCells.length - 1)];
-                this.currentScene.add(Grass, cell);
+				this.currentScene.add(Grass, cell);
             }
             this.lifeTime = 0;
         }

@@ -34,7 +34,7 @@ io.on("connection", (socket) =>
 			},
 			renderCopy: function(x, y, colour, size)
 			{
-				//console.log(`(${x}, ${y}, ${colour}, ${size})`);
+				console.log(`(${x}, ${y}, ${colour}, ${size})`);
 				
 				socket.emit("draw_call", 
 				{
@@ -47,9 +47,13 @@ io.on("connection", (socket) =>
 			}
 		};
 
+		const WIDTH = 100;
+		const HEIGHT = 100;
+		const PIXEL_SIZE = 8;
+
 		socket.emit("create_canvas", 
 		{   
-			w: 800, h: 800
+			w: WIDTH * PIXEL_SIZE, h: HEIGHT * PIXEL_SIZE
 		});
 		socket.emit("back_colour", 
 		{
@@ -71,9 +75,10 @@ io.on("connection", (socket) =>
 		let lastUpdateTime = null;
 		
 		let gameInstance = new game.BitHunt(
-			800, 
-			800, 
+			100, 
+			100, 
 			"#253140",
+			30,
 			RenderFunctions.clear,
 			RenderFunctions.background,
 			RenderFunctions.renderCopy);

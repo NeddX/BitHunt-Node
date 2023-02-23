@@ -14,13 +14,18 @@ class BitHunt
 	constructor(
 		width, 
 		height, 
+		backgroundColour,
 		pixelSize, 
 		clear_Func, 
 		background_Func,
 		renderCopy_Func)
 	{
 		
-		this.scWorld = new Game.BitHuntScene(width, height, pixelSize);
+		this.scWorld = new Game.BitHuntScene(
+			width, 
+			height,
+			backgroundColour, 
+			pixelSize);
 		this.scWorld.renderCopy = renderCopy_Func;
 		this.scWorld.clear = clear_Func;
 		this.scWorld.rendeCopy = renderCopy_Func;
