@@ -4,18 +4,9 @@ const http = require("http");
 const server = http.createServer(app);
 const io = require("socket.io")(server);
 const path = require("path");
+const game = require("./GameData/main");
 
-let players = [];
-
-function sleep(millis) 
-{
-    return new Promise(resolve => setTimeout(resolve, millis));
-}
-
-function sendUpdate(socketObj, updateMsg)
-{
-    socketObj.emit("update_packet", updateMsg);
-}
+let gameInstances = [];
 
 app.use(express.static(path.join(__dirname, "public/")));
 
@@ -23,7 +14,7 @@ app.get("/", (req, res) =>
 {
     res.sendFile(__dirname + "public/index.html");
 });
-  
+
 io.on("connection", (socket) => 
 {
     console.log("Connection is made!");
@@ -31,16 +22,87 @@ io.on("connection", (socket) =>
     let running = true;
     socket.on("init_game", () =>
     {
-        sendUpdate(socket, "create_canvas|800|800");
-        sendUpdate(socket, "backcolour|#253140");
+		const RenderFunctions =
+		{
+			clear: function()
+			{	
+				socket.emit("clear_call");
+			},
+			background: function(colour)
+			{
+				socket.emit("back_colour", colour);
+			},
+			renderCopy: function(x, y, colour, size)
+			{
+				//console.log(`(${x}, ${y}, ${colour}, ${size})`);
+				
+				socket.emit("draw_call", 
+				{
+					x: x,
+					y: y,
+					colour: colour,
+					size: size
+				});
+				
+			}
+		};
+
+		socket.emit("create_canvas", 
+		{   
+			w: 800, h: 800
+		});
+		socket.emit("back_colour", 
+		{
+			colour: "#253140"
+		});
         
         let x = 0;
         let y = 0;
-        while (running)
-        {
-            //sendUpdate(socket, `draw_call|${x}|${y}|#ffffff`);
-            x++;
-        }
+		let velocity = Math.random() * (50 - 10) + 10;
+
+		let drawData =
+		{
+			x: 0,
+			y: 0,
+			colour: "#ffffff",
+			size: 32
+		};
+
+		let lastUpdateTime = null;
+		
+		let gameInstance = new game.BitHunt(
+			800, 
+			800, 
+			"#253140",
+			RenderFunctions.clear,
+			RenderFunctions.background,
+			RenderFunctions.renderCopy);
+		gameInstances.push(gameInstance);
+		setInterval(function updateThread()
+		{
+			const now = Date.now();
+			const deltaTime = lastUpdateTime ? (now - lastUpdateTime) / 1000 : 0;
+			lastUpdateTime = now;
+			
+			gameInstance.update(deltaTime);
+			
+			//console.log("game objects: " + gameInstance.scWorld.objPool.size);
+			
+			/*
+			if (x < 800 - 32) 
+				x += velocity * deltaTime * 10;
+			else
+				x = 0;
+			
+			drawData.x = x;
+			socket.emit("clear_call");
+			socket.emit("draw_call", drawData);
+			*/
+			//console.clear();
+			//console.log("delta: " + deltaTime);
+				
+		}, 5);
+		
     });
 
     socket.on("disconnect", () =>

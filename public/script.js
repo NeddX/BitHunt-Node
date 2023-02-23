@@ -1,33 +1,34 @@
 const socket = io();
 
+let renderer = null;
+
 function main()
 {
     // Initialize the renderer
-    let renderer = new Renderer();
-
+    renderer = new Renderer();
     socket.emit("init_game");
-    socket.on("update_packet", (packet) => 
-    {
-        let packetInfo = packet.split('|');
-        switch (packetInfo[0])
-        {
-            case "create_canvas":
-                renderer.createCanvas(parseInt(packetInfo[1]), parseInt(packetInfo[2]));
-                break;
-            case "draw_call":
-                renderer.drawBit(
-                    parseInt(packetInfo[1]), 
-                    parseInt(packetInfo[2]), 
-                    packetInfo[3]);
-                break;
-            case "clear_call":
-                renderer.clear();
-                break;
-            case "backcolour":
-                renderer.backgroundColour(packetInfo[1]);
-                break;
-        }
-    });
+	socket.on("draw_call", (drawData) =>
+	{
+		renderer.drawBit(
+			drawData.x, 
+			drawData.y, 
+			drawData.colour,
+			drawData.size);
+	});
+	socket.on("clear_call", () =>
+	{
+		renderer.clear();
+	});
+	socket.on("create_canvas", (canvasData) =>
+	{
+		renderer.createCanvas(
+			canvasData.w,
+			canvasData.h);
+	});
+	socket.on("back_colour", (colour) =>
+	{
+		renderer.backgroundColour(colour);
+	});
 }
 
 window.onload = main;

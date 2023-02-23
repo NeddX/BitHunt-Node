@@ -37,21 +37,20 @@ class Renderer
 
     drawBit(x = 0, y = 0, colour = "#ffffff", size = this.__pixelSize)
     {
-        console.log("bit");
         let pixel = document.createElement("div");
         pixel.className = "__b_rend__css_c__pixel";
         pixel.style.width = size.toString() + "px";
         pixel.style.height = size.toString() + "px";
-        pixel.style.top = x.toString() + "px";
-        pixel.style.left = y.toString() + "px";
+        pixel.style.left = x.toString() + "px";
+        pixel.style.top = y.toString() + "px";
         pixel.style.backgroundColor = colour;
         this.__canvas.appendChild(pixel);
     }
 
     clear()
     {
-        while (this.__canvas.hasChildNodes())
-            this.__canvas.removeChild(this.__canvas.firstChild);
+        while (this.__canvas.firstChild)
+            this.__canvas.removeChild(this.__canvas.lastChild);
     }
 
     backgroundColour(hex = "#fffff")
