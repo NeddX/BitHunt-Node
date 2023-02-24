@@ -202,7 +202,7 @@ class Scene
 		// todo: remove p5
         this.clear();
         this.background(this.backgroundColour);
-		console.log(this.activeObjects);	
+		//console.log(this.activeObjects);	
 
         // Թարմացնենք խաղի օբյեկտները
         for (let i = 0; i < this.gameObjects.length; ++i)

@@ -6,55 +6,147 @@ function init()
 }
 init();
 
+const __b_rend__js_internal_ns =
+{
+    Canvas: class
+    {
+        constructor(
+            width, 
+            height, 
+            pixelSize, 
+            clearColour,
+            designerName)
+        {
+            this.id = 0;
+            this.body = document.body;
+            this.head = document.head;
+            this.width = width;
+            this.height = height;
+            this.pixelSize = pixelSize;
+            this.mClearColour = clearColour;
+            this.isChild = false;
+            this.canvas = document.createElement("canvas");
+            this.canvas.width = this.width;
+            this.canvas.height = this.height;
+            this.ctx = this.canvas.getContext("2d");
+            this.ctx.fillStyle = this.clearColour;
+            this.ctx.fillRect(0, 0, this.width, this.height);
+            this.canvas.classList.add("__b_rend__css_c__canvas");
+            this.body.appendChild(this.canvas);
+        }
+
+        clear()
+        {
+            this.ctx.fillStyle = this.mClearColour;
+            this.ctx.fillRect(0, 0, this.width, this.height);
+        }
+
+        renderBit(x = 0, y = 0, colour = "#ffffff", size = this.pixelSize)
+        {
+            this.ctx.fillStyle = colour;
+            this.ctx.fillRect(x, y, size, size);
+        }
+
+        renderText(text, x, y, colour = "#ffffff", font = "bold 24px Arial")
+        {
+            this.ctx.font = font;
+            this.ctx.fillStyle = colour;
+            this.ctx.fillText(text, x, y);
+        }
+
+        clearColour(colour)
+        {
+            this.mClearColour = colour;
+            this.ctx.fillStyle = this.mClearColour;
+        }
+
+        attachTo(canvas)
+        {
+            this.body.removeChild(this.canvas);
+            canvas.canvas.appendChild(this.canvas);
+            //this.body.removeChild(this.container);
+            //containerDiv.appendChild(this.canvas);
+        }
+
+        getID()
+        {
+            return this.id;
+        }
+
+        setPos(x, y)
+        {
+            //this.container.style.left = x.toString() + "px";
+            //this.container.style.top = y.toString() + "px";
+        }
+
+        setAlignment(alignment)
+        {
+            // 0:   Centre
+            // 1:   Top Left
+            // 2:   Bottom Left
+            // 3:   Top Right
+            // 4:   Bottom Right
+        }
+    }
+};
+
 class Renderer
 {
     constructor()
     {
-        this.__width = 0;
-        this.__height = 0;
         this.__body = document.body;
         this.__head = document.head;
-        this.__canvas = null;
+        this.__canvases = [];
+        this.__canvasDesigner = null;
         this.__appData = __b_rend__js_g__own_path;
-        this.__pixelSize = 0;
-    }
 
-    createCanvas(width = 128, height = 128, pixelSize = 32)
-    {   
-        this.__width = width;
-        this.__height = height;
-        this.__pixelSize = pixelSize;
         let link = document.createElement("link");
         link.rel = "stylesheet";
         link.href = this.__appData + "/css/renderer_designer.css";
         this.__head.appendChild(link);
-        this.__canvas = document.createElement("div");
-        this.__canvas.className = "__b_rend__css_c__canvas";
-        this.__canvas.style.width  = this.__width.toString() + "px";
-        this.__canvas.style.height = this.__height.toString() + "px";
-        this.__body.appendChild(this.__canvas);
     }
 
-    drawBit(x = 0, y = 0, colour = "#ffffff", size = this.__pixelSize)
+    createCanvas(width = 128, height = 128, pixelSize = 32, clearColour = "#737373")
     {
-        let pixel = document.createElement("div");
-        pixel.className = "__b_rend__css_c__pixel";
-        pixel.style.width = size.toString() + "px";
-        pixel.style.height = size.toString() + "px";
-        pixel.style.left = x.toString() + "px";
-        pixel.style.top = y.toString() + "px";
-        pixel.style.backgroundColor = colour;
-        this.__canvas.appendChild(pixel);
+        if (!this.__canvasDesigner)
+        {
+            for (let i = 0; i < document.styleSheets.length; ++i)
+            {
+                let path = document.styleSheets[i].href.split('/');
+                if (path[path.length - 1] == "renderer_designer.css")
+                {
+                    this.__canvasDesigner = document.styleSheets[i];
+                }
+            }
+        }
+
+        let canvas = new __b_rend__js_internal_ns.Canvas(
+            width, 
+            height, 
+            pixelSize, 
+            clearColour,
+            "__b_rend__css_c__container");
+        this.__canvases.push(canvas);
+        canvas.id = this.__canvases.length - 1;
+
+        return canvas.id;
     }
 
-    clear()
+    getCanvas(canvasId)
     {
-        while (this.__canvas.firstChild)
-            this.__canvas.removeChild(this.__canvas.lastChild);
+        return this.__canvases[canvasId];
     }
 
-    backgroundColour(hex = "#fffff")
+    attachCanvas(childCanvasID, parentCanvasID)
     {
-        this.__canvas.style.backgroundColor = hex;
+        let parent = this.__canvases[parentCanvasID];
+        let child = this.__canvases[childCanvasID];
+        child.attachTo(parent);
+        //this.__canvases[childCanvasID].attachTo(this.__canvases[parentCanvasID]);
+    }
+
+    detachCanvas(childCanvasID, parentCanvasID)
+    {
+        // detach 
     }
 }

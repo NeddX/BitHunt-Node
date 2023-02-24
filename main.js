@@ -4,9 +4,18 @@ const http = require("http");
 const server = http.createServer(app);
 const io = require("socket.io")(server);
 const path = require("path");
-const game = require("./GameData/main");
+const game = require("./game_data/game");
+
+const PacketTypes =
+{
+    
+};
 
 let gameInstances = [];
+let packetUpdate =
+{
+    type: 0
+};
 
 app.use(express.static(path.join(__dirname, "public/")));
 
@@ -32,9 +41,9 @@ io.on("connection", (socket) =>
 			{
 				socket.emit("back_colour", colour);
 			},
-			renderCopy: function(x, y, colour, size)
+			renderCopy: function(x, y, colour, size = 8)
 			{
-				console.log(`(${x}, ${y}, ${colour}, ${size})`);
+				//console.log(`(${x}, ${y}, ${colour}, ${size})`);
 				
 				socket.emit("draw_call", 
 				{
@@ -55,10 +64,8 @@ io.on("connection", (socket) =>
 		{   
 			w: WIDTH * PIXEL_SIZE, h: HEIGHT * PIXEL_SIZE
 		});
-		socket.emit("back_colour", 
-		{
-			colour: "#253140"
-		});
+		socket.emit("clear_colour", "#253140");
+        socket.emit("clear_call");
         
         let x = 0;
         let y = 0;
@@ -74,14 +81,13 @@ io.on("connection", (socket) =>
 
 		let lastUpdateTime = null;
 		
-		let gameInstance = new game.BitHunt(
-			100, 
-			100, 
-			"#253140",
-			30,
-			RenderFunctions.clear,
-			RenderFunctions.background,
-			RenderFunctions.renderCopy);
+        let renderer = new game.GameRenderer(
+            RenderFunctions.clear,
+            RenderFunctions.background,
+            RenderFunctions.renderCopy
+        );
+		let gameInstance = new game.Game(WIDTH, HEIGHT, PIXEL_SIZE, renderer);
+        gameInstance.add(game.Grass, 10, 20);
 		gameInstances.push(gameInstance);
 		setInterval(function updateThread()
 		{
@@ -89,7 +95,7 @@ io.on("connection", (socket) =>
 			const deltaTime = lastUpdateTime ? (now - lastUpdateTime) / 1000 : 0;
 			lastUpdateTime = now;
 			
-			gameInstance.update(deltaTime);
+			gameInstance.__internalUpdate(deltaTime);
 			
 			//console.log("game objects: " + gameInstance.scWorld.objPool.size);
 			

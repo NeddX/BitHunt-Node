@@ -1,60 +1,113 @@
 const socket = io();
 
-let renderer = null;
+// render must have only a single instance
+let renderer = new Renderer();
+
+function example()
+{
+    const P_WIDTH = 800;
+    const P_HEIGHT = 800;
+    const C_WIDTH = 400;
+    const C_HEIGHT = 400;
+    const C_PIXEL_SIZE = 8;
+
+    let parentID = renderer.createCanvas(P_WIDTH, P_HEIGHT);
+    let childID = renderer.createCanvas(C_WIDTH, C_HEIGHT);
+    let parentCanvas = renderer.getCanvas(parentID);
+    let childCanvas = renderer.getCanvas(childID);
+
+    //renderer.attachCanvas(childID, parentID);
+
+    parentCanvas.clearColour("blue");
+    childCanvas.clearColour("white");
+    parentCanvas.clear();
+    childCanvas.clear();
+
+    let x = 0, y = 0;
+    function update()
+    {
+        x = (x < C_WIDTH) ? ++x : 0;
+
+        childCanvas.clear();
+        parentCanvas.clear();
+        childCanvas.renderBit(x, y, "red", C_PIXEL_SIZE);
+        parentCanvas.renderText(`x: ${x}, y: ${y}`,0, P_HEIGHT - 100, "black");
+
+        window.requestAnimationFrame(update);
+    }
+    window.requestAnimationFrame(update);
+}
 
 function fkrnd()
 {	
-	const WIDTH = 800;
-	const HEIGHT = 800;
-	const PIXEL_SIZE = 50;
-	renderer.createCanvas(WIDTH, HEIGHT);
-	renderer.backgroundColour("#253140");
-	let x = 1;
+	const WIDTH = 100;
+	const HEIGHT = 100;
+	const PIXEL_SIZE = 8;
+
+	let canvasID = renderer.createCanvas(WIDTH * PIXEL_SIZE, HEIGHT * PIXEL_SIZE);
+    let canvas = renderer.getCanvas(canvasID);
+	canvas.clearColour("#253140");
+    canvas.clear();
+
+	let x = 0;
 	let y = 0;
 	function update()
 	{
-		renderer.clear();
-		/*if (x < WIDTH)
-			x++;
-		else
-			x = 0;
-		*/
-		renderer.drawBit(x * PIXEL_SIZE, y * PIXEL_SIZE, "#ffffff", PIXEL_SIZE);
+		canvas.clear();
+		if (x < WIDTH) x++;
+		else x = 0;
+        
+        canvas.renderBit(x * PIXEL_SIZE, y * PIXEL_SIZE, "#ffffff", PIXEL_SIZE);
+        canvas.renderText(`X: ${x}`, 30, 30);
+        
 		window.requestAnimationFrame(update);
 	}
 	window.requestAnimationFrame(update);
 }
 
+const PacketTypes =
+{
+    CREATE_CANVAS:          0,
+    DRAW_CALL:              1,
+    CLEAR_CALL:             2,
+    CLEAR_COLOUR_CALL:      3
+};
+
+function updateHandler(packet)
+{
+    switch (packet.type)
+    {
+        case PacketTypes.CREATE_CANVAS:
+            renderer.createCanvas(
+                packet.w, 
+                packet.h, 
+                packet.pixelSize, 
+                packet.clearColour);
+            break;
+        case PacketTypes.DRAW_CALL:
+            renderer.renderBit(
+                packet.x,
+                packet.y,
+                packet.colour,
+                packet.size
+            );
+            break;
+        case PacketTypes.CLEAR_CALL:
+            renderer.clear();
+            break;
+        case PacketTypes.CLEAR_COLOUR_CALL:
+            renderer.clear(packet.colour);
+            break;
+    }
+}
+
 function main()
 {
-    // Initialize the renderer
-    renderer = new Renderer();
-    if (false)
-		socket.emit("init_game");
-	else
-		fkrnd();
-	socket.on("draw_call", (drawData) =>
-	{
-		renderer.drawBit(
-			drawData.x, 
-			drawData.y, 
-			drawData.colour,
-			drawData.size);
-	});
-	socket.on("clear_call", () =>
-	{
-		renderer.clear();
-	});
-	socket.on("create_canvas", (canvasData) =>
-	{
-		renderer.createCanvas(
-			canvasData.w,
-			canvasData.h);
-	});
-	socket.on("back_colour", (colour) =>
-	{
-		renderer.backgroundColour(colour);
-	});
+    if (false) socket.emit("init_game");
+	else example();
+    //else fkrnd();
+	
+    socket.on("update_packet", updateHandler);
 }
 
 window.onload = main;
