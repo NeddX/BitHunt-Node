@@ -1,105 +1,57 @@
-const Tags =
+const Core = require("./bit_hunt/core/core");
+
+const PacketTypes =
 {
-    nullobj:    0,
-    Floor:      1,
-    Grass:      2
+    CREATE_CANVAS:          0,
+    DRAW_CALL:              1,
+    CLEAR_CALL:             2,
+    CLEAR_COLOUR_CALL:      3
 };
 
-class GameRenderer
-{
-    constructor(clear_Func, clearColour_Func, render_Func)
-    {
-        this.clear = clear_Func;
-        this.clearColour = clearColour_Func;
-        this.renderRect = render_Func;
-    }
+function sendPacket(socket, packetType, data)
+{	
+	let packet =
+	{
+		type: packetType,
+		data: data
+	};
+	socket.emit("update_packet", packet);
 }
 
-class Game
+class GameInstance
 {
-    constructor(width, height, pixelSize, renderer)
+    constructor(socket)
     {
-        this.width = width;
-        this.height = height;
-        this.pixelSize = pixelSize;
-        this.map = [];
-        this.gameObjects = [];
-        this.renderer = renderer;
+        this.socket = socket;
+        this.width = 100;
+        this.height = 100;
+        this.pixelSize = 8;
+        this.clearColour = "#18233b";
+        this.scene = new Core.Scene();
     }
 
     init()
     {
-        for (let i = 0; i < this.width * this.height; ++i)
+        sendPacket(this.socket, PacketTypes.CREATE_CANVAS,
         {
-            this.map[i] = Tags.Floor;
-        }
-    }
-
-    __internalUpdate(deltaTime)
-    {
-        for (let i = 0; i < this.gameObjects.length; ++i)
-            if (this.gameObjects[i])
-                this.gameObjects[i].update(deltaTime);
-    }
-
-    set(x, y, tag)
-    {
-        this.gameObjects[y * this.width + x] = tag;
-    }
-
-    get(x, y)
-    {
-        return this.gameObjects[y * this.width + x];
-    }
-
-    add(TobjectType, ...args)
-    {
-        let gameObject = new TobjectType(...args);
-        gameObject.renderer = this.renderer;
-        //this.set(gameObject.x, gameObject.y, gameObject.tag);
-        this.gameObjects.push(gameObject);
-    }
-}
-
-class GameObject
-{
-    constructor(x, y)
-    {
-        this.x = x;
-        this.y = y;
-        this.tag = Tags.nullobj;
-        this.renderer = null;
-        this.colour = "#ffffff";
+            w: this.width * this.pixelSize,
+            h: this.height * this.pixelSize,
+        });
+        sendPacket(this.socket, PacketTypes.CLEAR_COLOUR_CALL, 
+        {
+            id: 0,
+            colour: this.clearColour
+        });
+        sendPacket(this.socket, PacketTypes.CLEAR_CALL, 0);
     }
 
     update(deltaTime)
     {
-
+        this.scene.update();
     }
 }
 
-class Grass extends GameObject
+module.exports = 
 {
-    constructor(x, y)
-    {
-        super(x, y);
-        this.tag = Tags.Grass;
-        this.colour = "#32a846";
-    }
-
-    update(deltaTime)
-    {
-        this.renderer.clear();
-        this.renderer.renderRect(this.x, this.y, this.colour, 8);
-        //console.log("rendering myself at: " + this.x + ", " + this.y);
-    }
-}
-
-module.exports =
-{
-    Game,
-    GameRenderer,
-    GameObject,
-    Tags,
-    Grass
+    GameInstance
 };

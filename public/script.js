@@ -75,37 +75,34 @@ const PacketTypes =
 
 function updateHandler(packet)
 {
+    let data = packet.data;
+    let id = (data.id != null) ? data.id : packet.data;
     switch (packet.type)
     {
         case PacketTypes.CREATE_CANVAS:
-            renderer.createCanvas(
-                packet.w, 
-                packet.h, 
-                packet.pixelSize, 
-                packet.clearColour);
+            renderer.createCanvas(data.w, data.h);
             break;
         case PacketTypes.DRAW_CALL:
-            renderer.renderBit(
-                packet.x,
-                packet.y,
-                packet.colour,
-                packet.size
+            renderer.canvases[id].renderBit(
+                data.x,
+                data.y,
+                data.colour,
+                data.size
             );
             break;
         case PacketTypes.CLEAR_CALL:
-            renderer.clear();
+            renderer.canvases[id].clear();
             break;
         case PacketTypes.CLEAR_COLOUR_CALL:
-            renderer.clear(packet.colour);
+            renderer.canvases[id].clearColour(data.colour);
             break;
     }
 }
 
 function main()
 {
-    if (false) socket.emit("init_game");
+    if (true) socket.emit("init_game");
 	else example();
-    //else fkrnd();
 	
     socket.on("update_packet", updateHandler);
 }

@@ -94,11 +94,14 @@ class Renderer
 {
     constructor()
     {
+        // private
         this.__body = document.body;
         this.__head = document.head;
-        this.__canvases = [];
         this.__canvasDesigner = null;
         this.__appData = __b_rend__js_g__own_path;
+
+        // public
+        this.canvases = [];
 
         let link = document.createElement("link");
         link.rel = "stylesheet";
@@ -126,21 +129,21 @@ class Renderer
             pixelSize, 
             clearColour,
             "__b_rend__css_c__container");
-        this.__canvases.push(canvas);
-        canvas.id = this.__canvases.length - 1;
+        this.canvases.push(canvas);
+        canvas.id = this.canvases.length - 1;
 
         return canvas.id;
     }
 
     getCanvas(canvasId)
     {
-        return this.__canvases[canvasId];
+        return this.canvases[canvasId];
     }
 
     attachCanvas(childCanvasID, parentCanvasID)
     {
-        let parent = this.__canvases[parentCanvasID];
-        let child = this.__canvases[childCanvasID];
+        let parent = this.canvases[parentCanvasID];
+        let child = this.canvases[childCanvasID];
         child.attachTo(parent);
         //this.__canvases[childCanvasID].attachTo(this.__canvases[parentCanvasID]);
     }
