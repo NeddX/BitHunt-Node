@@ -1,3 +1,0 @@
-add genders to characters
-add seasons
-

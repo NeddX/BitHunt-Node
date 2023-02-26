@@ -1,25 +1,6 @@
-.__b_rend__css_c__canvas
-{
-    /*
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 128px; 
-    height: 128px;
-    background-color: #464646;
-    */
-    /*
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    */
-}
-
 .__b_rend__css_c__container
 {
-    position: relative;
+    position: absolute;
 }
 
 .__b_rend__css_c__container canvas

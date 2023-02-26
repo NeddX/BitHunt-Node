@@ -1,72 +1,77 @@
 const express = require("express");
 const app = express();
 const http = require("http");
-const server = http.createServer(app);
-const io = require("socket.io")(server);
+const httpServer = http.createServer(app);
+const socketIO = require("socket.io")(httpServer);
 const path = require("path");
-const game = require("./game_data/game");
+const game = require("./game_src/game");
 
-let gameInstances = [];
+let gameInstances = {};
 
 app.use(express.static(path.join(__dirname, "public/")));
-
 app.get("/", (req, res) => 
 {
     res.sendFile(__dirname + "public/index.html");
 });
 
-io.on("connection", (socket) => 
+socketIO.on("connection", (socket) => 
 {
-    console.log("Connection is made!");
+    console.log(`Client: ${socket.id} connected!`);
 
     socket.on("init_game", () =>
     {
-		const RenderFunctions =
-		{
-			clear: function()
-			{	
-				socket.emit("clear_call");
-			},
-			background: function(colour)
-			{
-				socket.emit("back_colour", colour);
-			},
-			renderCopy: function(x, y, colour, size = 8)
-			{
-				//console.log(`(${x}, ${y}, ${colour}, ${size})`);
-				socket.emit("draw_call", 
-				{
-					x: x,
-					y: y,
-					colour: colour,
-					size: size
-				});
-				
-			}
-		};
+        const WIDTH = 100;
+        const HEIGHT = 100;
+        const PIXEL_SIZE = 8;
 
+        let fps = 0;
 		let lastUpdateTime = null;
-		let inst = new game.GameInstance(socket);
-		inst.init();
-		gameInstances.push(game);
-		setInterval(function updateThread()
+		let gameInst = new game.Scene(
+            socket,
+            WIDTH, 
+            HEIGHT, 
+            "#253140",
+            PIXEL_SIZE
+        );
+        let inst =
+        {
+            running: 1,
+            gameInst: gameInst
+        };
+        gameInstances[socket.id.toString()] = inst;
+		gameInst.init();
+        socket.emit("init_finished");
+        
+		let engineThread = setInterval(function updateThread()
 		{
-			const now = Date.now();
-			const deltaTime = lastUpdateTime ? (now - lastUpdateTime) / 1000 : 0;
-			lastUpdateTime = now;
-			inst.update(deltaTime);
+            if (inst.running == 1)
+            {
+			    const now = Date.now();
+			    const deltaTime = lastUpdateTime ? (now - lastUpdateTime) / 1000 : 0;
+			    lastUpdateTime = now;
+                fps = 1 / deltaTime;
+                gameInst.render();
+			    gameInst.update();
+                process.stdout.write(`\rFPS: ${Math.round(fps)}     `);
+            }
+            else clearInterval(engineThread);
 		}, 5);
-		
     });
 
     socket.on("disconnect", () =>
     {
-        console.log("Client disconntected!");
-        running = false;
+        console.log(`Client: ${socket.id} disconnected!`);
+        let inst = gameInstances[socket.id.toString()];
+        if (inst)
+        {
+            gameInstances[socket.id.toString()].running = 0;
+            gameInstances[socket.id.toString()].gameInst.dispose();
+            delete gameInstances[socket.id.toString()];
+        }
     });
 });
   
-server.listen(80, () => 
+httpServer.listen(80, () => 
 {
     console.log("listening on localhost:80");
 });
