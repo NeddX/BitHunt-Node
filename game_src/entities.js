@@ -63,7 +63,9 @@ class Entity
                         }
                     }
                 }
-                else if (obj == null && tags.includes(this.Tags.Floor)) 
+                else if (obj == null 
+					&& (tags.includes(this.Tags.Floor)
+					|| tags.includes(this.Tags.nullobj))) 
                 {  
                     found.push(this.range[i]);
                 }
@@ -89,7 +91,7 @@ class Entity
             this.y * this.h, 
             this.w, 
             this.h, 
-            this.colour)
+            this.colour);
     }
 
     dispose()
@@ -153,7 +155,7 @@ class Predator extends Entity
             this.Tags.Grass, 
             this.Tags.Insect, 
             this.Tags.Tarantula, 
-            this.Tags.EggNest
+            //this.Tags.EggNest
         ];
         this.colour = "#c40017";
         this.gender = Math.round(Math.random());
@@ -173,7 +175,7 @@ class Predator extends Entity
             if (partner.gender == 1)
                 foundMalePartner = true;
         }
-        if (cells.length > 0 && cells && foundMalePartner) 
+        if (cells && cells.length > 0 && foundMalePartner) 
         {
             this.currentScene.add(this.constructor, cells[0].x, cells[0].y, this.w, this.h);
         }
@@ -246,11 +248,11 @@ class Insect extends Predator
 
 class EggNest extends Entity
 {
-    constructor(x, y, w, h, entityType, eggCount, hatchTime, canHatchOn, colour)
+    constructor(x, y, w, h, T, eggCount, hatchTime, canHatchOn, colour)
     {
         super(x, y, w, h);
         this.eggCount = eggCount;
-        this.entityType = entityType;
+        this.entityType = T;
         this.lifeTime = hatchTime;
         this.canHatchOn = canHatchOn;
         this.colour = colour;
@@ -277,7 +279,7 @@ class EggNest extends Entity
     }
 }
 
-class Tarantula extends Insect
+class Tarantula extends Predator
 {
     constructor(x, y, w, h)
     {

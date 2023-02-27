@@ -8,7 +8,6 @@ class NetworkRenderer
         this.width = width;
         this.height = height;
         this.socket = networkSocket;
-        this.batchRender = false;
         this.PacketType =
         {
             CREATE_CANVAS:              0,
@@ -22,6 +21,7 @@ class NetworkRenderer
             CANVAS_ALIGNMENT:           8,
             RENDER_TEXT:                9
         };
+		this.batchRender = false;
         this.renderData = [];
     }
 
@@ -90,10 +90,10 @@ class NetworkRenderer
     renderEnd()
     {
         this.batchRender = false;
-        const compressedPacket = zlib.deflateSync(JSON.stringify(this.renderData));
+        const compressedData = zlib.deflateSync(JSON.stringify(this.renderData));
         let packet = 
         {
-            data:           compressedPacket
+            data: compressedData
         };
         //process.stdout.write(`\rCompressed render data size: ${runtime.serialize(compressedPacket).byteLength}bytes`);
         //process.stdout.write(`\rRender data size: ${runtime.serialize(this.renderData).byteLength}bytes`);

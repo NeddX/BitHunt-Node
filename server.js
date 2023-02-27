@@ -16,7 +16,7 @@ app.get("/", (req, res) =>
 
 socketIO.on("connection", (socket) => 
 {
-    console.log(`Client: ${socket.id} connected!`);
+    console.log(`Client: '${socket.id}' connected!`);
 
     socket.on("init_game", () =>
     {
@@ -26,7 +26,7 @@ socketIO.on("connection", (socket) =>
 
         let fps = 0;
 		let lastUpdateTime = null;
-		let gameInst = new game.Scene(
+		const gameInst = new game.Scene(
             socket,
             WIDTH, 
             HEIGHT, 
@@ -41,21 +41,22 @@ socketIO.on("connection", (socket) =>
         gameInstances[socket.id.toString()] = inst;
 		gameInst.init();
         socket.emit("init_finished");
-        
-		let engineThread = setInterval(function updateThread()
+
+		let latency = 50;
+		const engineThread = setInterval(function updateThread()
 		{
             if (inst.running == 1)
             {
 			    const now = Date.now();
 			    const deltaTime = lastUpdateTime ? (now - lastUpdateTime) / 1000 : 0;
 			    lastUpdateTime = now;
-                fps = 1 / deltaTime;
+                fps = Math.round(1 / deltaTime);
                 gameInst.render();
 			    gameInst.update();
-                //process.stdout.write(`\rFPS: ${Math.round(fps)}     `);
+                //process.stdout.write(`\rFPS: ${fps}     `);
             }
             else clearInterval(engineThread);
-		}, 5);
+		}, latency);
     });
 
     socket.on("disconnect", () =>

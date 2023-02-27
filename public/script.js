@@ -2,6 +2,8 @@ const socket = io();
 
 let renderer = new Renderer();
 let selectedEvent = 0;
+let frameCount = 0;
+
 const PacketType =
 {
     CREATE_CANVAS:              0,
@@ -14,27 +16,6 @@ const PacketType =
     DETACH_CANVAS:              7,
     CANVAS_ALIGNMENT:           8,
     RENDER_TEXT:                9
-};
-
-const Tags = 
-{
-    nullobj:       -1,
-    Floor:          0,
-    Grass:          1,
-    Predator:       2,
-    Insect:         3,
-    Tarantula:      4,
-    EggNest:        5
-};
-
-const TagsStr =
-{
-    0:          "Floor",
-    1:          "Grasses",
-    2:          "Predators",
-    3:          "Insects",
-    4:          "Tarantulas",
-    5:          "EggNests"
 };
 
 const Event =
@@ -50,15 +31,6 @@ function renderPacketHandler(packet)
     {
         case PacketType.CREATE_CANVAS:
             renderer.createCanvas(data.w, data.h);
-            break;
-        case PacketType.ATTACH_TO_CANVAS:
-            renderer.attachTo(id, data.parentID);
-            break;
-        case PacketType.DETACH_CANVAS:
-            renderer.detach(id);
-            break;
-        case PacketType.CANVAS_ALIGNMENT:
-            renderer.setAlignment(data.alignment);
             break;
         case PacketType.RENDER_RECT:
             renderer.renderRect(
@@ -87,18 +59,20 @@ function renderPacketHandler(packet)
             const renderData = JSON.parse(pako.inflate(data.data, { to: "string" }));
             for (let i = 0; i < renderData.length; ++i)
                 renderPacketHandler(renderData[i]);
-            break;
+			//frameCount++;
+			//document.getElementById("fr").textContent = `Frame count: ${frameCount}`;
+			break;
     }
 }
 
 function statPacketHandler(packet)
-{
-    const dcData = pako.inflate(packet, { to: "string" });
-    const data = JSON.parse(dcData);
+{	
+    const data = JSON.parse(pako.inflate(packet, { to: "string" }));
     
+	// i know but performance is not critical in this case
     const elementsToRemove = document.querySelectorAll(".__stat_text");
     elementsToRemove.forEach((element) => { element.remove(); });
-
+	
     const textContainer = document.getElementById("statTextContainer");
     for (let i = 0; i < data.length; ++i)
     {
@@ -111,26 +85,22 @@ function statPacketHandler(packet)
 
 function onMouseClick(eventArgs)
 {
-    /*
-    const diffW = Math.round(renderer.width  / renderer.canvas.clientWidth);
-    const diffH = Math.round(renderer.height / renderer.canvas.clientHeight);
-    const x = eventArgs.offsetX * diffW;
-    const y = eventArgs.offsetY * diffH;
+	// move to the server side
+	let mulX = renderer.canvas.width  / renderer.canvas.offsetWidth;
+	let mulY = renderer.canvas.height / renderer.canvas.offsetHeight;
+	let x = Math.round(eventArgs.offsetX  * mulX);
+    let y = Math.round(eventArgs.offsetY  * mulY);
     let mouseEventArgs =
-    {
-        x:      x,
-        y:      y
-    };
-    socket.emit("interact_mouseDown", mouseEventArgs);*/
-    var x = eventArgs.offsetX;
-    var y = eventArgs.offsetY;
-    console.log(`x: ${relativeX} y: ${relativeY}`);
+	{
+		x:		x,
+		y:		y
+	};
+	socket.emit("interactions_onMouseDown", mouseEventArgs);
 }
 
 function main()
-{
-    socket.emit("init_game");
-    socket.on("render_update", renderPacketHandler);
+{	
+	socket.on("render_update", renderPacketHandler);
     socket.on("stat_update", statPacketHandler);
     socket.on("init_finished", () =>
     {
@@ -139,6 +109,7 @@ function main()
         renderer.attachEvent("mousedown", onMouseClick);
     });
 
+    socket.emit("init_game");
 }
 
 window.onload = main;

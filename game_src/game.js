@@ -29,12 +29,22 @@ class Scene
             Tarantula:      4,
             EggNest:        5
         };
-		this.TagNames =
+		this.Season =
 		{
+			Autumn:			0,
+			Winter:			1,
+			Spring:			2,
+			Summer:			3
 		};
+		this.currentSeason = this.Season.Autumn;
         this.frameCount = 0;
-        this.entitiyCount = new Map();
-    }
+        this.entityCount = new Map();
+		this.EventType =
+		{
+			OnMouseDown:	0
+		};
+		this.eventStack = new Map();
+	}
 
     worldGen(
         grassCount = 0, 
@@ -48,17 +58,14 @@ class Scene
         {
             const vec = 
             { 
-                x: Math.round(Math.random() * (this.width - 1)), 
-                y: Math.round(Math.random() * (this.height - 1))
+                x: Math.round(Math.random() * (this.width	- 1)), 
+                y: Math.round(Math.random() * (this.height	- 1))
             };
             if (this.getEntityAtLocation(vec.x, vec.y) == null)
             {
                 this.add(entities.Grass, vec.x, vec.y, this.pixelSize, this.pixelSize);
             }
-            else
-            {
-                i--;
-            }
+            else i--;
         }
         
         // Spawn Insects
@@ -66,17 +73,14 @@ class Scene
         {
             const vec = 
             { 
-                x: Math.round(Math.random() * (this.width - 1)), 
-                y: Math.round(Math.random() * (this.height - 1))
+                x: Math.round(Math.random() * (this.width	- 1)), 
+                y: Math.round(Math.random() * (this.height	- 1))
             };
             if (this.getEntityAtLocation(vec.x, vec.y) == null)
             {
                 this.add(entities.Insect, vec.x, vec.y, this.pixelSize, this.pixelSize);
             }
-            else
-            {
-                i--;
-            }
+            else i--;
         }
 
         // Spawn Tarantulas
@@ -84,17 +88,14 @@ class Scene
         {
             const vec = 
             { 
-                x: Math.round(Math.random() * (this.width - 1)), 
-                y: Math.round(Math.random() * (this.height - 1))
+                x: Math.round(Math.random() * (this.width	- 1)), 
+                y: Math.round(Math.random() * (this.height	- 1))
             };
             if (this.getEntityAtLocation(vec.x, vec.y) == null)
             {
                 this.add(entities.Tarantula, vec.x, vec.y, this.pixelSize, this.pixelSize);
             }
-            else
-            {
-                i--;
-            }
+            else i--;
         }
     
         // Spawn predators
@@ -102,24 +103,21 @@ class Scene
         {
             const vec = 
             { 
-                x: Math.round(Math.random() * (this.width - 1)), 
-                y: Math.round(Math.random() * (this.height - 1))
+                x: Math.round(Math.random() * (this.width	- 1)), 
+                y: Math.round(Math.random() * (this.height	- 1))
             };
             if (this.getEntityAtLocation(vec.x, vec.y) == null)
             {
                 this.add(entities.Predator, vec.x, vec.y, this.pixelSize, this.pixelSize);
             }
-            else
-            {
-                i--;
-            }
+			else i--;
         }
     }
 
     updateStatistics(deltaTime)
     {
 		let arr = [];
-		for (const [key, value] of this.entitiyCount)
+		for (const [key, value] of this.entityCount)
 		{
 			switch (key)
 			{
@@ -151,8 +149,29 @@ class Scene
 
     onMouseDown(mouseEventArgs)
     {
-        console.log(`clicked at: ${mouseEventArgs.x} ${mouseEventArgs.y}`);
-    }
+		let mX = Math.round(mouseEventArgs.x / (this.renderer.width		/ this.width));
+		let mY = Math.round(mouseEventArgs.y / (this.renderer.height	/ this.height));
+		let radius = 10;
+		let minVec =
+		{
+			x:	mX - radius,
+			y:	mY - radius
+		};
+		let maxVec =
+		{
+			x:	mX + radius,
+			y:	mY + radius
+		};
+		for (let y = minVec.y; y < maxVec.y; ++y)
+		{
+			for (let x = minVec.x; x < maxVec.x; ++x)
+			{
+				let entity = this.getEntityAtLocation(x, y);
+				if (entity)
+					this.remove(entity);
+			}
+		}
+	}
 
     init()
     {
@@ -178,19 +197,30 @@ class Scene
 
         this.updateStatistics(0);
 
-        this.socket.on("interact_mouseDown", this.onMouseDown);
-    }
+		this.socket.on("interactions_onMouseDown", (args) => 
+		{
+			this.eventStack.set(this.EventType.OnMouseDown, args); 
+		});
+	}
+
+	pollEvents()
+	{
+		for (const [key, value] of this.eventStack)
+		{
+			switch (key)
+			{
+				case this.EventType.OnMouseDown:
+					this.onMouseDown(value);
+					break;
+			}
+		}
+		this.eventStack.clear();
+	}
 
     update(deltaTime)
     {
-		/*
-		for (let i = 0; i < this.activeEntities.length; ++i)
-		{
-			let x = this.activeEntities[i];
-			this.entities[x].update(deltaTime);
-		}
-		*/
-		
+		this.pollEvents();
+
         for (let i = 0; i < this.entities.length; ++i)
         {
             if (this.entities[i])
@@ -199,20 +229,25 @@ class Scene
 
         if (this.frameCount % 2 == 0)
             this.updateStatistics(deltaTime);
-    }
+		if (this.frameCount % 90 == 0)
+			this.currentSeason = (this.currentSeason + 1 > 3) ? 0 : ++this.currentSeason;
+	}
 
     render(deltaTime)
-    {
+    {	
         this.renderer.renderBegin();
         this.renderer.clear();
-        for (let i = 0; i < this.entities.length; ++i)
+        
+		for (let i = 0; i < this.entities.length; ++i)
         {
             if (this.entities[i])
                 this.entities[i].render(deltaTime);
         }
-        this.renderer.renderEnd();
+        
+		this.renderer.renderEnd();
         this.frameCount++;
-    }
+		//process.stdout.write(`\rFrame count: ${this.frameCount}`);
+	}
 
     add(T, ...args)
     {
@@ -221,14 +256,13 @@ class Scene
         obj.renderer = this.renderer;
         obj.init();
         this.entities[obj.y * this.width + obj.x] = obj;
-        if (this.entitiyCount.has(obj.tag))
-        {
-            let num = this.entitiyCount.get(obj.tag);
-            this.entitiyCount.set(obj.tag, ++num);
-        }
-        else
-            this.entitiyCount.set(obj.tag, 1);
-        return obj;
+        if (this.entityCount.has(obj.tag))
+		{
+			let count = this.entityCount.get(obj.tag);
+			this.entityCount.set(obj.tag, ++count);
+		}
+		else this.entityCount.set(obj.tag, 1);
+		return obj;
     }
 
     setEntityLocation(entity, x, y)
@@ -246,10 +280,11 @@ class Scene
 
     remove(entity)
     {
-        this.entities[entity.y * this.width + entity.x] = null;
-        let num = this.entitiyCount.get(entity.tag);
-        this.entitiyCount.set(entity.tag, --num);
-    }
+		let count = this.entityCount.get(entity.tag);
+		this.entityCount.set(entity.tag, --count);
+		this.entities[entity.y * this.width + entity.x] = null;
+        //entity.dispose();
+	}
 
     dispose()
     {
