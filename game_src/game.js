@@ -118,41 +118,41 @@ class Scene
 
     updateStatistics(deltaTime)
     {
-		let map = new Map();
-		for (const [key, value] in this.entitiyCount)
+		let arr = [];
+		for (const [key, value] of this.entitiyCount)
 		{
 			switch (key)
 			{
 				case this.Tags.Grass:
-					map.set("Grasses", value);
+					arr.push(`Grasses: ${value}`);
 					break;
 				case this.Tags.Insect:
-					map.set("Insects", value);
+					arr.push(`Insects: ${value}`);
 					break;
 				case this.Tags.EggNest:
-					map.set("EggNests", value);
+					arr.push(`EggNests: ${value}`);
 					break;
 				case this.Tags.Predator:
-					map.set("Predators", value);
+					arr.push(`Predators: ${value}`);
 					break;
 				case this.Tags.Tarantula:
-					map.set("Tarantulas", value);
+					arr.push(`Tarantulas: ${value}`);
 					break;
 				default:
-					map.set("Unknown", value);
+					arr.push(`Unknown: ${value}`);
 					break;
 			}
 		}
 		const compressedData = zlib.deflateSync(
-			JSON.stringify(Array.from(map))
+			JSON.stringify(arr)
 		);
-		console.log(JSON.stringify(Array.from(map)));
-	/*
-        const compressedData = zlib.deflateSync(
-            JSON.stringify(Array.from(this.entitiyCount)));
         this.socket.emit("stat_update", compressedData);
-    */
 	}
+
+    onMouseDown(mouseEventArgs)
+    {
+        console.log(`clicked at: ${mouseEventArgs.x} ${mouseEventArgs.y}`);
+    }
 
     init()
     {
@@ -177,6 +177,8 @@ class Scene
         }
 
         this.updateStatistics(0);
+
+        this.socket.on("interact_mouseDown", this.onMouseDown);
     }
 
     update(deltaTime)

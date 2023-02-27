@@ -52,7 +52,7 @@ socketIO.on("connection", (socket) =>
                 fps = 1 / deltaTime;
                 gameInst.render();
 			    gameInst.update();
-                process.stdout.write(`\rFPS: ${Math.round(fps)}     `);
+                //process.stdout.write(`\rFPS: ${Math.round(fps)}     `);
             }
             else clearInterval(engineThread);
 		}, 5);

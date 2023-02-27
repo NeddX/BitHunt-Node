@@ -1,3 +1,7 @@
+const socket = io();
+
+let renderer = new Renderer();
+let selectedEvent = 0;
 const PacketType =
 {
     CREATE_CANVAS:              0,
@@ -38,11 +42,6 @@ const Event =
     Nuke:           0,
     Smite:          1
 };
-
-const socket = io();
-
-let renderer = new Renderer();
-let selectedEvent = 0;
 
 function renderPacketHandler(packet)
 {
@@ -95,16 +94,16 @@ function renderPacketHandler(packet)
 function statPacketHandler(packet)
 {
     const dcData = pako.inflate(packet, { to: "string" });
-    const map = JSON.parse(dcData);
+    const data = JSON.parse(dcData);
     
     const elementsToRemove = document.querySelectorAll(".__stat_text");
     elementsToRemove.forEach((element) => { element.remove(); });
 
     const textContainer = document.getElementById("statTextContainer");
-    for (let i = 0; i < map.length; ++i)
+    for (let i = 0; i < data.length; ++i)
     {
         const e = document.createElement("p");
-        e.textContent = `${TagsStr[map[i][0]]}: ${map[i][1]}`;
+        e.textContent = data[i];
         e.classList.add("__stat_text");
         textContainer.appendChild(e);
     }
@@ -112,17 +111,26 @@ function statPacketHandler(packet)
 
 function onMouseClick(eventArgs)
 {
+    /*
     const diffW = Math.round(renderer.width  / renderer.canvas.clientWidth);
     const diffH = Math.round(renderer.height / renderer.canvas.clientHeight);
     const x = eventArgs.offsetX * diffW;
     const y = eventArgs.offsetY * diffH;
-    console.log(`x: ${x} y: ${y}`);
+    let mouseEventArgs =
+    {
+        x:      x,
+        y:      y
+    };
+    socket.emit("interact_mouseDown", mouseEventArgs);*/
+    var x = eventArgs.offsetX;
+    var y = eventArgs.offsetY;
+    console.log(`x: ${relativeX} y: ${relativeY}`);
 }
 
 function main()
 {
     socket.emit("init_game");
-    socket.on("render_packet", updatePacketHandler);
+    socket.on("render_update", renderPacketHandler);
     socket.on("stat_update", statPacketHandler);
     socket.on("init_finished", () =>
     {
