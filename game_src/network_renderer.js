@@ -32,7 +32,7 @@ class NetworkRenderer
             type:   packetType,
             data:   data
         };
-        if (!this.batchRender) this.socket.emit("update_packet", packet);
+        if (!this.batchRender) this.socket.emit("render_update", packet);
         else this.renderData.push(packet);
     }
 

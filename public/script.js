@@ -44,7 +44,7 @@ const socket = io();
 let renderer = new Renderer();
 let selectedEvent = 0;
 
-function updatePacketHandler(packet)
+function renderPacketHandler(packet)
 {
     const data = packet.data;
     switch (packet.type)
@@ -87,7 +87,7 @@ function updatePacketHandler(packet)
         case PacketType.BATCH_RENDER_END:
             const renderData = JSON.parse(pako.inflate(data.data, { to: "string" }));
             for (let i = 0; i < renderData.length; ++i)
-                updatePacketHandler(renderData[i]);
+                renderPacketHandler(renderData[i]);
             break;
     }
 }
@@ -122,7 +122,7 @@ function onMouseClick(eventArgs)
 function main()
 {
     socket.emit("init_game");
-    socket.on("update_packet", updatePacketHandler);
+    socket.on("render_packet", updatePacketHandler);
     socket.on("stat_update", statPacketHandler);
     socket.on("init_finished", () =>
     {

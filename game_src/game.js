@@ -13,7 +13,8 @@ class Scene
         this.pixelSize = pixelSize;
         this.size = this.width * this.height;
         this.entities = new Array(this.width * this.height).fill(null);
-        this.renderer = new ntr.NetworkRenderer(
+        this.activeEntities = [];
+		this.renderer = new ntr.NetworkRenderer(
             this.socket, 
             this.width  * this.pixelSize,
             this.height * this.pixelSize
@@ -28,6 +29,9 @@ class Scene
             Tarantula:      4,
             EggNest:        5
         };
+		this.TagNames =
+		{
+		};
         this.frameCount = 0;
         this.entitiyCount = new Map();
     }
@@ -112,12 +116,43 @@ class Scene
         }
     }
 
-    updateStatistics()
+    updateStatistics(deltaTime)
     {
+		let map = new Map();
+		for (const [key, value] in this.entitiyCount)
+		{
+			switch (key)
+			{
+				case this.Tags.Grass:
+					map.set("Grasses", value);
+					break;
+				case this.Tags.Insect:
+					map.set("Insects", value);
+					break;
+				case this.Tags.EggNest:
+					map.set("EggNests", value);
+					break;
+				case this.Tags.Predator:
+					map.set("Predators", value);
+					break;
+				case this.Tags.Tarantula:
+					map.set("Tarantulas", value);
+					break;
+				default:
+					map.set("Unknown", value);
+					break;
+			}
+		}
+		const compressedData = zlib.deflateSync(
+			JSON.stringify(Array.from(map))
+		);
+		console.log(JSON.stringify(Array.from(map)));
+	/*
         const compressedData = zlib.deflateSync(
             JSON.stringify(Array.from(this.entitiyCount)));
         this.socket.emit("stat_update", compressedData);
-    }
+    */
+	}
 
     init()
     {
@@ -141,11 +176,19 @@ class Scene
                 this.entities[i].init();
         }
 
-        this.updateStatistics();
+        this.updateStatistics(0);
     }
 
     update(deltaTime)
     {
+		/*
+		for (let i = 0; i < this.activeEntities.length; ++i)
+		{
+			let x = this.activeEntities[i];
+			this.entities[x].update(deltaTime);
+		}
+		*/
+		
         for (let i = 0; i < this.entities.length; ++i)
         {
             if (this.entities[i])
@@ -153,7 +196,7 @@ class Scene
         }
 
         if (this.frameCount % 2 == 0)
-            this.updateStatistics();
+            this.updateStatistics(deltaTime);
     }
 
     render(deltaTime)
