@@ -179,10 +179,10 @@ class Scene
         this.renderer.backgroundColour(this.colour);
         this.renderer.clear();
 
-        const grassCount = this.size / 4;
-        const insectCount = this.size / 8;
-        const tarantulaCount = this.size / 32;
-        const predatorCount = this.size / (this.size / 4);
+        //const grassCount = this.size / 4;
+        //const insectCount = this.size / 8;
+        //const tarantulaCount = this.size / 64;
+        //const predatorCount = this.size / (this.size / 4);
         this.worldGen(
             grassCount, 
             insectCount, 

@@ -18,7 +18,7 @@ socketIO.on("connection", (socket) =>
 {
     console.log(`Client: '${socket.id}' connected!`);
 
-    socket.on("init_game", () =>
+    socket.on("init_game", (gameSettings) =>
     {
         const WIDTH = 100;
         const HEIGHT = 100;

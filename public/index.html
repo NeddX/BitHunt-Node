@@ -4,22 +4,19 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.0.4/pako.min.js"></script>
         <script src="lib/brend/renderer.js"></script>
         <script src="script.js"></script>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../style.css">
     </head>
     <body>
         <div class="container">
             <div class="gameContainer">
-                <div class="textContainer" id="statTextContainer"> 
-                    <h1>The Title</h1>
-                    <p>The describing paragraph.</p>
-                    <p id="fr">framecount</p>
+                <div class="promptContainer"> 
+                    <h1>What's your nickname?</h1>
 					<hr style="color: #10171e; border-color: #10171e;">
-                    <br>
-                </div>
-                <div class="buttonContainer">
-                    <button>do stuff</button>
-                    <button>do more stuff</button>
-                    <button>do even more stuff</button>
+                    <form action="pages/menu/index.html" method="GET">
+                        <input class="genericTextBox" type="text" name="nick">
+                        <br>
+                        <button class="genericButton" type="submit">Play</button>
+                    </form>
                 </div>
             </div>
         </div>

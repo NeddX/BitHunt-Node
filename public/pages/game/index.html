@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.0.4/pako.min.js"></script>
+        <script src="lib/brend/renderer.js"></script>
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="../../style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="gameContainer">
+                <div class="textContainer" id="statTextContainer"> 
+                    <h1>The Title</h1>
+                    <p>The describing paragraph.</p>
+                    <p id="fr">framecount</p>
+					<hr style="color: #10171e; border-color: #10171e;">
+                    <br>
+                </div>
+                <div class="buttonContainer">
+                    <button>do stuff</button>
+                    <button>do more stuff</button>
+                    <button>do even more stuff</button>
+                    <button onclick="playAudio()">play epic music</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
