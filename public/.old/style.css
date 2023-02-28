@@ -1,0 +1,145 @@
+@font-face 
+{
+    font-family: "wonderland";
+    src: url("assets/fonts/wonderland.TTF");
+}
+
+body
+{
+	background-color: #18212a;
+}
+
+.container
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 95vw;
+    height: 60vw;
+
+    background-color: #243141;
+
+    border-style: solid;
+    border-radius: 1vw;
+    border-width: 0.4vw;
+    border-color: #10171e;
+}
+
+.propertyContainer
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 95vw;
+    height: 70vw;
+
+    background-color: #243141;
+
+    border-style: solid;
+    border-radius: 1vw;
+    border-width: 0.4vw;
+    border-color: #10171e;
+}
+
+.gameContainer
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 95%;
+    height: 95%;
+}
+
+.gameContainer canvas
+{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+
+    max-width: 90%;
+    max-height: 90%;
+
+    border-style: solid;
+    border-radius: 1vw;
+    border-width: 0.4vw;
+    border-color: #10171e;
+}
+
+.textContainer
+{
+    position: absolute;
+    font-family: "wonderland";
+    color: #ffffff;
+
+    width: 40%;
+    --max-width: 47%;
+    --max-height: 80%;
+    margin-top: 2.5%;
+
+    border-style: solid;
+    border-radius: 1vw;
+    border-width: 0.4vw;
+    border-color: #10171e;
+}
+
+.textContainer h1, h2, h3, h4, p, label
+{
+    margin: 3%;
+}
+
+.promptContainer
+{
+    position: absolute;
+    font-family: "wonderland";
+    color: #ffffff;
+	background-color: #243141; 
+ 
+	width: 50vw;
+	height: 30vw;    
+
+	--max-width: 80%;
+    --max-height: 40%;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    border-style: solid;
+    border-radius: 1vw;
+    border-width: 0.4vw;
+    border-color: #10171e;
+}
+
+.promptCotainer p, h1
+{
+	width: 30%;
+	height: 30%;
+}
+
+.buttonContainer
+{
+    position: absolute;
+    bottom: 0;
+
+    width: 40%;
+    --max-height: 80%;
+    margin-bottom: 2.5%;
+
+    border-style: solid;
+    border-radius: 1vw;
+    border-width: 0.4vw;
+    border-color: #10171e;
+}
+
+.genericTextBox
+{
+    margin: 2%;
+}

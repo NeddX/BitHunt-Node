@@ -1,24 +1,29 @@
 <html>
     <head>
-        <script src="/socket.io/socket.io.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.0.4/pako.min.js"></script>
-        <script src="lib/brend/renderer.js"></script>
-        <script src="script.js"></script>
-        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="stylesheets/style.css">
     </head>
     <body>
-        <div class="container">
-            <div class="gameContainer">
-                <div class="promptContainer"> 
-                    <h1>What's your nickname?</h1>
-					<hr style="color: #10171e; border-color: #10171e;">
-                    <form action="pages/menu/index.html" method="GET">
-                        <input class="genericTextBox" type="text" name="nick">
-                        <br>
-                        <button class="genericButton" type="submit">Play</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </body>
+	<div class="container">
+		<h1>Game of Life<h1>
+		<button id="btn" class="genericButton" onclick="location.href = 'html/worldgen.html';">Play</button>
+	</div>
+	<style>
+		.container
+		{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			font-family: "wonderland";
+			color: #ffffff;
+		}
+		
+		#btn
+		{
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	</style>
+	</body>
 </html>

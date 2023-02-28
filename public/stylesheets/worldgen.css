@@ -1,0 +1,59 @@
+.content
+{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin: 10px;
+}
+
+label
+{
+	display: inline-block;
+	float: left;
+	clear: left;
+	width: 250px;
+	text-align: left;
+}
+
+input
+{
+	display: inline-block;
+	float: left;
+}
+
+#globalContainer
+{
+	width: 99%;
+	height: 80%;
+	box-sizing: border-box;
+}
+
+#canvasContainer
+{
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 50px;
+	width: 50%;
+}
+
+#infoContainer
+{
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 50px;
+	max-width: 49%;
+	--width: 49.5%;
+	padding: 10px;
+}
+
+#title
+{
+	font-size: 24px;
+}
+
+#text
+{
+	font-size: 12px;
+}

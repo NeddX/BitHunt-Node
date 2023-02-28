@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../stylesheets/style.css">
+        <link rel="stylesheet" href="../stylesheets/worldgen.css">
+		<script src="../scripts/worldgen.js"></script>
+	</head>
+    <body>
+		<div class="genericContainer centered" id="globalContainer">
+			<div class="content">
+				<div class="genericContainer" id="infoContainer">
+					<h1 class="genericText" id="title">The Title</h1>
+					<p class="genericText" id="text">The describing paragraph.</p>
+					<p class="genericText" id="text">The descsdasraph.</p>
+					<hr class="genericLine">
+					
+					<br>
+					<form action="game.html" method="GET">
+					<label for="worldWidth" class="genericText" id="text">World Width:</label>
+					<input type="text" id="worldWidth" name="worldWidth">
+					<br>
+					<form action="game.html" method="GET">
+					<label for="worldHeight" class="genericText" id="text">World Height:</label>
+					<input type="text" id="worldHeight" name="worldHeight">
+					<br>
+					<form action="game.html" method="GET">
+					<label for="grassCount" class="genericText" id="text">Grass Count:</label>
+					<input type="text" id="grassCount" name="grassCount">
+					<br>
+					<form action="game.html" method="GET">
+					<label for="insectCount" class="genericText" id="text">Insect Count:</label>
+					<input type="text" id="insectCount" name="insectCount">
+					<br>
+					<form action="game.html" method="GET">
+					<label for="tarantulaCount" class="genericText" id="text">Tarantula Count:</label>
+					<input type="text" id="tarantulaCount" name="tarantulaCount">
+					<br>
+					<form action="game.html" method="GET">
+					<label for="predatorCount" class="genericText" id="text">Predator Count:</label>
+					<input type="text" id="predatorCount" name="predatorCount">
+					<br>
+					<br>
+					
+					<button class="genericButton" type="submit">Start</button>
+					<button class="genericButton">Randomize</button>
+				</div>
+				<div class="genericContainer" id="canvasContainer">
+					<canvas width="800" height="800">
+				</div>
+			</div>
+		</div>
+    </body>
+</html>
