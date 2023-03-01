@@ -50,4 +50,9 @@ class Renderer
     {
         this.canvas.addEventListener(type, callbackFunction);
     }
+
+    setID(id)
+    {
+        this.canvas.id = id;
+    }
 }

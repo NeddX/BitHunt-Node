@@ -18,20 +18,16 @@ socketIO.on("connection", (socket) =>
 {
     console.log(`Client: '${socket.id}' connected!`);
 
-    socket.on("init_game", (gameSettings) =>
+    socket.on("init_game", (gameProperties) =>
     {
-        const WIDTH = 100;
-        const HEIGHT = 100;
-        const PIXEL_SIZE = 8;
-
         let fps = 0;
 		let lastUpdateTime = null;
 		const gameInst = new game.Scene(
             socket,
-            WIDTH, 
-            HEIGHT, 
+            gameProperties.worldWidth, 
+            gameProperties.worldHeight, 
             "#253140",
-            PIXEL_SIZE
+            gameProperties.pixelSize
         );
         let inst =
         {
@@ -39,7 +35,12 @@ socketIO.on("connection", (socket) =>
             gameInst: gameInst
         };
         gameInstances[socket.id.toString()] = inst;
-		gameInst.init();
+        gameInst.init(
+            gameProperties.grassCount,
+            gameProperties.insectCount,
+            gameProperties.predatorCount,
+            gameProperties.tarantulaCount
+        );
         socket.emit("init_finished");
 
 		let latency = 50;

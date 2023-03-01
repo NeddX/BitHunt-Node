@@ -173,7 +173,7 @@ class Scene
 		}
 	}
 
-    init()
+    init(grassCount, insectCount, predatorCount, tarantulaCount)
     {
         this.renderer.init();
         this.renderer.backgroundColour(this.colour);
@@ -187,8 +187,9 @@ class Scene
             grassCount, 
             insectCount, 
             predatorCount, 
-            tarantulaCount);
-        
+            tarantulaCount
+        );
+
         for (let i = 0; i < this.entities.length; ++i)
         {
             if (this.entities[i]) 

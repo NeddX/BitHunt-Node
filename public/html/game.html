@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.0.4/pako.min.js"></script>
+        <script src="../lib/brend/renderer.js"></script>
+        <script src="../scripts/game_script.js"></script>
+        <link rel="stylesheet" href="../stylesheets/style.css">
+        <link rel="stylesheet" href="../stylesheets/game.css">
+    </head>
+    <body>
+        <div class="genericContainer">
+            <div class="genericContainer" id="gameContainer">
+                <div class="genericText" id="statTextContainer"> 
+                    <h1>The Title</h1>
+                    <p>The describing paragraph.</p>
+                    <p id="fr">framecount</p>
+					<hr style="color: #10171e; border-color: #10171e;">
+                    <br>
+                </div>
+                <div class="genericContainer">
+                    <button class="genericButton">do stuff</button>
+                    <button class="genericButton">do more stuff</button>
+                    <button class="genericButton">do even more stuff</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
