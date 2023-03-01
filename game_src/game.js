@@ -1,6 +1,7 @@
 const ntr = require("./network_renderer");
 const entities = require("./entities");
 const zlib = require("zlib");
+const fs = require("fs");
 
 class Scene
 {
@@ -35,8 +36,15 @@ class Scene
 			Winter:			1,
 			Spring:			2,
 			Summer:			3
-		};
-		this.currentSeason = this.Season.Autumn;
+        };
+        this.SeasonStr =
+        [
+            "Autumn",
+            "Winter",
+            "Spring",
+            "Summer"
+        ];
+		this.currentSeason = this.Season.Winter;
         this.frameCount = 0;
         this.entityCount = new Map();
 		this.EventType =
@@ -116,13 +124,13 @@ class Scene
 
     updateStatistics(deltaTime)
     {
-		let arr = [];
+        let arr = [];
 		for (const [key, value] of this.entityCount)
 		{
 			switch (key)
 			{
 				case this.Tags.Grass:
-					arr.push(`Grasses: ${value}`);
+                    arr.push(`Grasses: ${value}`);
 					break;
 				case this.Tags.Insect:
 					arr.push(`Insects: ${value}`);
@@ -140,11 +148,13 @@ class Scene
 					arr.push(`Unknown: ${value}`);
 					break;
 			}
-		}
-		const compressedData = zlib.deflateSync(
-			JSON.stringify(arr)
-		);
+        }
+        arr.push(`Season: ${this.SeasonStr[this.currentSeason]}`);
+        const jsonData = JSON.stringify(arr);
+		const compressedData = zlib.deflateSync(jsonData);
         this.socket.emit("stat_update", compressedData);
+        if (this.frameCount % 60 == 0) 
+            fs.appendFileSync("./stats.json", jsonData + "\n", err => { console.log("failed to write to file."); });
 	}
 
     onMouseDown(mouseEventArgs)

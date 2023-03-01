@@ -54,6 +54,7 @@ socketIO.on("connection", (socket) =>
                 fps = Math.round(1 / deltaTime);
                 gameInst.render();
 			    gameInst.update();
+                //process.stdout.write(`\rFPS: ${fps}     `);
             }
             else clearInterval(engineThread);
 		}, latency);

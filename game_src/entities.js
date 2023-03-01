@@ -26,6 +26,8 @@ class Entity
             { x: this.x + 1,    y: this.y + 1 },
         ];
         this.tags = this.Tags.nullobj;
+        this.Season = this.currentScene.Season;
+        this.currentSeason = this.currentScene.currentSeason;
     }
 
     checkFor(tags = [])
@@ -116,21 +118,63 @@ class Grass extends Entity
         this.tag = this.Tags.Grass;
         this.requiredTime = 5;
         this.lifeTime = 0;
-        this.colour = "#32a846";
+
+        switch (this.currentSeason)
+        {
+            case this.Season.Winter:
+                this.colour = "#94e8ff";
+                break;
+            default:
+                this.colour = "#32a846";
+                break;
+        }
     }
 
     update(deltaTime)
     {
+        this.currentSeason = this.currentScene.currentSeason;
         this.lifeTime++;
-        if (this.lifeTime >= this.requiredTime)
+        switch (this.currentSeason)
         {
-            let freeCells = this.checkFor([this.Tags.Floor]);
-            if (freeCells.length > 0 && freeCells)
-            {
-                let cell = freeCells[Math.round(Math.random() * (freeCells.length - 1))];
-                this.currentScene.add(Grass, cell.x, cell.y, this.w, this.h);
-            }
-            this.lifeTime = 0;
+            case this.Season.Winter:
+                this.colour = "#94e8ff";
+                if (this.lifeTime >= this.requiredTime + this.requiredTime / 2)
+                {
+                    let freeCells = this.checkFor([this.Tags.Floor]);
+                    if (freeCells.length > 0 && freeCells)
+                    {
+                    let cell = freeCells[Math.round(Math.random() * (freeCells.length - 1))];
+                        this.currentScene.add(Grass, cell.x, cell.y, this.w, this.h);
+                    }
+                    this.lifeTime = 0;
+                }
+                break;
+            case this.Season.Spring:
+                    this.colour = "#32a846";
+                    if (this.lifeTime >= this.requiredTime - this.requiredTime / 2)
+                    {
+                        let freeCells = this.checkFor([this.Tags.Floor]);
+                        if (freeCells.length > 0 && freeCells)
+                        {
+                            let cell = freeCells[Math.round(Math.random() * (freeCells.length - 1))];
+                            this.currentScene.add(Grass, cell.x, cell.y, this.w, this.h);
+                        }
+                        this.lifeTime = 0;
+                    }
+                break;
+            default:
+                this.colour = "#32a846";
+                if (this.lifeTime >= this.requiredTime)
+                {
+                    let freeCells = this.checkFor([this.Tags.Floor]);
+                    if (freeCells.length > 0 && freeCells)
+                    {
+                        let cell = freeCells[Math.round(Math.random() * (freeCells.length - 1))];
+                        this.currentScene.add(Grass, cell.x, cell.y, this.w, this.h);
+                    }
+                    this.lifeTime = 0;
+                }
+                break;
         }
     }
 }
@@ -204,9 +248,26 @@ class Predator extends Entity
                 this.energy++;
                 this.currentScene.remove(obj);
 
-                if (this.energy >= this.requiredEnergy && this.gender == 0) 
+                switch (this.currentSeason)
                 {
-                    this.reproduce();
+                    case this.Season.Winter:
+                        if (this.energy >= this.requiredEnergy + this.requiredEnergy / 2 && this.gender == 0) 
+                        {
+                            this.reproduce();
+                        }
+                        break;
+                    case this.Season.Spring:
+                        if (this.energy >= this.requiredEnergy - this.requiredEnergy / 2 && this.gender == 0) 
+                        {
+                            this.reproduce();
+                        }
+                        break;
+                    default:
+                        if (this.energy >= this.requiredEnergy && this.gender == 0) 
+                        {
+                            this.reproduce();
+                        }
+                        break;
                 }
             }
             this.lifeTime = this.lifeExpectancy;
