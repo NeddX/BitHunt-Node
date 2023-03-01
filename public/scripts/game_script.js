@@ -81,6 +81,7 @@ function statPacketHandler(packet)
         const e = document.createElement("p");
         e.textContent = data[i];
         e.classList.add("__stat_text");
+        e.classList.add("genericText");
         textContainer.appendChild(e);
     }
 }
@@ -106,10 +107,10 @@ function main()
     socket.on("stat_update", statPacketHandler);
     socket.on("init_finished", () =>
     {
-        const gameContainer = document.getElementById("gameContainer");
+        const gameContainer = document.getElementById("gameCanvasContainer");
 
         gameContainer.appendChild(renderer.canvas);
-        gameContainer.setID("gameCanvas");
+        renderer.setID("gameCanvas");
         renderer.attachEvent("mousedown", onMouseClick);
         
         backgroundMusic.volume = 0.3;

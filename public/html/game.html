@@ -8,8 +8,20 @@
         <link rel="stylesheet" href="../stylesheets/game.css">
     </head>
     <body>
-        <div class="genericContainer">
-            <div class="genericContainer" id="gameCanvasContainer">
+        <div class="genericContainer centered" id="globalContainer">
+            <div id="content">
+                <div class="genericContainer" id="statTextContainer">
+					<h1 class="genericText">The Title</h1>
+					<p class="genericText">The describing paragraph.</p>
+					<hr class="genericLine">
+                </div>
+                <div id="gameCanvasContainer">
+                    <!-- canvas -->
+                </div>
+            </div>
+        </div>
+        <!--<div class="genericContainer centered" id="globalContainer">
+            <div class="genericContainer" id="content">
                 <div class="genericText" id="statTextContainer"> 
                     <h1>The Title</h1>
                     <p>The describing paragraph.</p>
@@ -17,12 +29,13 @@
 					<hr style="color: #10171e; border-color: #10171e;">
                     <br>
                 </div>
+                <div id="gameCanvasContainer"></div>
                 <div class="genericContainer">
                     <button class="genericButton">do stuff</button>
                     <button class="genericButton">do more stuff</button>
                     <button class="genericButton">do even more stuff</button>
                 </div>
             </div>
-        </div>
+        </div>-->
     </body>
 </html>
