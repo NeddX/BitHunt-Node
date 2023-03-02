@@ -8,12 +8,29 @@
         <link rel="stylesheet" href="../stylesheets/game.css">
     </head>
     <body>
+        <div id="background">
+            <img class="autumn" src="../assets/images/terraria_overworld.png">
+            <img class="winter" src="../assets/images/terraria_snowbiome.png">
+            <img class="spring" src="../assets/images/terraria_jungle.png">
+            <img class="summer" src="../assets/images/terraria_desert.png">
+        </div>
         <div class="genericContainer centered" id="globalContainer">
             <div id="content">
-                <div class="genericContainer" id="statTextContainer">
-					<h1 class="genericText">The Title</h1>
-					<p class="genericText">The describing paragraph.</p>
-					<hr class="genericLine">
+                <div id="gameUI">
+                    <div class="genericContainer" id="statText">
+                        <h1 class="genericText">The Title</h1>
+                        <p class="genericText">The describing paragraph.</p>
+                        <hr class="genericLine">
+                    </div>
+                    <div class="genericContainer" id="interactor">
+                        <h1 class="genericText">Interaction options</h1>
+                        <hr class="genericLine">
+                        <p class="genericText" id="elementIndicator">Active element: Water</p>
+                        <div id="buttons">
+                            <button class="genericButton" id="waterBtn">Water</button>
+                            <button class="genericButton" id="radiationBtn">Radiation</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

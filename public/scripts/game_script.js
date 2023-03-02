@@ -1,11 +1,6 @@
 const socket = io();
 const urlParams = new URLSearchParams(window.location.search);
 
-let renderer = new Renderer();
-let backgroundMusic = new Audio("../assets/music/dBSoundworks/cc2g.ogg");
-let selectedEvent = 0;
-let frameCount = 0;
-
 const PacketType =
 {
     CREATE_CANVAS:              0,
@@ -20,11 +15,42 @@ const PacketType =
     RENDER_TEXT:                9
 };
 
-const Event =
+const GElement =
 {
-    Nuke:           0,
-    Smite:          1
+    Water:              0,
+    Radiation:          1,
+    Virus:              2,
+    Fire:               3
 };
+
+const GElementStr =
+[
+    "Water",
+    "Radiation",
+    "Virus",
+    "Fire"
+];
+
+const Season =
+{
+    Autumn:			0,
+    Winter:			1,
+    Spring:			2,
+    Summer:			3
+};
+
+const SeasonStr =
+[
+    "Autumn",
+    "Winter",
+    "Spring",
+    "Summer"
+];
+
+let renderer = new Renderer();
+let backgroundMusic = new Audio("../assets/music/dBSoundworks/cc2g.ogg");
+let activeElement = 0;
+let frameCount = 0;
 
 function renderPacketHandler(packet)
 {
@@ -75,7 +101,7 @@ function statPacketHandler(packet)
     const elementsToRemove = document.querySelectorAll(".__stat_text");
     elementsToRemove.forEach((element) => { element.remove(); });
 	
-    const textContainer = document.getElementById("statTextContainer");
+    const textContainer = document.getElementById("statText");
     for (let i = 0; i < data.length; ++i)
     {
         const e = document.createElement("p");
@@ -93,12 +119,23 @@ function onMouseClick(eventArgs)
 	let mulY = renderer.canvas.height / renderer.canvas.offsetHeight;
 	let x = Math.round(eventArgs.offsetX  * mulX);
     let y = Math.round(eventArgs.offsetY  * mulY);
-    let mouseEventArgs =
+    let mEventArgs =
 	{
-		x:		x,
-		y:		y
+		x:		        x,
+		y:		        y,
+        element:        activeElement
 	};
-	socket.emit("interactions_onMouseDown", mouseEventArgs);
+	socket.emit("interactions_mouseDown", mEventArgs);
+}
+
+function onButtonClick(eventArgs)
+{
+    if (eventArgs.srcElement.id == "waterBtn")
+        activeElement = GElement.Water;
+    else if (eventArgs.srcElement.id == "radiationBtn")
+        activeElement = GElement.Radiation;
+    
+    document.getElementById("elementIndicator").textContent = `Active element: ${GElementStr[activeElement]}`;
 }
 
 function main()
@@ -113,10 +150,24 @@ function main()
         renderer.setID("gameCanvas");
         renderer.addClassList("genericContainer");
         renderer.attachEvent("mousedown", onMouseClick);
+
+        const buttons = document.getElementsByTagName("button");
+        for (var i = 0; i < buttons.length; i++)
+            buttons[i].addEventListener("click", onButtonClick);
         
         backgroundMusic.volume = 0.3;
         backgroundMusic.loop = true;
         backgroundMusic.play();
+    });
+    socket.on("season_change", (seasonID) => 
+    {
+        const img = document.getElementsByClassName(SeasonStr[seasonID].toLowerCase())[0];
+        
+        document.querySelector("#background")
+            .querySelectorAll("img")
+            .forEach(e => { e.style.opacity = 0; });
+
+        img.style.opacity = 1.0;
     });
 
     socket.emit("init_game", 

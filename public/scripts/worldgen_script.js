@@ -1,10 +1,12 @@
 const backgroundMusic = new Audio("../assets/music/dbSoundworks/thisworld5.ogg");
 const templates =
-[
-    [ 0.5,  0.4,    0.05,   0.05    ],
-    [ 0.2,  0.2,    0.5,   0.1      ],
-    [ 0.3,  0.1,    0.1,   0.5      ],
-    [ 0.7,  0.1,    0.1,   0.1      ]
+[   
+    // Grass,       Insect,     Tarantula,      Predator
+    [ 0.08,         0.04,       0.02,           0.1      ],
+    [ 0.5,          0.4,        0.05,           0.05     ],
+    [ 0.2,          0.2,        0.5,            0.1      ],
+    [ 0.3,          0.1,        0.1,            0.5      ],
+    [ 0.7,          0.1,        0.1,            0.1      ]
 ];
 
 let templateSelector    = null;
@@ -25,31 +27,29 @@ function UpdateFormInputFields()
 
 function OnTemplateSelect(eventArgs)
 {
-    if (this.selectedIndex != 0)
+    console.log("asd");
+    const currentTemplate = templates[this.selectedIndex];
+    if (propertyFields.get("worldWidth") == 0 || propertyFields.get("worldHeight") == 0)
     {
-        const currentTemplate = templates[this.selectedIndex - 1];
-        if (propertyFields.get("worldWidth") == 0 || propertyFields.get("worldHeight") == 0)
-        {
-            propertyFields.set("worldHeight",   100);
-            propertyFields.set("worldWidth",    100);
-            UpdateFormInputFields();
-        }
-        const size = propertyFields.get("worldWidth") * propertyFields.get("worldHeight");
-        let lastSize = 0;
-        let i = -2;
-        const newMap = new Map(propertyFields);
-        for (const [key, value] of propertyFields)
-        {   
-            if (i >= 0)
-            {
-                lastSize = Math.round(size * currentTemplate[i] / 1.0);//Math.round(Math.random() * ((size - lastSize) * currentTemplate[i] / 1.0));
-                newMap.set(key, lastSize);
-            }
-            i++;
-        }
-        propertyFields = newMap;
+        propertyFields.set("worldHeight",   100);
+        propertyFields.set("worldWidth",    100);
         UpdateFormInputFields();
     }
+    const size = propertyFields.get("worldWidth") * propertyFields.get("worldHeight");
+    let lastSize = 0;
+    let i = -2;
+    const newMap = new Map(propertyFields);
+    for (const [key, value] of propertyFields)
+    {   
+        if (i >= 0)
+        {
+            lastSize = Math.round(size * currentTemplate[i] / 1.0);//Math.round(Math.random() * ((size - lastSize) * currentTemplate[i] / 1.0));
+            newMap.set(key, lastSize);
+        }
+        i++;
+    }
+    propertyFields = newMap;
+    UpdateFormInputFields();
 }
 
 function OnInputTextChange(eventArgs)
@@ -70,5 +70,9 @@ function main()
 	backgroundMusic.loop = true;
 	backgroundMusic.volume = 0.3;
 	backgroundMusic.play();
+
+    // trigger fake event
+    const changeEvent = new Event("change");
+    templateSelector.dispatchEvent(changeEvent);
 }
 window.onload = main;

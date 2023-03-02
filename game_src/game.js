@@ -45,12 +45,19 @@ class Scene
             "Spring",
             "Summer"
         ];
-		this.currentSeason = this.Season.Summer;
+        this.GElement =
+        {
+            Water:              0,
+            Radiation:          1,
+            Virus:              2,
+            Fire:               3
+        };
+		this.currentSeason = this.Season.Autumn;
         this.frameCount = 0;
         this.entityCount = new Map();
 		this.EventType =
 		{
-			OnMouseDown:	0
+			mouseDown:	0
 		};
 		this.eventStack = new Map();
 	}
@@ -157,17 +164,55 @@ class Scene
             fs.appendFileSync("./stats.json", jsonData + "\n", err => { console.log("failed to write to file."); });
 	}
 
-    onMouseDown(mouseEventArgs)
+    onMouseDown(eventArgs)
     {
-		let mX = Math.round(mouseEventArgs.x / (this.renderer.width		/ this.width));
-		let mY = Math.round(mouseEventArgs.y / (this.renderer.height	/ this.height));
-		let radius = 10;
-		let minVec =
+        const mX = Math.round(eventArgs.x / (this.renderer.width		/ this.width));
+		const mY = Math.round(eventArgs.y / (this.renderer.height	/ this.height));
+        
+        switch (eventArgs.element)
+        {
+            case this.GElement.Water:
+                const radius = 10;
+                const minVec =
+                {
+                    x:	mX - radius,
+                    y:	mY - radius
+                };
+                const maxVec =
+                {
+                    x:	mX + radius,
+                    y:	mY + radius
+                };
+                for (let y = minVec.y; y < maxVec.y; ++y)
+		        {
+		        	for (let x = minVec.x; x < maxVec.x; ++x)
+		        	{
+		        		const entity = this.getEntityAtLocation(x, y);
+		        		if (entity && entity.tag == this.Tags.Fire)
+                        {
+		        			this.remove(entity);
+                            this.add(entities.Water, x, y, this.pixelSize, this.pixelSize);
+                        }
+		        	}
+		        }
+                /*const entity = this.getEntityAtLocation(mX, mY);
+                if (entity && entity.tag == this.Tags.Fire)
+                {
+                    this.remove(entity);
+                    this.add(entities.Water, mX, mY, this.pixelSize, this.pixelSize);
+                }*/
+                break;
+        }
+        /*
+		const mX = Math.round(mouseEventArgs.x / (this.renderer.width		/ this.width));
+		const mY = Math.round(mouseEventArgs.y / (this.renderer.height	/ this.height));
+		const radius = 10;
+		const minVec =
 		{
 			x:	mX - radius,
 			y:	mY - radius
 		};
-		let maxVec =
+		const maxVec =
 		{
 			x:	mX + radius,
 			y:	mY + radius
@@ -176,11 +221,12 @@ class Scene
 		{
 			for (let x = minVec.x; x < maxVec.x; ++x)
 			{
-				let entity = this.getEntityAtLocation(x, y);
+				const entity = this.getEntityAtLocation(x, y);
 				if (entity)
 					this.remove(entity);
 			}
 		}
+        */
 	}
 
     init(grassCount, insectCount, predatorCount, tarantulaCount)
@@ -189,10 +235,6 @@ class Scene
         this.renderer.backgroundColour(this.colour);
         this.renderer.clear();
 
-        //const grassCount = this.size / 4;
-        //const insectCount = this.size / 8;
-        //const tarantulaCount = this.size / 64;
-        //const predatorCount = this.size / (this.size / 4);
         this.worldGen(
             grassCount, 
             insectCount, 
@@ -207,10 +249,11 @@ class Scene
         }
 
         this.updateStatistics(0);
+        this.socket.emit("season_change", this.currentSeason);
 
-		this.socket.on("interactions_onMouseDown", (args) => 
+		this.socket.on("interactions_mouseDown", (args) => 
 		{
-			this.eventStack.set(this.EventType.OnMouseDown, args); 
+			this.eventStack.set(this.EventType.mouseDown, args); 
 		});
 	}
 
@@ -220,7 +263,7 @@ class Scene
 		{
 			switch (key)
 			{
-				case this.EventType.OnMouseDown:
+				case this.EventType.mouseDown:
 					this.onMouseDown(value);
 					break;
 			}
@@ -233,27 +276,22 @@ class Scene
         if (this.frameCount % 90 == 0)
         {
             this.currentSeason = (this.currentSeason + 1 > 3) ? 0 : ++this.currentSeason;
-            const rolledNum = Math.random() * 100;
-            console.log(`rolled num: ${rolledNum}`);
-            if (rolledNum >= 50)
+            
+            this.socket.emit("season_change", this.currentSeason);
+            
+            if (Math.random() <= 0.5)
             {
-                let randVec = 
-                {
-                    x:  Math.round(Math.random() * this.width - 1),
-                    y:  Math.round(Math.random() * this.height - 1)
-                };
-                let entity = this.getEntityAtLocation(randVec.x, randVec.y);
-                if (entity) this.remove(entity);
                 switch (this.currentSeason)
                 {
                     case this.Season.Summer:
-                        this.add(entities.Fire, randVec.x, randVec.y, this.pixelSize, this.pixelSize);
+                        const foundEntities = this.getEntitiesByTag(this.Tags.Grass);
+                        const entity = foundEntities[Math.round(Math.random() * foundEntities.length - 1)];
+                        this.remove(entity);
+                        this.add(entities.Fire, entity.x, entity.y, this.pixelSize, this.pixelSize);
                         break;
                 }
             }
-            
         }
-
     }
 
     update(deltaTime)
@@ -315,6 +353,20 @@ class Scene
     getEntityAtLocation(x, y)
     {
         return this.entities[y * this.width + x];
+    }
+
+    getEntitiesByTag(tag)
+    {
+        const entities = [];
+        for (let i = 0; i < this.entities.length; ++i)
+        {
+            if (this.entities[i])
+            {
+                if (this.entities[i].tag == tag)
+                    entities.push(this.entities[i]);
+            }
+        }
+        return entities;
     }
 
     remove(entity)

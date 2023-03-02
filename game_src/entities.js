@@ -125,7 +125,7 @@ class Grass extends Entity
                 this.colour = "#94e8ff";
                 break;
             case this.Season.Summer:
-                this.colour = "#cbff3d"
+                this.colour = "#a18b00"
                 break;
             default:
                 this.colour = "#32a846";
@@ -166,7 +166,7 @@ class Grass extends Entity
                     }
                 break;
             case this.Season.Summer:
-                this.colour = "#cbff3d";
+                this.colour = "#a18b00";
                 if (this.lifeTime >= this.requiredTime)
                 {
                     let freeCells = this.checkFor([this.Tags.Floor]);
@@ -217,13 +217,17 @@ class Predator extends Entity
             this.Tags.Tarantula, 
             this.Tags.EggNest
         ];
+        this.canWalkOn =
+        [
+            this.Tags.Floor
+        ];
         this.colour = "#c40017";
         this.gender = Math.round(Math.random());
     }
 
     reproduce()
     {
-        let cells = this.checkFor([this.Tags.Floor]);
+        let cells = this.checkFor(this.canWalkOn);
         let possiblePartners = this.checkFor([this.tag]);
         let foundMalePartner = false;
         for (let i = 0; i < possiblePartners.length; ++i)
@@ -244,7 +248,7 @@ class Predator extends Entity
 
     move()
     {
-        let freeCells = this.checkFor([this.Tags.Floor]);
+        let freeCells = this.checkFor(this.canWalkOn);
         if (freeCells.length > 0 && freeCells)
         {
             let pos = freeCells[Math.round(Math.random() * (freeCells.length - 1))];
@@ -316,7 +320,7 @@ class Insect extends Predator
         this.tag = this.Tags.Insect;
         this.energy = 0;
         this.requiredEnergy = 3;
-        this.lifeExpectancy = 30;
+        this.lifeExpectancy = 40;
         this.lifeTime = this.lifeExpectancy;
         this.food = [this.Tags.Grass];
         this.colour = "#f2ca35";
@@ -372,6 +376,11 @@ class Tarantula extends Predator
         this.lifeExpectancy = 60;
         this.lifeTime = this.lifeExpectancy;
         this.food = [this.Tags.Insect];
+        this.canWalkOn = 
+        [
+            this.Tags.Floor,
+            this.Tags.Grass
+        ];
         this.eggHatchTime = 12;
         this.eggColour = "#969696";
         this.colour = "#000f4d";
@@ -379,7 +388,7 @@ class Tarantula extends Predator
 
     reproduce()
     {
-        let freeCells = this.checkFor([this.Tags.Floor, this.Tags.Grass]);
+        let freeCells = this.checkFor(this.canWalkOn);
         let cell = freeCells[Math.round(Math.random() * (freeCells.length - 1))];
         if (cell && this.gender == 0)
         {
@@ -392,7 +401,7 @@ class Tarantula extends Predator
                 this.constructor, 
                 this.breedCount, 
                 this.eggHatchTime, 
-                [this.Tags.Floor, this.Tags.Grass], 
+                this.canWalkOn, 
                 this.eggColour);
         }
     }
@@ -408,7 +417,7 @@ class Soot extends Entity
     init()
     {
         super.init();
-        this.colour = "#242424";
+        this.colour = "#171717";
         this.lifeExpectancy = Math.round(Math.random() * (120 - 60) + 60);
         this.lifeTime = this.lifeExpectancy;
     }
@@ -443,49 +452,81 @@ class Fire extends Predator
         this.currentColourID = 0;
         this.colour = this.colours[this.currentColourID];
         this.currentFrame = 0;
+        this.lifeExpectancy = Math.round(Math.random() * (30 - 10) + 10);
+        this.lifeTime = this.lifeExpectancy;
     }
 
     hunt()
     {
-        if (this.currentFrame > 5)
+        let cells = this.checkFor(this.food);
+        if (cells && cells.length > 0)
         {
-            let cells = this.checkFor(this.food);
-            if (cells && cells.length > 0)
+            let cell = cells[Math.round(Math.random() * (cells.length - 1))];
+            let obj = this.currentScene.getEntityAtLocation(cell.x, cell.y);
+            if (obj)
             {
-                let cell = cells[Math.round(Math.random() * (cells.length - 1))];
-                let obj = this.currentScene.getEntityAtLocation(cell.x, cell.y);
-                if (obj)
-                {
-                    let objPos = 
-                    {
-                        x: obj.x,
-                        y: obj.y
-                    };
-                    this.currentScene.remove(obj);
-                    this.currentScene.add(this.constructor, objPos.x, objPos.y, this.w, this.h);
-                }
-                this.reproduce();
-                this.currentFrame = 0;
+                this.currentScene.remove(obj);
+                this.currentScene.add(this.constructor, obj.x, obj.y, this.w, this.h);
             }
+            this.reproduce();
         }
-        else this.currentFrame++;
     }
 
     update(deltaTime)
     {
-        if (this.currentScene.currentSeason == this.Season.Summer)
+        if (this.currentScene.currentSeason == this.Season.Summer
+            && this.lifeTime > 0)
         {
             // ghetto fire effect
             this.currentColourID = (this.currentColourID + 1 <= this.colours.length - 1) ? ++this.currentColourID : 0;
             this.colour = this.colours[this.currentColourID];
-            this.hunt();
+            
+            if (this.currentFrame % 20 == 0) this.hunt();
             this.move();
+
+            this.currentFrame++;
+            this.lifeTime--;
+            return;
         }
-        else
+        this.currentScene.remove(this);
+        this.currentScene.add(Soot, this.x, this.y, this.w, this.h);
+    }
+}
+
+class Water extends Entity
+{
+    constructor(x, y, w, h)
+    {
+        super(x, y, w, h);
+    }
+
+    init()
+    {
+        super.init();
+        this.frameCount = 0;
+        this.colours = 
+        [
+            "#236da6",
+            "#2d84c9"
+        ];
+        this.currentColourID = Math.round(Math.random() * (this.colours.length - 1));
+        this.colour = this.colours[this.currentColourID];
+        this.lifeExpectancy = Math.round(Math.random() * (120 - 60) + 60);
+        this.lifeTime = this.lifeExpectancy + 1;
+    }
+
+    update(deltaTime)
+    {
+        if (--this.lifeTime <= 0) 
         {
             this.currentScene.remove(this);
-            this.currentScene.add(Soot, this.x, this.y, this.w, this.h);
         }
+        else if (this.frameCount % 20 == 0)
+        {
+            this.currentColourID = (this.currentColourID + 1 <= this.colours.length - 1) ? ++this.currentColourID : 0;
+            this.colour = this.colours[this.currentColourID];
+        }
+        this.frameCount++;
     }
 }
 
@@ -496,5 +537,6 @@ module.exports =
     Insect,
     Tarantula,
     EggNest,
-    Fire
+    Fire,
+    Water
 };
