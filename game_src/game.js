@@ -230,7 +230,7 @@ class Scene
 
     seasonHandler()
     {
-        if (this.frameCount % 60 == 0)
+        if (this.frameCount % 90 == 0)
         {
             this.currentSeason = (this.currentSeason + 1 > 3) ? 0 : ++this.currentSeason;
             const rolledNum = Math.random() * 100;
