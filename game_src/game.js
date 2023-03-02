@@ -53,7 +53,6 @@ class Scene
 			OnMouseDown:	0
 		};
 		this.eventStack = new Map();
-        this.naturalEventOccured = false;
 	}
 
     worldGen(
@@ -231,28 +230,30 @@ class Scene
 
     seasonHandler()
     {
-        if (this.frameCount % 90 == 0)
-        this.currentSeason = (this.currentSeason + 1 > 3) ? 0 : ++this.currentSeason;
-    
-        switch (this.currentSeason)
+        if (this.frameCount % 60 == 0)
         {
-            case this.Season.Summer:
-                //if (Math.random() * 100 < 50 && !this.naturalEventOccured)
-                if (!this.naturalEventOccured)
+            this.currentSeason = (this.currentSeason + 1 > 3) ? 0 : ++this.currentSeason;
+            const rolledNum = Math.random() * 100;
+            console.log(`rolled num: ${rolledNum}`);
+            if (rolledNum >= 50)
+            {
+                let randVec = 
                 {
-                    console.log("lol");
-                    let randVec = 
-                    {
-                        x:  Math.round(Math.random() * this.width - 1),
-                        y:  Math.round(Math.random() * this.height - 1)
-                    };
-                    let entity = this.getEntityAtLocation(randVec.x, randVec.y);
-                    if (entity) this.remove(entity);
-                    this.add(entities.Fire, randVec.x, randVec.y, this.pixelSize, this.pixelSize);
-                    this.naturalEventOccured = true;
+                    x:  Math.round(Math.random() * this.width - 1),
+                    y:  Math.round(Math.random() * this.height - 1)
+                };
+                let entity = this.getEntityAtLocation(randVec.x, randVec.y);
+                if (entity) this.remove(entity);
+                switch (this.currentSeason)
+                {
+                    case this.Season.Summer:
+                        this.add(entities.Fire, randVec.x, randVec.y, this.pixelSize, this.pixelSize);
+                        break;
                 }
-                break;
+            }
+            
         }
+
     }
 
     update(deltaTime)

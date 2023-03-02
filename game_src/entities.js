@@ -119,10 +119,13 @@ class Grass extends Entity
         this.requiredTime = 5;
         this.lifeTime = 0;
 
-        switch (this.currentSeason)
+        switch (this.currentScene.currentSeason)
         {
             case this.Season.Winter:
                 this.colour = "#94e8ff";
+                break;
+            case this.Season.Summer:
+                this.colour = "#cbff3d"
                 break;
             default:
                 this.colour = "#32a846";
@@ -161,6 +164,19 @@ class Grass extends Entity
                         }
                         this.lifeTime = 0;
                     }
+                break;
+            case this.Season.Summer:
+                this.colour = "#cbff3d";
+                if (this.lifeTime >= this.requiredTime)
+                {
+                    let freeCells = this.checkFor([this.Tags.Floor]);
+                    if (freeCells.length > 0 && freeCells)
+                    {
+                        let cell = freeCells[Math.round(Math.random() * (freeCells.length - 1))];
+                        this.currentScene.add(Grass, cell.x, cell.y, this.w, this.h);
+                    }
+                    this.lifeTime = 0;
+                }
                 break;
             default:
                 this.colour = "#32a846";
@@ -382,6 +398,30 @@ class Tarantula extends Predator
     }
 }
 
+class Soot extends Entity
+{
+    constructor(x, y, w, h)
+    {
+        super(x, y, w, h);
+    }
+
+    init()
+    {
+        super.init();
+        this.colour = "#242424";
+        this.lifeExpectancy = Math.round(Math.random() * (120 - 60) + 60);
+        this.lifeTime = this.lifeExpectancy;
+    }
+
+    update(deltaTime)
+    {
+        if (--this.lifeTime <= 0)
+        {
+            this.currentScene.remove(this);
+        }
+    }
+}
+
 class Fire extends Predator
 {
     constructor(x, y, w, h)
@@ -402,30 +442,36 @@ class Fire extends Predator
         ];
         this.currentColourID = 0;
         this.colour = this.colours[this.currentColourID];
+        this.currentFrame = 0;
     }
 
     hunt()
     {
-        let cells = this.checkFor(this.food);
-        if (cells && cells.length > 0)
+        if (this.currentFrame > 5)
         {
-            let cell = cells[Math.round(Math.random() * (cells.length - 1))];
-            let obj = this.currentScene.getEntityAtLocation(cell.x, cell.y);
-            if (obj)
+            let cells = this.checkFor(this.food);
+            if (cells && cells.length > 0)
             {
-                let objPos = 
+                let cell = cells[Math.round(Math.random() * (cells.length - 1))];
+                let obj = this.currentScene.getEntityAtLocation(cell.x, cell.y);
+                if (obj)
                 {
-                    x: obj.x,
-                    y: obj.y
-                };
-                this.currentScene.remove(obj);
-                this.currentScene.add(this.constructor, objPos.x, objPos.y, this.w, this.h);
+                    let objPos = 
+                    {
+                        x: obj.x,
+                        y: obj.y
+                    };
+                    this.currentScene.remove(obj);
+                    this.currentScene.add(this.constructor, objPos.x, objPos.y, this.w, this.h);
+                }
+                this.reproduce();
+                this.currentFrame = 0;
             }
-            this.reproduce();
         }
+        else this.currentFrame++;
     }
 
-    update()
+    update(deltaTime)
     {
         if (this.currentScene.currentSeason == this.Season.Summer)
         {
@@ -437,8 +483,8 @@ class Fire extends Predator
         }
         else
         {
-            console.log("not summer");
             this.currentScene.remove(this);
+            this.currentScene.add(Soot, this.x, this.y, this.w, this.h);
         }
     }
 }
