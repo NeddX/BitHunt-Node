@@ -28,7 +28,8 @@ class Scene
             Predator:       2,
             Insect:         3,
             Tarantula:      4,
-            EggNest:        5
+            EggNest:        5,
+            Fire:           6
         };
 		this.Season =
 		{
@@ -44,7 +45,7 @@ class Scene
             "Spring",
             "Summer"
         ];
-		this.currentSeason = this.Season.Winter;
+		this.currentSeason = this.Season.Summer;
         this.frameCount = 0;
         this.entityCount = new Map();
 		this.EventType =
@@ -52,6 +53,7 @@ class Scene
 			OnMouseDown:	0
 		};
 		this.eventStack = new Map();
+        this.naturalEventOccured = false;
 	}
 
     worldGen(
@@ -227,6 +229,32 @@ class Scene
 		this.eventStack.clear();
 	}
 
+    seasonHandler()
+    {
+        if (this.frameCount % 90 == 0)
+        this.currentSeason = (this.currentSeason + 1 > 3) ? 0 : ++this.currentSeason;
+    
+        switch (this.currentSeason)
+        {
+            case this.Season.Summer:
+                //if (Math.random() * 100 < 50 && !this.naturalEventOccured)
+                if (!this.naturalEventOccured)
+                {
+                    console.log("lol");
+                    let randVec = 
+                    {
+                        x:  Math.round(Math.random() * this.width - 1),
+                        y:  Math.round(Math.random() * this.height - 1)
+                    };
+                    let entity = this.getEntityAtLocation(randVec.x, randVec.y);
+                    if (entity) this.remove(entity);
+                    this.add(entities.Fire, randVec.x, randVec.y, this.pixelSize, this.pixelSize);
+                    this.naturalEventOccured = true;
+                }
+                break;
+        }
+    }
+
     update(deltaTime)
     {
 		this.pollEvents();
@@ -239,8 +267,8 @@ class Scene
 
         if (this.frameCount % 2 == 0)
             this.updateStatistics(deltaTime);
-		if (this.frameCount % 90 == 0)
-			this.currentSeason = (this.currentSeason + 1 > 3) ? 0 : ++this.currentSeason;
+        
+        this.seasonHandler();
 	}
 
     render(deltaTime)

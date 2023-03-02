@@ -199,7 +199,7 @@ class Predator extends Entity
             this.Tags.Grass, 
             this.Tags.Insect, 
             this.Tags.Tarantula, 
-            //this.Tags.EggNest
+            this.Tags.EggNest
         ];
         this.colour = "#c40017";
         this.gender = Math.round(Math.random());
@@ -382,11 +382,73 @@ class Tarantula extends Predator
     }
 }
 
+class Fire extends Predator
+{
+    constructor(x, y, w, h)
+    {
+        super(x, y, w, h);
+    }
+
+    init()
+    {
+        super.init();
+        this.tag = this.Tags.Fire;
+        this.food = [this.Tags.Grass, this.Tags.EggNest];
+        this.colours = 
+        [
+            "#f23535",
+            "#f27735",
+            "#f2b335"
+        ];
+        this.currentColourID = 0;
+        this.colour = this.colours[this.currentColourID];
+    }
+
+    hunt()
+    {
+        let cells = this.checkFor(this.food);
+        if (cells && cells.length > 0)
+        {
+            let cell = cells[Math.round(Math.random() * (cells.length - 1))];
+            let obj = this.currentScene.getEntityAtLocation(cell.x, cell.y);
+            if (obj)
+            {
+                let objPos = 
+                {
+                    x: obj.x,
+                    y: obj.y
+                };
+                this.currentScene.remove(obj);
+                this.currentScene.add(this.constructor, objPos.x, objPos.y, this.w, this.h);
+            }
+            this.reproduce();
+        }
+    }
+
+    update()
+    {
+        if (this.currentScene.currentSeason == this.Season.Summer)
+        {
+            // ghetto fire effect
+            this.currentColourID = (this.currentColourID + 1 <= this.colours.length - 1) ? ++this.currentColourID : 0;
+            this.colour = this.colours[this.currentColourID];
+            this.hunt();
+            this.move();
+        }
+        else
+        {
+            console.log("not summer");
+            this.currentScene.remove(this);
+        }
+    }
+}
+
 module.exports = 
 {
     Grass,
     Predator,
     Insect,
     Tarantula,
-    EggNest
+    EggNest,
+    Fire
 };
