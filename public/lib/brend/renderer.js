@@ -55,4 +55,9 @@ class Renderer
     {
         this.canvas.id = id;
     }
+
+    addClassList(className)
+    {
+        this.canvas.classList.add(className);
+    }
 }

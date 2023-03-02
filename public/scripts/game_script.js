@@ -69,7 +69,7 @@ function renderPacketHandler(packet)
 
 function statPacketHandler(packet)
 {	
-    const data = JSON.parse(pako.inflate(packet, { to: "string" }));
+    const data = JSON.parse(packet);
     
 	// i know but performance is not critical in this case
     const elementsToRemove = document.querySelectorAll(".__stat_text");
@@ -107,10 +107,11 @@ function main()
     socket.on("stat_update", statPacketHandler);
     socket.on("init_finished", () =>
     {
-        const gameContainer = document.getElementById("gameCanvasContainer");
+        const gameContainer = document.getElementById("content");
 
         gameContainer.appendChild(renderer.canvas);
         renderer.setID("gameCanvas");
+        renderer.addClassList("genericContainer");
         renderer.attachEvent("mousedown", onMouseClick);
         
         backgroundMusic.volume = 0.3;

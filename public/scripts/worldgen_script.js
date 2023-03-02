@@ -1,4 +1,4 @@
-const backgroundMusic = new Audio("../assets/music/dbSoundworks/thisworld5_loop.ogg");
+const backgroundMusic = new Audio("../assets/music/dbSoundworks/thisworld5.ogg");
 const templates =
 [
     [ 0.5,  0.4,    0.05,   0.05    ],

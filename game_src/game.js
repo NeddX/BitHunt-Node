@@ -151,8 +151,7 @@ class Scene
         }
         arr.push(`Season: ${this.SeasonStr[this.currentSeason]}`);
         const jsonData = JSON.stringify(arr);
-		const compressedData = zlib.deflateSync(jsonData);
-        this.socket.emit("stat_update", compressedData);
+        this.socket.emit("stat_update", jsonData);
         if (this.frameCount % 60 == 0) 
             fs.appendFileSync("./stats.json", jsonData + "\n", err => { console.log("failed to write to file."); });
 	}
