@@ -454,6 +454,7 @@ class Fire extends Predator
         this.currentFrame = 0;
         this.lifeExpectancy = Math.round(Math.random() * (30 - 10) + 10);
         this.lifeTime = this.lifeExpectancy;
+        this.leavesBehind = Soot;
     }
 
     hunt()
@@ -468,7 +469,6 @@ class Fire extends Predator
                 this.currentScene.remove(obj);
                 this.currentScene.add(this.constructor, obj.x, obj.y, this.w, this.h);
             }
-            this.reproduce();
         }
     }
 
@@ -489,7 +489,90 @@ class Fire extends Predator
             return;
         }
         this.currentScene.remove(this);
-        this.currentScene.add(Soot, this.x, this.y, this.w, this.h);
+        this.currentScene.add(this.leavesBehind, this.x, this.y, this.w, this.h);
+    }
+}
+
+class Uranium extends Entity
+{
+    constructor(x, y, w, h)
+    {
+        super(x, y, w, h);
+    }
+
+    init()
+    {
+        super.init();
+        this.colours =
+        [
+            "#411496",
+            "#5c24c7",
+            "#300582"
+        ];
+        this.currentColourID = 0;
+        this.colour = this.colours[this.currentColourID];
+        this.currentFrame = 0;
+        this.lifeExpectancy = Math.round(Math.random() * (240 - 120) + 120);
+        this.lifeTime = this.lifeExpectancy;
+        //this.leavesBehind = Soot;
+    }
+
+    update(deltaTime)
+    {
+        if (this.lifeTime)
+        {
+            this.currentColourID = Math.round(Math.random() * (this.colours.length - 1));
+            this.colour = this.colours[this.currentColourID];
+
+            this.lifeTime--;
+        }
+        else this.currentScene.remove(this);
+    }
+}
+
+class Explosion extends Fire
+{
+    constructor(x, y, w, h)
+    {
+        super(x, y, w, h);
+    }
+
+    init()
+    {
+        super.init();
+        this.lifeTime = 10;
+        this.currentColourID = 0;
+        this.colour = this.colours[this.currentColourID];
+        this.currentFrame = 0;
+        this.leavesBehind = Uranium;
+    }
+
+    populate()
+    {
+        let cells = this.checkFor([this.Tags.Floor]);
+        if (cells && cells.length > 0)
+        {
+            let cell = cells[Math.round(Math.random() * (cells.length - 1))];
+            this.currentScene.add(this.constructor, cells[0].x, cells[0].y, this.w, this.h);
+        }
+    }
+
+    update(deltaTime)
+    {
+        if (this.lifeTime > 0)
+        {
+            // ghetto fire effect
+            this.currentColourID = (this.currentColourID + 1 <= this.colours.length - 1) ? ++this.currentColourID : 0;
+            this.colour = this.colours[this.currentColourID];
+
+            this.populate();
+            this.lifeTime--;
+        }
+        else
+        {
+            this.currentScene.remove(this);
+            this.currentScene.add(this.leavesBehind, this.x, this.y, this.w, this.h);
+        }
     }
 }
 
@@ -538,5 +621,7 @@ module.exports =
     Tarantula,
     EggNest,
     Fire,
-    Water
+    Water,
+    Uranium,
+    Explosion
 };

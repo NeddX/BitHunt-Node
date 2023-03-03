@@ -85,3 +85,18 @@ body
     background-color: #1f6396;
     border-color: #1f6396;
 }
+
+@keyframes genericShakeAnim 
+{
+    0%              { transform: translate(0, 0); }
+    10%, 90%        { transform: translate(-10px, 0); }
+    20%, 80%        { transform: translate(10px, 0); }
+    30%, 50%, 70%   { transform: translate(-10px, 0); }
+    40%, 60%        { transform: translate(10px, 0); }
+    100%            { transform: translate(0, 0); }
+  }
+  
+.genericShake 
+{
+    animation: genericShakeAnim 0.5s;
+}

@@ -24,8 +24,21 @@
     transition:         opacity     2s ease-in-out;
 }
 
+#nukeImage
+{
+    position: absolute;
+    z-index: 100;
+    transform: rotate(90deg);
+    opacity: 0;
+    -webkit-transition: opacity     0.1s ease-in-out;
+    -moz-transition:    opacity     0.1s ease-in-out;
+    -o-transition:      opacity     0.1s ease-in-out;
+    transition:         opacity     0.1s ease-in-out;
+}
+
 #globalContainer
 {
+    position: relative;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -38,6 +51,7 @@
 
 #content
 {
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -58,6 +72,24 @@
     align-items: stretch;
     gap: 10px;
     font-size: 12px;
+}
+
+#gameCanvasContainer
+{
+    position: relative;
+    display: flex;
+    background-color: #ffffff;
+}
+
+#gameCanvas
+{
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    -webkit-transition: opacity     0.3s ease-in-out;
+    -moz-transition:    opacity     0.3s ease-in-out;
+    -o-transition:      opacity     0.3s ease-in-out;
+    transition:         opacity     0.3s ease-in-out;
 }
 
 #statText

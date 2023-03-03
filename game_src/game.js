@@ -47,10 +47,9 @@ class Scene
         ];
         this.GElement =
         {
-            Water:              0,
-            Radiation:          1,
-            Virus:              2,
-            Fire:               3
+            Radiation:          0,
+            Virus:              1,
+            Fire:               2
         };
 		this.currentSeason = this.Season.Autumn;
         this.frameCount = 0;
@@ -172,6 +171,7 @@ class Scene
         switch (eventArgs.element)
         {
             case this.GElement.Water:
+            {
                 const radius = 10;
                 const minVec =
                 {
@@ -202,6 +202,41 @@ class Scene
                     this.add(entities.Water, mX, mY, this.pixelSize, this.pixelSize);
                 }*/
                 break;
+            }
+            case this.GElement.Radiation:
+            {
+                const radius = 10;
+                const minVec =
+                {
+                    x:	mX - radius,
+                    y:	mY - radius
+                };
+                const maxVec =
+                {
+                    x:	mX + radius,
+                    y:	mY + radius
+                };
+                let i = 10
+                ;
+                let j = 0;
+                for (let y = minVec.y; y < maxVec.y; ++y)
+                {
+                    for (let x = minVec.x - i; x < maxVec.x + i; ++x)
+                    {
+                        const entity = this.getEntityAtLocation(x, y);
+                        if (entity) this.remove(entity);
+                        j++;
+                    }
+                    i = (y % 2) ? --i : i;
+                }
+                this.add(
+                    entities.Explosion, 
+                    mX, 
+                    mY, 
+                    this.pixelSize, 
+                    this.pixelSize);
+                break;
+            }
         }
         /*
 		const mX = Math.round(mouseEventArgs.x / (this.renderer.width		/ this.width));
