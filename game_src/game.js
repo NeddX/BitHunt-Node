@@ -216,18 +216,23 @@ class Scene
                     x:	mX + radius,
                     y:	mY + radius
                 };
-                let i = 10
-                ;
-                let j = 0;
+                let lenX = maxVec.x - minVec.x;
+                let lenY = maxVec.y - minVec.y;
+                let maxOneFX = Math.round(lenX * 0.25);
+                let maxOneFY = Math.round(lenY * 0.25);
+                let i = maxOneFY;
+                let j = maxOneFX;
                 for (let y = minVec.y; y < maxVec.y; ++y)
                 {
-                    for (let x = minVec.x - i; x < maxVec.x + i; ++x)
+                    for (let x = minVec.x + j; x < maxVec.x - j; ++x)
                     {
                         const entity = this.getEntityAtLocation(x, y);
                         if (entity) this.remove(entity);
-                        j++;
                     }
-                    i = (y % 2) ? --i : i;
+                    if (y > maxVec.y / 2)
+                        j = (j > 0) ? j - 1 : 0;
+                    else 
+                        j = (j < maxOneFX) ? j + 1 : j; 
                 }
                 this.add(
                     entities.Explosion, 

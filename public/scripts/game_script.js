@@ -59,6 +59,7 @@ let activeElement = 0;
 let frameCount = 0;
 let onWait = false;
 let gameCanvasContainer = null;
+const elementTimeout = 1000;
 
 function renderPacketHandler(packet)
 {
@@ -191,7 +192,7 @@ function onMouseClick(eventArgs)
                     {
                         socket.emit("interactions_mouseDown", mEventArgs); 
                         renderer.canvas.style.opacity = 1; 
-                        setTimeout(() => { onWait = false; }, 5000);
+                        setTimeout(() => { onWait = false; }, elementTimeout);
                         gameCanvasContainer.classList.remove("genericShake");
                     }, 300);
                     return;
@@ -228,7 +229,7 @@ function main()
             buttons[i].addEventListener("click", onButtonClick);
 
         for (let i = 0; i < nukeSfx.length; ++i)
-            nukeSfx[i].volume = 0.3;
+            nukeSfx[i].volume = 0.4;
         
         denySfx.volume = 0.3;
         denySfx.playbackRate = 1.6;
