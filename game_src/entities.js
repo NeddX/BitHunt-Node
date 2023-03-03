@@ -591,7 +591,6 @@ class Uranium extends Entity
         this.currentColourID = 0;
         this.colour = this.colours[this.currentColourID];
         this.currentFrame = 0;
-        //this.lifeExpectancy = Math.round(Math.random() * (30 - 10) + 30);
         this.lifeExpectancy = 10;
         this.lifeTime = this.lifeExpectancy;
     }
