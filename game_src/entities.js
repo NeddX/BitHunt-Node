@@ -647,7 +647,7 @@ class Explosion extends Fire
         if (cells && cells.length > 0)
         {
             let cell = cells[Math.round(Math.random() * (cells.length - 1))];
-            this.currentScene.add(this.constructor, cells[0].x, cells[0].y, this.w, this.h);
+            this.currentScene.add(this.constructor, cell.x, cell.y, this.w, this.h);
         }
     }
 

@@ -11,6 +11,7 @@ let gameInstances = {};
 app.use(express.static(path.join(__dirname, "public/")));
 app.get("/", (req, res) => 
 {
+    console.log("asd");
     res.sendFile(__dirname + "public/index.html");
 });
 
