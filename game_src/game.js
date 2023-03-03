@@ -29,7 +29,8 @@ class Scene
             Insect:         3,
             Tarantula:      4,
             EggNest:        5,
-            Fire:           6
+            Fire:           6,
+            Uran:           7
         };
 		this.Season =
 		{
@@ -114,6 +115,7 @@ class Scene
         }
     
         // Spawn predators
+        console.log(`Preadtor count: ${predatorCount}`);
         for (let i = 0; i < predatorCount; ++i)
         {
             const vec = 
@@ -195,12 +197,6 @@ class Scene
                         }
 		        	}
 		        }
-                /*const entity = this.getEntityAtLocation(mX, mY);
-                if (entity && entity.tag == this.Tags.Fire)
-                {
-                    this.remove(entity);
-                    this.add(entities.Water, mX, mY, this.pixelSize, this.pixelSize);
-                }*/
                 break;
             }
             case this.GElement.Radiation:
@@ -326,8 +322,11 @@ class Scene
                     case this.Season.Summer:
                         const foundEntities = this.getEntitiesByTag(this.Tags.Grass);
                         const entity = foundEntities[Math.round(Math.random() * foundEntities.length - 1)];
-                        this.remove(entity);
-                        this.add(entities.Fire, entity.x, entity.y, this.pixelSize, this.pixelSize);
+                        if (entity)
+                        {
+                            this.remove(entity);
+                            this.add(entities.Fire, entity.x, entity.y, this.pixelSize, this.pixelSize);
+                        }
                         break;
                 }
             }

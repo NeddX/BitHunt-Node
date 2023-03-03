@@ -257,7 +257,7 @@ function main()
         grassCount:     urlParams.get("grassCount"),
         insectCount:    urlParams.get("insectCount"),
         tarantulaCount: urlParams.get("tarantulaCount"),
-        preadatorCount: urlParams.get("predatorCount")
+        predatorCount: urlParams.get("predatorCount")
     });
 }
 

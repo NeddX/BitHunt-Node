@@ -75,6 +75,84 @@ class Entity
         }
         return found;
     }
+
+    checkForAny(checkForEmpty = false)
+    {
+        this.range = 
+        [
+            { x: this.x - 1,    y: this.y - 1 },
+            { x: this.x,        y: this.y - 1 },
+            { x: this.x + 1,    y: this.y - 1 },
+            { x: this.x - 1,    y: this.y     },
+            { x: this.x + 1,    y: this.y     },
+            { x: this.x - 1,    y: this.y + 1 },
+            { x: this.x,        y: this.y + 1 },
+            { x: this.x + 1,    y: this.y + 1 },
+        ];
+
+        let found = [];
+        for (let i = 0; i < this.range.length; ++i)
+        {
+            if (this.range[i].x <= this.currentScene.width - 1 
+                && this.range[i].y <= this.currentScene.height - 1
+                && this.range[i].x >= 0 
+                && this.range[i].y >= 0)
+            {
+                let obj = this.currentScene.getEntityAtLocation(
+                    this.range[i].x, 
+                    this.range[i].y);
+                if (obj)
+                {
+                    found.push(this.range[i]);
+                }
+                else if (checkForEmpty) 
+                {  
+                    found.push(this.range[i]);
+                }
+            }
+        }
+        return found;
+    }
+
+    checkForAnyExcept(tags)
+    {
+        this.range = 
+        [
+            { x: this.x - 1,    y: this.y - 1 },
+            { x: this.x,        y: this.y - 1 },
+            { x: this.x + 1,    y: this.y - 1 },
+            { x: this.x - 1,    y: this.y     },
+            { x: this.x + 1,    y: this.y     },
+            { x: this.x - 1,    y: this.y + 1 },
+            { x: this.x,        y: this.y + 1 },
+            { x: this.x + 1,    y: this.y + 1 },
+        ];
+
+        let found = [];
+        for (let i = 0; i < this.range.length; ++i)
+        {
+            if (this.range[i].x <= this.currentScene.width - 1 
+                && this.range[i].y <= this.currentScene.height - 1
+                && this.range[i].x >= 0 
+                && this.range[i].y >= 0)
+            {
+                let obj = this.currentScene.getEntityAtLocation(
+                    this.range[i].x, 
+                    this.range[i].y);
+                if (obj)
+                {
+                    for (let x = 0; x < tags.length; ++x) 
+                    {
+                        if (obj.tag != tags[x]) 
+                        {
+                            found.push(this.range[i]);
+                        }
+                    }
+                }
+            }
+        }
+        return found;
+    }
     
     setPosition(x, y)
     {
@@ -503,6 +581,7 @@ class Uranium extends Entity
     init()
     {
         super.init();
+        this.tag = this.Tags.Uran;
         this.colours =
         [
             "#411496",
@@ -512,18 +591,34 @@ class Uranium extends Entity
         this.currentColourID = 0;
         this.colour = this.colours[this.currentColourID];
         this.currentFrame = 0;
-        this.lifeExpectancy = Math.round(Math.random() * (240 - 120) + 120);
+        //this.lifeExpectancy = Math.round(Math.random() * (30 - 10) + 30);
+        this.lifeExpectancy = 10;
         this.lifeTime = this.lifeExpectancy;
-        //this.leavesBehind = Soot;
+    }
+
+    spread()
+    {
+        let cells = this.checkFor([this.Tags.Grass]);
+        if (cells && cells.length > 0)
+        {
+            let cell = cells[Math.round(Math.random() * (cells.length - 1))];
+            let obj = this.currentScene.getEntityAtLocation(cell.x, cell.y);
+            if (obj)
+            {
+                this.currentScene.remove(obj);
+                this.currentScene.add(this.constructor, cell.x, cell.y, this.w, this.h);
+            }
+        }
     }
 
     update(deltaTime)
     {
-        if (this.lifeTime)
+        if (this.lifeTime > 0)
         {
             this.currentColourID = Math.round(Math.random() * (this.colours.length - 1));
             this.colour = this.colours[this.currentColourID];
 
+            if (Math.random() < 0.125) this.spread();
             this.lifeTime--;
         }
         else this.currentScene.remove(this);
@@ -576,43 +671,6 @@ class Explosion extends Fire
     }
 }
 
-class Water extends Entity
-{
-    constructor(x, y, w, h)
-    {
-        super(x, y, w, h);
-    }
-
-    init()
-    {
-        super.init();
-        this.frameCount = 0;
-        this.colours = 
-        [
-            "#236da6",
-            "#2d84c9"
-        ];
-        this.currentColourID = Math.round(Math.random() * (this.colours.length - 1));
-        this.colour = this.colours[this.currentColourID];
-        this.lifeExpectancy = Math.round(Math.random() * (120 - 60) + 60);
-        this.lifeTime = this.lifeExpectancy + 1;
-    }
-
-    update(deltaTime)
-    {
-        if (--this.lifeTime <= 0) 
-        {
-            this.currentScene.remove(this);
-        }
-        else if (this.frameCount % 20 == 0)
-        {
-            this.currentColourID = (this.currentColourID + 1 <= this.colours.length - 1) ? ++this.currentColourID : 0;
-            this.colour = this.colours[this.currentColourID];
-        }
-        this.frameCount++;
-    }
-}
-
 module.exports = 
 {
     Grass,
@@ -621,7 +679,6 @@ module.exports =
     Tarantula,
     EggNest,
     Fire,
-    Water,
     Uranium,
     Explosion
 };
