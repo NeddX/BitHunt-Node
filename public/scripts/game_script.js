@@ -1,5 +1,6 @@
 const socket = io();
 const urlParams = new URLSearchParams(window.location.search);
+const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
 
 const PacketType =
 {
@@ -19,14 +20,16 @@ const GElement =
 {
     Radiation:          0,
     Virus:              1,
-    Fire:               2
+    Fire:               2,
+    Bomb:               3
 };
 
 const GElementStr =
 [
     "Radiation",
     "Virus",
-    "Fire"
+    "Fire",
+    "Small Bomb"
 ];
 
 const Season =
@@ -45,21 +48,29 @@ const SeasonStr =
     "Summer"
 ];
 
-let renderer = new Renderer();
-const backgroundMusic = new Audio("../assets/music/dBSoundworks/cc2g.ogg");
-const nukeSfx =
-[
-    new Audio("../assets/sfx/8bit_nuke_v0.wav"),
-    new Audio("../assets/sfx/8bit_nuke_v1.wav"),
-    new Audio("../assets/sfx/8bit_nuke_v2.wav"),
-    new Audio("../assets/sfx/8bit_nuke_v3.wav")
-];
-const denySfx = new Audio("../assets/sfx/death.wav");
-let activeElement = 0;
+const renderer = new Renderer();
+
+const soundBank = new Map();
+soundBank.set("background", new Audio("../assets/music/dBSoundworks/cc2g.ogg"));
+soundBank.set("defeat", new Audio("../assets/music/dBSoundworks/udiedfinal.ogg"));
+soundBank.set("deny", new Audio("../assets/sfx/death.wav"));
+soundBank.set("nuke_explode_v0", new Audio("../assets/sfx/8bit_nuke_v0.wav"));
+soundBank.set("nuke_explode_v1", new Audio("../assets/sfx/8bit_nuke_v1.wav"));
+soundBank.set("nuke_explode_v2", new Audio("../assets/sfx/8bit_nuke_v2.wav"));
+soundBank.set("nuke_explode_v3", new Audio("../assets/sfx/8bit_nuke_v3.wav"));
+soundBank.set("nuke_drop", new Audio("../assets/sfx/8bit_wing_flap.wav"));
+soundBank.set("fuse", new Audio("../assets/sfx/8bit_fuse_loop.wav"));
+soundBank.set("explode", new Audio("../assets/sfx/8bit_explosion.wav"));
+soundBank.set("click", new Audio("../assets/sfx/click.wav"));
+const elementTimeout = 1000;
+
+let activeElement = GElement.Bomb;
 let frameCount = 0;
 let onWait = false;
+let fallout = false;
 let gameCanvasContainer = null;
-const elementTimeout = 1000;
+let run = true;
+let fuseTime = 1500;
 
 function renderPacketHandler(packet)
 {
@@ -123,20 +134,17 @@ function statPacketHandler(packet)
 
 function onMouseClick(eventArgs)
 {
-    // this can be easily manipulated by virtually anyone but that is besides the point
-    // of this project and this is not a shipping product so i dont care
-    if (onWait)
+    if (onWait || !run)
     {
-        denySfx.play();
+        soundBank.get("deny").play();
         return;
     }
 
-	// move to the server side
-	let mulX = renderer.canvas.width  / renderer.canvas.offsetWidth;
-	let mulY = renderer.canvas.height / renderer.canvas.offsetHeight;
-	let x = Math.round(eventArgs.offsetX  * mulX);
-    let y = Math.round(eventArgs.offsetY  * mulY);
-    let mEventArgs =
+	const mulX = renderer.canvas.width  / renderer.canvas.offsetWidth;
+	const mulY = renderer.canvas.height / renderer.canvas.offsetHeight;
+	const x = Math.round(eventArgs.offsetX  * mulX);
+    const y = Math.round(eventArgs.offsetY  * mulY);
+    const mEventArgs =
 	{
 		x:		        x,
 		y:		        y,
@@ -145,19 +153,83 @@ function onMouseClick(eventArgs)
 
     switch (activeElement)
     {
-        case GElement.Radiation:
+        case GElement.Bomb:
+        {
             // perform a little nice animation
-            const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
+            soundBank.get("nuke_drop").play();
+            soundBank.get("fuse").play();
             
-            const img = document.getElementById("nukeImage");
+            const cntr = document.getElementById("bombImgContainer");
+            const img = document.getElementById("bombImg");
+            cntr.style.transform = "rotate(0deg)";
+            img.width = 50;
+            img.height = 50;
+            document.getElementById("bombImg").setAttribute("src", "../assets/images/bomb.png");
             
-            let mY = eventArgs.clientY - (30 / 2);
-            let mX = eventArgs.clientX - (50 / 2);
+            const mY = eventArgs.clientY - (30 / 2);
+            const mX = eventArgs.clientX - (50 / 2);
             let iY = mY - 400;
 
-            img.style.top = mY;
-            img.style.left = mX;
-            img.style.opacity = 1;
+            cntr.style.top = mY;
+            cntr.style.left = mX;
+            cntr.style.opacity = 1;
+
+            let speed = 1;
+
+            onWait = true;
+            function animation()
+            {
+                if (iY != mY - 20)
+                {
+                    iY += speed;
+                    iY = clamp(iY, mY - 150, mY - 20);
+                    cntr.style.top = iY;
+                }
+
+                speed += 0.8;
+
+                if (iY == mY - 20)
+                {
+                    setTimeout(() => 
+                    {
+                        soundBank.get("fuse").pause();
+                        soundBank.get("explode").play();
+                        cntr.style.opacity = 0;
+                        socket.emit("interactions_mouseDown", mEventArgs);
+                        gameCanvasContainer.classList.add("genericShake");
+                        setTimeout(() => 
+                        { 
+                            gameCanvasContainer.classList.remove("genericShake");
+                            onWait = false;
+                        }, elementTimeout); 
+                    }, fuseTime);
+                    return;
+                }
+
+                window.requestAnimationFrame(animation);
+            }
+            window.requestAnimationFrame(animation);
+            break;
+        }
+        case GElement.Radiation:
+        {
+            // perform a little nice animation
+            soundBank.get("nuke_drop").play();
+            
+            const cntr = document.getElementById("bombImgContainer");
+            const img = document.getElementById("bombImg");
+            cntr.style.transform = "rotate(90deg)";
+            img.width = 50;
+            img.height = 30;
+            img.setAttribute("src", "../assets/images/nuke.png");
+            
+            const mY = eventArgs.clientY - (30 / 2);
+            const mX = eventArgs.clientX - (50 / 2);
+            let iY = mY - 400;
+
+            cntr.style.top = mY;
+            cntr.style.left = mX;
+            cntr.style.opacity = 1;
 
             let rot = 90;
             let speed = 1;
@@ -169,14 +241,14 @@ function onMouseClick(eventArgs)
                 {
                     rot -= speed;
                     rot = clamp(rot, -90, 90);
-                    img.style.transform = `rotate(${rot}deg)`;
+                    cntr.style.transform = `rotate(${rot}deg)`;
                 }
 
                 if (iY != mY - 20)
                 {
                     iY += speed;
                     iY = clamp(iY, mY - 150, mY - 20);
-                    img.style.top = iY;
+                    cntr.style.top = iY;
                 }
 
                 speed += 0.8;
@@ -186,14 +258,14 @@ function onMouseClick(eventArgs)
                     // flash
                     gameCanvasContainer.classList.add("genericShake");
                     renderer.canvas.style.opacity = 0;
-                    img.style.opacity = 0;
-                    nukeSfx[Math.round(Math.random() * (nukeSfx.length - 1))].play();
+                    cntr.style.opacity = 0;
+                    soundBank.get("nuke_explode_v" + Math.round(Math.random() * 3).toString()).play();
                     setTimeout(() => 
                     {
                         socket.emit("interactions_mouseDown", mEventArgs); 
                         renderer.canvas.style.opacity = 1; 
                         setTimeout(() => { onWait = false; }, elementTimeout);
-                        gameCanvasContainer.classList.remove("genericShake");
+                        gameCanvasContainer.classList.remove("genericShake"); 
                     }, 300);
                     return;
                 }
@@ -201,19 +273,73 @@ function onMouseClick(eventArgs)
             }
             window.requestAnimationFrame(animation);
             break;
+        }
     }
 }
 
 function onButtonClick(eventArgs)
 {
-    if (eventArgs.srcElement.id == "radiationBtn")
-        activeElement = GElement.Radiation;
-    
-    document.getElementById("elementIndicator").textContent = `Active element: ${GElementStr[activeElement]}`;
+    soundBank.get("click").play();
+
+    setTimeout(() => 
+    {
+        if (eventArgs.srcElement.id == "radiationBtn")
+            activeElement = GElement.Radiation;
+        else if (eventArgs.srcElement.id == "bombBtn")
+            activeElement = GElement.Bomb;
+        else if (eventArgs.srcElement.id == "resetBtn")
+            location.reload();
+        
+        document.getElementById("elementIndicator").textContent = `Active element: ${GElementStr[activeElement]}`;
+    }, 100);
+}
+
+function gameOver(reasoning)
+{
+    renderer.clear();
+    run = false;
+    const music = soundBank.get("defeat");
+    music.loop = false;
+    music.play();
+    soundBank.get("background").pause();
+    setTimeout(() =>
+    {
+        const div = document.getElementById("endGameStuff");
+        div.style.opacity = 1;
+        setTimeout(() => 
+        { 
+            const p = document.getElementById("endQuote");
+            p.textContent = reasoning;
+            p.style.opacity = 1; 
+
+            setTimeout(() => 
+            {
+                const btn = document.getElementsByClassName("endGameResetBtn")[0];
+                btn.style.opacity = 1;
+                div.style.pointerEvents = "all";
+            }, 1000);
+        }, 1500);
+    }, 2000);
+}
+
+function soundInit()
+{
+    for (const [key, value] of soundBank)
+        value.volume = 0.3;
+
+    soundBank.get("deny").playbackRate = 1.6;
+    soundBank.get("background").loop = true;
+    soundBank.get("background").play();
+    soundBank.get("nuke_drop").volume = 0.2;
+    soundBank.get("fuse").loop = true;
+    soundBank.get("fuse").volume = 0.2;
+    soundBank.get("click").volume = 0.2;
 }
 
 function main()
 {	
+    const entCompressed = pako.deflate(sessionStorage.getItem("entityData"));
+
 	socket.on("render_update", renderPacketHandler);
     socket.on("stat_update", statPacketHandler);
     socket.on("init_finished", () =>
@@ -224,40 +350,50 @@ function main()
         renderer.setID("gameCanvas");
         renderer.attachEvent("mousedown", onMouseClick);
 
+        soundInit();
+
         const buttons = document.getElementsByTagName("button");
         for (let i = 0; i < buttons.length; ++i)
             buttons[i].addEventListener("click", onButtonClick);
-
-        for (let i = 0; i < nukeSfx.length; ++i)
-            nukeSfx[i].volume = 0.4;
-        
-        denySfx.volume = 0.3;
-        denySfx.playbackRate = 1.6;
-
-        backgroundMusic.volume = 0.3;
-        backgroundMusic.loop = true;
-        backgroundMusic.play();
     });
     socket.on("season_change", (seasonID) => 
     {
-        const img = document.getElementsByClassName(SeasonStr[seasonID].toLowerCase())[0];
-        
+        if (!fallout)
+        {
+            const img = document.getElementsByClassName(SeasonStr[seasonID].toLowerCase())[0];
+            
+            document.querySelector("#background")
+                .querySelectorAll("img")
+                .forEach(e => { e.style.opacity = 0; });
+    
+            img.style.opacity = 1;
+        }
+    });
+    socket.on("nuclear_fallout", () =>
+    {
+        const img = document.getElementsByClassName("fallout")[0];
+        fallout = true;
         document.querySelector("#background")
             .querySelectorAll("img")
             .forEach(e => { e.style.opacity = 0; });
-
-        img.style.opacity = 1.0;
+        img.style.opacity = 1;
     });
-
+    socket.on("game_over", (reasoning) =>
+    {
+        gameOver(reasoning);
+    });
+    
+    debugger;
     socket.emit("init_game", 
     {
         worldWidth:     urlParams.get("worldWidth"),
         worldHeight:    urlParams.get("worldHeight"),
         pixelSize:      8,
-        grassCount:     urlParams.get("grassCount"),
+        /*grassCount:     urlParams.get("grassCount"),
         insectCount:    urlParams.get("insectCount"),
         tarantulaCount: urlParams.get("tarantulaCount"),
-        predatorCount: urlParams.get("predatorCount")
+        predatorCount: urlParams.get("predatorCount")*/
+        entityData:     entCompressed
     });
 }
 

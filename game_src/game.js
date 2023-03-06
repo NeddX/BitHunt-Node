@@ -1,6 +1,6 @@
 const ntr = require("./network_renderer");
 const entities = require("./entities");
-const zlib = require("zlib");
+const pool = require("./entity_pool");
 const fs = require("fs");
 
 class Scene
@@ -14,12 +14,15 @@ class Scene
         this.pixelSize = pixelSize;
         this.size = this.width * this.height;
         this.entities = new Array(this.width * this.height).fill(null);
+        this.activeEntities = 0;
         this.activeEntities = [];
+        this.run = true;
 		this.renderer = new ntr.NetworkRenderer(
             this.socket, 
             this.width  * this.pixelSize,
             this.height * this.pixelSize
         );
+        this.pool = new pool.EntityPool();
         this.Tags = 
         {
             nullobj:       -1,
@@ -30,7 +33,8 @@ class Scene
             Tarantula:      4,
             EggNest:        5,
             Fire:           6,
-            Uran:           7
+            Uran:           7,
+            Soot:           8
         };
 		this.Season =
 		{
@@ -50,7 +54,8 @@ class Scene
         {
             Radiation:          0,
             Virus:              1,
-            Fire:               2
+            Fire:               2,
+            Bomb:               3
         };
 		this.currentSeason = this.Season.Autumn;
         this.frameCount = 0;
@@ -60,6 +65,7 @@ class Scene
 			mouseDown:	0
 		};
 		this.eventStack = new Map();
+        this.possibleCauseOfEnd = "Natural Causes";
 	}
 
     worldGen(
@@ -115,7 +121,6 @@ class Scene
         }
     
         // Spawn predators
-        console.log(`Preadtor count: ${predatorCount}`);
         for (let i = 0; i < predatorCount; ++i)
         {
             const vec = 
@@ -133,37 +138,53 @@ class Scene
 
     updateStatistics(deltaTime)
     {
-        let arr = [];
+        const arr = [];
+        const jsonMap = new Map();
 		for (const [key, value] of this.entityCount)
 		{
 			switch (key)
 			{
 				case this.Tags.Grass:
                     arr.push(`Grasses: ${value}`);
+                    jsonMap.set("Grasses", value);
 					break;
 				case this.Tags.Insect:
 					arr.push(`Insects: ${value}`);
+                    jsonMap.set("Insects", value);
 					break;
 				case this.Tags.EggNest:
 					arr.push(`EggNests: ${value}`);
+                    jsonMap.set("EggNests", value);
 					break;
 				case this.Tags.Predator:
 					arr.push(`Predators: ${value}`);
+                    jsonMap.set("Predators", value);
 					break;
 				case this.Tags.Tarantula:
 					arr.push(`Tarantulas: ${value}`);
+                    jsonMap.set("Tarantulas", value);
 					break;
-				default:
-					arr.push(`Unknown: ${value}`);
+                case this.Tags.Fire:
+					arr.push(`Fire particles: ${value}`);
+                    jsonMap.set("Fire particles", value);
 					break;
+                case this.Tags.Uran:
+                    arr.push(`Radioactive particles: ${value}`);
+                    jsonMap.set("Radioactive particles", value);
+                    break;
+                case this.Tags.Soot:
+                    arr.push(`Soot: ${value}`);
+                    jsonMap.set("Soot", value);
+                    break;
 			}
         }
         arr.push(`Season: ${this.SeasonStr[this.currentSeason]}`);
         const jsonData = JSON.stringify(arr);
         this.socket.emit("stat_update", jsonData);
+
         if (this.frameCount % 60 == 0) 
-            fs.appendFileSync("./stats.json", jsonData + "\n", err => { console.log("failed to write to file."); });
-	}
+            fs.appendFileSync("./stats.json", JSON.stringify(Object.fromEntries(jsonMap)) + "\n", err => { console.log("failed to write to file."); });
+    }
 
     onMouseDown(eventArgs)
     {
@@ -172,7 +193,7 @@ class Scene
         
         switch (eventArgs.element)
         {
-            case this.GElement.Water:
+            case this.GElement.Bomb:
             {
                 const radius = 10;
                 const minVec =
@@ -185,37 +206,10 @@ class Scene
                     x:	mX + radius,
                     y:	mY + radius
                 };
-                for (let y = minVec.y; y < maxVec.y; ++y)
-		        {
-		        	for (let x = minVec.x; x < maxVec.x; ++x)
-		        	{
-		        		const entity = this.getEntityAtLocation(x, y);
-		        		if (entity && entity.tag == this.Tags.Fire)
-                        {
-		        			this.remove(entity);
-                            this.add(entities.Water, x, y, this.pixelSize, this.pixelSize);
-                        }
-		        	}
-		        }
-                break;
-            }
-            case this.GElement.Radiation:
-            {
-                const radius = 10;
-                const minVec =
-                {
-                    x:	mX - radius,
-                    y:	mY - radius
-                };
-                const maxVec =
-                {
-                    x:	mX + radius,
-                    y:	mY + radius
-                };
-                let lenX = maxVec.x - minVec.x;
-                let lenY = maxVec.y - minVec.y;
-                let maxOneFX = Math.round(lenX * 0.25);
-                let maxOneFY = Math.round(lenY * 0.25);
+                const lenX = maxVec.x - minVec.x;
+                const lenY = maxVec.y - minVec.y;
+                const maxOneFX = Math.round(lenX * 0.25);
+                const maxOneFY = Math.round(lenY * 0.25);
                 let i = maxOneFY;
                 let j = maxOneFX;
                 for (let y = minVec.y; y < maxVec.y; ++y)
@@ -235,48 +229,69 @@ class Scene
                     mX, 
                     mY, 
                     this.pixelSize, 
-                    this.pixelSize);
+                    this.pixelSize,
+                    entities.Soot);
+                this.possibleCauseOfEnd = "You went 1999 NATO on them!";
+                break;
+            }
+            case this.GElement.Radiation:
+            {
+                const radius = 10;
+                const minVec =
+                {
+                    x:	mX - radius,
+                    y:	mY - radius
+                };
+                const maxVec =
+                {
+                    x:	mX + radius,
+                    y:	mY + radius
+                };
+                const lenX = maxVec.x - minVec.x;
+                const lenY = maxVec.y - minVec.y;
+                const maxOneFX = Math.round(lenX * 0.25);
+                const maxOneFY = Math.round(lenY * 0.25);
+                let i = maxOneFY;
+                let j = maxOneFX;
+                for (let y = minVec.y; y < maxVec.y; ++y)
+                {
+                    for (let x = minVec.x + j; x < maxVec.x - j; ++x)
+                    {
+                        const entity = this.getEntityAtLocation(x, y);
+                        if (entity) this.remove(entity);
+                    }
+                    if (y > maxVec.y / 2)
+                        j = (j > 0) ? j - 1 : 0;
+                    else 
+                        j = (j < maxOneFX) ? j + 1 : j; 
+                }
+                this.add(
+                    entities.Explosion, 
+                    mX, 
+                    mY, 
+                    this.pixelSize, 
+                    this.pixelSize,
+                    entities.Uranium);
+                this.possibleCauseOfEnd = "You nuked them all!";
+                this.socket.emit("nuclear_fallout");
                 break;
             }
         }
-        /*
-		const mX = Math.round(mouseEventArgs.x / (this.renderer.width		/ this.width));
-		const mY = Math.round(mouseEventArgs.y / (this.renderer.height	/ this.height));
-		const radius = 10;
-		const minVec =
-		{
-			x:	mX - radius,
-			y:	mY - radius
-		};
-		const maxVec =
-		{
-			x:	mX + radius,
-			y:	mY + radius
-		};
-		for (let y = minVec.y; y < maxVec.y; ++y)
-		{
-			for (let x = minVec.x; x < maxVec.x; ++x)
-			{
-				const entity = this.getEntityAtLocation(x, y);
-				if (entity)
-					this.remove(entity);
-			}
-		}
-        */
 	}
 
-    init(grassCount, insectCount, predatorCount, tarantulaCount)
+    init(jsonData)
     {
         this.renderer.init();
         this.renderer.backgroundColour(this.colour);
         this.renderer.clear();
 
-        this.worldGen(
+        /*this.worldGen(
             grassCount, 
             insectCount, 
             predatorCount, 
             tarantulaCount
-        );
+        );*/
+        this.deserialize(jsonData);
 
         for (let i = 0; i < this.entities.length; ++i)
         {
@@ -309,7 +324,7 @@ class Scene
 
     seasonHandler()
     {
-        if (this.frameCount % 90 == 0)
+        if (this.frameCount % 160 == 0)
         {
             this.currentSeason = (this.currentSeason + 1 > 3) ? 0 : ++this.currentSeason;
             
@@ -335,51 +350,90 @@ class Scene
 
     update(deltaTime)
     {
-		this.pollEvents();
-
-        for (let i = 0; i < this.entities.length; ++i)
+        if (this.run)
         {
-            if (this.entities[i])
-                this.entities[i].update(deltaTime);
+            this.pollEvents();
+    
+            for (let i = 0; i < this.entities.length; ++i)
+            {
+                if (this.entities[i])
+                    this.entities[i].update(deltaTime);
+            }
+    
+            if (this.activeEntities == 0)
+            {
+                this.socket.emit("game_over", this.possibleCauseOfEnd);
+                this.run = false;
+            }
+    
+            if (this.frameCount % 2 == 0)
+                this.updateStatistics(deltaTime);
+            
+            this.seasonHandler();
         }
-
-        if (this.frameCount % 2 == 0)
-            this.updateStatistics(deltaTime);
-        
-        this.seasonHandler();
 	}
 
     render(deltaTime)
     {	
-        this.renderer.renderBegin();
-        this.renderer.clear();
-        
-		for (let i = 0; i < this.entities.length; ++i)
+        if (this.run)
         {
-            if (this.entities[i])
-                this.entities[i].render(deltaTime);
+            this.renderer.renderBegin();
+            this.renderer.clear();
+            
+            for (let i = 0; i < this.entities.length; ++i)
+            {
+                if (this.entities[i])
+                    this.entities[i].render(deltaTime);
+            }
+            
+            this.renderer.renderEnd();
+            this.frameCount++;
+            //process.stdout.write(`\rFrame count: ${this.frameCount}`);
         }
-        
-		this.renderer.renderEnd();
-        this.frameCount++;
-		//process.stdout.write(`\rFrame count: ${this.frameCount}`);
 	}
 
     add(T, ...args)
     {
-        const obj = new T(...args);
+        const obj = this.pool.getObject(T, ...args);
         obj.currentScene = this;
         obj.renderer = this.renderer;
         obj.init();
         this.entities[obj.y * this.width + obj.x] = obj;
+        this.activeEntities++;
+
         if (this.entityCount.has(obj.tag))
-		{
-			let count = this.entityCount.get(obj.tag);
-			this.entityCount.set(obj.tag, ++count);
-		}
-		else this.entityCount.set(obj.tag, 1);
-		return obj;
+        {
+            const count = this.entityCount.get(obj.tag);
+            this.entityCount.set(obj.tag, count + 1);
+        }
+        else
+        {
+            this.entityCount.set(obj.tag, 1);
+        }
+
+        return obj;
     }
+
+    remove(entity)
+    {
+		this.entities[entity.y * this.width + entity.x] = null;
+        this.pool.releaseObject(entity);
+        this.activeEntities--;
+        
+        const count = this.entityCount.get(entity.tag);
+        if (!count)
+        {
+            console.log("wtf");
+        }
+        this.entityCount.set(entity.tag, count - 1);
+
+        const p = Math.round((this.activeEntities / this.pool.size) * 100);
+        if (p < 60)
+        {
+            this.pool.collect(p);
+            this.activeEntities = this.getAllEntities().length;
+        }
+	}
 
     setEntityLocation(entity, x, y)
     {
@@ -387,6 +441,19 @@ class Scene
         this.entities[y * this.width + x] = entity;
         entity.x = x;
         entity.y = y;
+    }
+
+    getAllEntities()
+    {
+        const ret = [];
+        for (let i = 0; i < this.entities.length; ++i)
+        {
+            if (this.entities[i])
+            {
+                ret.push(this.entities[i]);
+            }
+        }
+        return ret;
     }
 
     getEntityAtLocation(x, y)
@@ -408,19 +475,49 @@ class Scene
         return entities;
     }
 
-    remove(entity)
+    serialize(filePath)
     {
-		let count = this.entityCount.get(entity.tag);
-		this.entityCount.set(entity.tag, --count);
-		this.entities[entity.y * this.width + entity.x] = null;
-        //entity.dispose();
-	}
+        const stream = [];
+        for (let i = 0; i < this.entities.length; ++i)
+        {
+            if (this.entities[i]) 
+                this.entities[i].serialize(stream);
+        }
+        const jsonData = JSON.stringify(stream);
+        fs.writeFileSync(filePath, jsonData);
+    }
+
+    deserialize(jsonData)
+    {
+        const stream = JSON.parse(jsonData);
+        for (let i = 0; i < stream.length; ++i)
+        {
+            const ent = stream[i];
+            switch(ent.tag)
+            {
+                case this.Tags.Grass:
+                    this.add(entities.Grass, ent.x, ent.y, ent.w, ent.h);
+                    break;
+                case this.Tags.Insect:
+                    this.add(entities.Insect, ent.x, ent.y, ent.w, ent.h);
+                    break;
+                case this.Tags.Tarantula:
+                    this.add(entities.Tarantula, ent.x, ent.y, ent.w, ent.h);
+                    break;
+                case this.Tags.Predator:
+                    this.add(entities.Predator, ent.x, ent.y, ent.w, ent.h);
+                    break;
+            }
+        }
+    }
 
     dispose()
     {
         this.entities = null;
         this.renderer.dispose();
         this.renderer = null;
+        this.pool.dispose();
+        this.pool = null;
         delete this;
     }
 }

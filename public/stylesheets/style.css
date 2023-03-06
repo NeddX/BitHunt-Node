@@ -44,7 +44,7 @@ body
     appearance: button;
     background-color: #2c84c8;
     border: 2px solid #aadaff;
-    border-radius: 12px;
+    border-radius: 10px;
     box-sizing: border-box;
     color: #FFFFFF;
     cursor: pointer;
@@ -94,7 +94,7 @@ body
     30%, 50%, 70%   { transform: translate(-10px, 0); }
     40%, 60%        { transform: translate(10px, 0); }
     100%            { transform: translate(0, 0); }
-  }
+}
   
 .genericShake 
 {

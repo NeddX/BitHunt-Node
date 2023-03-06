@@ -1,16 +1,43 @@
+const renderer = new Renderer();
 const backgroundMusic = new Audio("../assets/music/dbSoundworks/thisworld5.ogg");
+const pixelSize = 8;
 const templates =
 [   
     // Grass,       Insect,     Tarantula,      Predator
-    [ 0.08,         0.04,       0.02,           0.1      ],
-    [ 0.5,          0.4,        0.05,           0.05     ],
-    [ 0.2,          0.2,        0.5,            0.1      ],
-    [ 0.3,          0.1,        0.1,            0.5      ],
-    [ 0.7,          0.1,        0.1,            0.1      ]
+    [ 0.08,         0.04,       0.01,           0.001               ],
+    [ 0.05,         0.04,       0.001,          0.0005              ],
+    [ 0.1,          0.03,       0.01,           0.001               ],
+    [ 0.05,         0.05,       0.01,           0.03                ],
+    [ 0.05,          0.01,       0.0,            0.0                 ]
 ];
 
+const Tags = 
+{
+    nullobj:       -1,
+    Floor:          0,
+    Grass:          1,
+    Predator:       2,
+    Insect:         3,
+    Tarantula:      4,
+    EggNest:        5,
+    Fire:           6,
+    Uran:           7,
+    Soot:           8
+};
+
+const Colours =
+[
+    "#ffffff",
+    "#32a846",
+    "#c40017",
+    "#f2ca35",
+    "#000f4d",
+];
+
+let entities = [];
 let templateSelector    = null;
 let form                = null;
+let gameCanvasContainer = null;
 let propertyFields = new Map();
 propertyFields.set("worldWidth",       0);
 propertyFields.set("worldHeight",      0);
@@ -23,11 +50,11 @@ function UpdateFormInputFields()
 {
     const fields = form.querySelectorAll("input");
     fields.forEach(e => { e.value = propertyFields.get(e.name); });
+    worldGen();
 }
 
 function OnTemplateSelect(eventArgs)
 {
-    console.log("asd");
     const currentTemplate = templates[this.selectedIndex];
     if (propertyFields.get("worldWidth") == 0 || propertyFields.get("worldHeight") == 0)
     {
@@ -54,11 +81,129 @@ function OnTemplateSelect(eventArgs)
 
 function OnInputTextChange(eventArgs)
 {
-    propertyFields[this.name] = parseInt(this.value);
+    console.log("asd");
+    propertyFields.set(this.name, parseInt(this.value));
+    worldGen();
+}
+
+function worldGen()
+{
+    entities = [];
+
+    const grassCount = propertyFields.get("grassCount");
+    const insectCount = propertyFields.get("insectCount");
+    const tarantulaCount = propertyFields.get("tarantulaCount");
+    const predatorCount = propertyFields.get("predatorCount");
+    const width = propertyFields.get("worldWidth");
+    const height = propertyFields.get("worldHeight");
+
+    gameCanvasContainer.removeChild(renderer.canvas);
+    renderer.createCanvas(width * pixelSize, height * pixelSize);
+    renderer.setClearColour("#344459");
+    renderer.clear();
+    gameCanvasContainer.appendChild(renderer.canvas);
+
+    // Spawn Grass
+    for (let i = 0; i < grassCount; ++i)
+    {
+        const data = 
+        { 
+            tag: Tags.Grass,
+            x: Math.round(Math.random() * (width	- 1)), 
+            y: Math.round(Math.random() * (height	- 1)),
+            w: pixelSize,
+            h: pixelSize
+        };
+        entities.push(data);
+        renderer.renderRect(
+            data.x * pixelSize, 
+            data.y * pixelSize, 
+            pixelSize, 
+            pixelSize, 
+            Colours[Tags.Grass]
+        );
+    }
+    
+    // Spawn Insects
+    for (let i = 0; i < insectCount; ++i)
+    {
+        const data = 
+        { 
+            tag: Tags.Insect,
+            x: Math.round(Math.random() * (width	- 1)), 
+            y: Math.round(Math.random() * (height	- 1)),
+            w: pixelSize,
+            h: pixelSize
+        };
+        entities.push(data);
+        renderer.renderRect(
+            data.x * pixelSize, 
+            data.y * pixelSize, 
+            pixelSize, 
+            pixelSize, 
+            Colours[Tags.Insect]
+        );
+    }
+
+    // Spawn Tarantulas
+    for (let i = 0; i < tarantulaCount; ++i)
+    {
+        const data = 
+        { 
+            tag: Tags.Tarantula,
+            x: Math.round(Math.random() * (width	- 1)), 
+            y: Math.round(Math.random() * (height	- 1)),
+            w: pixelSize,
+            h: pixelSize
+        };
+        entities.push(data);
+        renderer.renderRect(
+            data.x * pixelSize, 
+            data.y * pixelSize, 
+            pixelSize, 
+            pixelSize, 
+            Colours[Tags.Tarantula]
+        );
+    }
+
+    // Spawn predators
+    for (let i = 0; i < predatorCount; ++i)
+    {
+        const data = 
+        { 
+            tag: Tags.Predator,
+            x: Math.round(Math.random() * (width	- 1)), 
+            y: Math.round(Math.random() * (height	- 1)),
+            w: pixelSize,
+            h: pixelSize
+        };
+        entities.push(data);
+        renderer.renderRect(
+            data.x * pixelSize, 
+            data.y * pixelSize, 
+            pixelSize, 
+            pixelSize, 
+            Colours[Tags.Predator]
+        );
+    }
+}
+
+function submit()
+{
+    alert("asderrr");
+    debugger;
+    sessionStorage.setItem("entityData", JSON.stringify(entities));
+    window.location.href = "../html/game.html";
 }
 
 function main()
 {
+    gameCanvasContainer = document.getElementById("gameCanvasContainer");
+    renderer.createCanvas(800, 800);
+    renderer.setClearColour("#344459");
+    renderer.clear();
+    gameCanvasContainer.appendChild(renderer.canvas);
+
     templateSelector = document.getElementById("templateSelector");
     templateSelector.addEventListener("change", OnTemplateSelect);
 

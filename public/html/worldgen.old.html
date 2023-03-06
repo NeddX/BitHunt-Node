@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <script src="../lib/brend/renderer.js"></script>
+        <link rel="stylesheet" href="../stylesheets/style.css">
+        <link rel="stylesheet" href="../stylesheets/worldgen.css">
+		<script src="../scripts/worldgen_script.js"></script>
+	</head>
+    <body>
+		<div class="genericContainer centered" id="globalContainer">
+			<div class="content">
+				<div class="genericContainer" id="infoContainer">
+					<h1 class="genericText" id="title">The Title</h1>
+					<p class="genericText" id="text">The describing paragraph.</p>
+					<hr class="genericLine">
+					
+					<br>
+                    <div id="form">
+					    <form action="game.html" method="GET">
+					    <label for="worldWidth" class="genericText" id="text">World Width:</label>
+					    <input type="number" id="worldWidth" name="worldWidth">
+					    <br>
+					    <label for="worldHeight" class="genericText" id="text">World Height:</label>
+					    <input type="number" id="worldHeight" name="worldHeight">
+					    <br>
+					    <label for="grassCount" class="genericText" id="text">Grass Count:</label>
+					    <input type="number" id="grassCount" name="grassCount">
+					    <br>
+					    <label for="insectCount" class="genericText" id="text">Insect Count:</label>
+					    <input type="number" id="insectCount" name="insectCount">
+					    <br>
+					    <label for="tarantulaCount" class="genericText" id="text">Tarantula Count:</label>
+					    <input type="number" id="tarantulaCount" name="tarantulaCount">
+					    <br>
+					    <label for="predatorCount" class="genericText" id="text">Predator Count:</label>
+					    <input type="number" id="predatorCount" name="predatorCount">
+                    </div>
+                    <br>
+					<br>
+					
+                    <select name="templateSelector" id="templateSelector">
+                        <option value="template_Balanced">Balanced (Recommended)</option>
+                        <option value="template_AntInvasion">Ant Invasion</option>
+                        <option value="template_SpiderRain">Spider Rain</option>
+                        <option value="template_PredatorInvasion">Predator Invasion</option>
+                        <option value="template_GreenWorld">Green World</option>
+                    </select>
+                    <label for="templateSelector" class="genericText" id="text">Templates:</label>
+                    <br>
+                    
+                    <br>
+					<button class="genericButton" type="submit">Start</button>
+					<button class="genericButton">Randomize</button>
+				</div>  
+                <!--<div class="genericContainer" id="canvasContainer">
+
+                </div>-->
+            </div>
+		</div>
+    </body>
+</html>
