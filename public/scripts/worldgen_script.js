@@ -86,7 +86,7 @@ function OnInputTextChange(eventArgs)
 
 function randomize()
 {
-	let max = 0.1;
+	let max = Math.random() * (0.4 - 0.01) + 0.01;
 	const currentTemplate = templates[templates.length - 1];	
     for (let i = 0; i < currentTemplate.length; ++i)
 	{
