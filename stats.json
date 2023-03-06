@@ -2635,3 +2635,1403 @@
 {"Grasses":1526,"Insects":450}
 {"Grasses":379,"Insects":28}
 {"Grasses":178,"Insects":6}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":7793,"Insects":59,"Tarantulas":131,"Predators":10,"EggNests":5}
+{"Grasses":8749,"Insects":163,"Tarantulas":8,"Predators":10,"EggNests":0}
+{"Grasses":6600,"Insects":171,"Tarantulas":25,"Predators":10,"EggNests":2}
+{"Grasses":4363,"Insects":52,"Tarantulas":15,"Predators":10,"EggNests":0}
+{"Grasses":3475,"Insects":29,"Tarantulas":0,"Predators":7,"EggNests":0}
+{"Grasses":9924,"Insects":23,"Tarantulas":0,"Predators":7,"EggNests":0}
+{"Grasses":10058,"Insects":23,"Tarantulas":0,"Predators":7,"EggNests":0}
+{"Grasses":10059,"Insects":23,"Tarantulas":0,"Predators":7,"EggNests":0}
+{"Grasses":8963,"Insects":23,"Tarantulas":0,"Predators":7,"EggNests":0,"Fire particles":687,"Soot":383}
+{"Grasses":5259,"Insects":21,"Tarantulas":0,"Predators":7,"EggNests":0,"Fire particles":1324,"Soot":3390}
+{"Grasses":2542,"Insects":17,"Tarantulas":0,"Predators":5,"EggNests":0,"Fire particles":116,"Soot":5662}
+{"Grasses":2275,"Insects":14,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":26,"Soot":2445}
+{"Grasses":6014,"Insects":14,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":0,"Soot":265}
+{"Grasses":6752,"Insects":14,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":0,"Soot":9}
+{"Grasses":6564,"Insects":14,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":6440,"Insects":13,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9984,"Insects":13,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10078,"Insects":13,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10074,"Insects":13,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10075,"Insects":13,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10074,"Insects":13,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10075,"Insects":13,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10073,"Insects":13,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10073,"Insects":13,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9871,"Insects":13,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9746,"Insects":13,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10075,"Insects":13,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10077,"Insects":13,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10078,"Insects":13,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10072,"Insects":13,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10072,"Insects":13,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10076,"Insects":13,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10070,"Insects":13,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10073,"Insects":13,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9982,"Insects":13,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9817,"Insects":13,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9628,"Insects":13,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10077,"Insects":13,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10076,"Insects":13,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10077,"Insects":13,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10069,"Insects":13,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10071,"Insects":13,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10075,"Insects":13,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10076,"Insects":13,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10072,"Insects":13,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9923,"Insects":13,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9747,"Insects":13,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":9673,"Insects":13,"Tarantulas":0,"Predators":2,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":6868,"Insects":52,"Tarantulas":111,"Predators":11,"EggNests":8}
+{"Grasses":10078,"Insects":13,"Tarantulas":0,"Predators":2,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9083,"Insects":106,"Tarantulas":2,"Predators":27,"EggNests":0}
+{"Grasses":10077,"Insects":13,"Tarantulas":0,"Predators":2,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":7341,"Insects":115,"Tarantulas":2,"Predators":38,"EggNests":0}
+{"Grasses":10036,"Insects":13,"Tarantulas":0,"Predators":2,"EggNests":0,"Fire particles":31,"Soot":6}
+{"Grasses":5396,"Insects":34,"Tarantulas":2,"Predators":26,"EggNests":0}
+{"Grasses":8156,"Insects":13,"Tarantulas":0,"Predators":2,"EggNests":0,"Fire particles":1107,"Soot":808}
+{"Grasses":4599,"Insects":20,"Tarantulas":2,"Predators":18,"EggNests":0}
+{"Grasses":2059,"Insects":13,"Tarantulas":0,"Predators":2,"EggNests":0,"Fire particles":2011,"Soot":5803}
+{"Grasses":9615,"Insects":13,"Tarantulas":2,"Predators":14,"EggNests":0}
+{"Grasses":667,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":20,"Soot":6449}
+{"Grasses":10044,"Insects":13,"Tarantulas":2,"Predators":14,"EggNests":0}
+{"Grasses":2561,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":980}
+{"Grasses":10042,"Insects":13,"Tarantulas":2,"Predators":14,"EggNests":0}
+{"Grasses":7011,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":8932,"Insects":13,"Tarantulas":2,"Predators":14,"EggNests":0,"Fire particles":768,"Soot":315}
+{"Grasses":7011,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":5697,"Insects":11,"Tarantulas":2,"Predators":14,"EggNests":0,"Fire particles":993,"Soot":3266}
+{"Grasses":7011,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":3033,"Insects":10,"Tarantulas":2,"Predators":10,"EggNests":0,"Fire particles":211,"Soot":5222}
+{"Grasses":8672,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":3712,"Insects":10,"Tarantulas":2,"Predators":6,"EggNests":0,"Fire particles":0,"Soot":2352}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":7560,"Insects":9,"Tarantulas":2,"Predators":6,"EggNests":0,"Fire particles":0,"Soot":301}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":8054,"Insects":9,"Tarantulas":2,"Predators":6,"EggNests":0,"Fire particles":0,"Soot":140}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":7387,"Insects":9,"Tarantulas":2,"Predators":6,"EggNests":0,"Fire particles":25,"Soot":384}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":7136,"Insects":9,"Tarantulas":2,"Predators":6,"EggNests":0,"Fire particles":0,"Soot":313}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10027,"Insects":9,"Tarantulas":2,"Predators":6,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9868,"Insects":9,"Tarantulas":2,"Predators":6,"EggNests":0,"Fire particles":157,"Soot":36}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9800,"Insects":9,"Tarantulas":2,"Predators":6,"EggNests":0,"Fire particles":61,"Soot":198}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":6981,"Insects":9,"Tarantulas":2,"Predators":6,"EggNests":0,"Fire particles":1359,"Soot":1683}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":3005,"Insects":9,"Tarantulas":2,"Predators":5,"EggNests":0,"Fire particles":1239,"Soot":5411}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":2410,"Insects":9,"Tarantulas":2,"Predators":2,"EggNests":0,"Fire particles":48,"Soot":4993}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":6211,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":1275}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9737,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":328}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9737,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":83}
+{"Grasses":9506,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":343,"Soot":232}
+{"Grasses":9737,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":7317,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":848,"Soot":1861}
+{"Grasses":10069,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":5120,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":128,"Soot":4030}
+{"Grasses":10069,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":6011,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":36,"Soot":2256}
+{"Grasses":10069,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9658,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":287}
+{"Grasses":9696,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":300,"Soot":73}
+{"Grasses":9961,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":8}
+{"Grasses":4911,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":2302,"Soot":2843}
+{"Grasses":9961,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":219,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":835,"Soot":8031}
+{"Grasses":9961,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":1402,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":3683}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":5708,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":660,"Soot":1283}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":7239,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":2583}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":7239,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":358}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":7239,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10069,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10069,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10069,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10069,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10069,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10069,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10069,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10069,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10069,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9956,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":81,"Soot":44}
+{"Grasses":10069,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":7718,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":961,"Soot":1393}
+{"Grasses":10069,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":4616,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1303,"Soot":3690}
+{"Grasses":10069,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":3257,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":52,"Soot":4031}
+{"Grasses":10069,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":6226,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":910}
+{"Grasses":10069,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":8021,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":75}
+{"Grasses":10069,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":8021,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10069,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":8021,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10069,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9553,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9808,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":261}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9642,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":379}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9642,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":218}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":6583,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0,"Radioactive particles":2465}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":134,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0,"Radioactive particles":2193}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":69,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0,"Radioactive particles":1}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":6235,"Insects":57,"Tarantulas":66,"Predators":10,"EggNests":7,"Fire particles":793}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":7624,"Insects":46,"Tarantulas":3,"Predators":10,"EggNests":0,"Fire particles":341,"Soot":1595}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":3440,"Insects":34,"Tarantulas":2,"Predators":6,"EggNests":0,"Fire particles":0,"Soot":286,"Radioactive particles":3363}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":285,"Insects":12,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0,"Radioactive particles":953}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":200,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0,"Radioactive particles":15}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":1482,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":8,"Soot":123,"Radioactive particles":177}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":4536,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":16,"Soot":176,"Radioactive particles":1120}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":4180,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":716,"Soot":426,"Radioactive particles":2837}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":1398,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":698,"Soot":96,"Radioactive particles":5154}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":72,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":278,"Soot":24,"Radioactive particles":6759}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":72,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":161,"Soot":0,"Radioactive particles":3433}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":72,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":1037,"Soot":1087,"Radioactive particles":4103}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":72,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":2118,"Soot":916,"Radioactive particles":3447}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":72,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":1961,"Soot":4,"Radioactive particles":2789}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":72,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":967,"Soot":1899,"Radioactive particles":2893}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":72,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":627,"Soot":180,"Radioactive particles":6414}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":72,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":187,"Soot":617,"Radioactive particles":4519}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":72,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":1269,"Soot":1547,"Radioactive particles":1379}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":72,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":180,"Soot":3830,"Radioactive particles":1751}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":72,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":1006,"Radioactive particles":854}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":72,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":12,"Radioactive particles":39}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9299,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":537,"Soot":245}
+{"Grasses":4207,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":2083,"Soot":3740}
+{"Grasses":1025,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":69,"Soot":7672}
+{"Grasses":3223,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":2625}
+{"Grasses":9447,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":58}
+{"Grasses":9906,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9906,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9906,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10028,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":51,"Soot":2}
+{"Grasses":8617,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":694,"Soot":770}
+{"Grasses":5469,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1159,"Soot":3224}
+{"Grasses":4529,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":56,"Soot":4189}
+{"Grasses":6769,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":8,"Soot":1300}
+{"Grasses":9678,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":253}
+{"Grasses":9678,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":43}
+{"Grasses":9678,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":6608,"Insects":55,"Tarantulas":106,"Predators":10,"EggNests":10}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9674,"Insects":25,"Tarantulas":34,"Predators":10,"EggNests":0}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":8935,"Insects":25,"Tarantulas":2,"Predators":15,"EggNests":0,"Fire particles":0,"Soot":253}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":7096,"Insects":26,"Tarantulas":2,"Predators":16,"EggNests":0,"Fire particles":171,"Soot":176}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":6309,"Insects":17,"Tarantulas":2,"Predators":14,"EggNests":0,"Fire particles":0,"Soot":370}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":8285,"Insects":16,"Tarantulas":2,"Predators":30,"EggNests":0,"Fire particles":0,"Soot":0,"Radioactive particles":1418}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":2393,"Insects":11,"Tarantulas":2,"Predators":62,"EggNests":0,"Fire particles":0,"Soot":0,"Radioactive particles":2661}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":72,"Insects":9,"Tarantulas":2,"Predators":56,"EggNests":0,"Fire particles":0,"Soot":0,"Radioactive particles":454}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":71,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":657,"Soot":0,"Radioactive particles":6815}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":71,"Insects":9,"Tarantulas":2,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0,"Radioactive particles":6}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10081,"Insects":13,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":7617,"Insects":44,"Tarantulas":152,"Predators":10,"EggNests":6}
+{"Grasses":9767,"Insects":55,"Tarantulas":9,"Predators":10,"EggNests":0}
+{"Grasses":8419,"Insects":90,"Tarantulas":0,"Predators":14,"EggNests":0}
+{"Grasses":6797,"Insects":38,"Tarantulas":0,"Predators":13,"EggNests":0}
+{"Grasses":6054,"Insects":25,"Tarantulas":0,"Predators":12,"EggNests":0}
+{"Grasses":9947,"Insects":21,"Tarantulas":0,"Predators":10,"EggNests":0}
+{"Grasses":10059,"Insects":20,"Tarantulas":0,"Predators":10,"EggNests":0}
+{"Grasses":10057,"Insects":20,"Tarantulas":0,"Predators":10,"EggNests":0}
+{"Grasses":10043,"Insects":20,"Tarantulas":0,"Predators":10,"EggNests":0}
+{"Grasses":10041,"Insects":18,"Tarantulas":0,"Predators":10,"EggNests":0}
+{"Grasses":10049,"Insects":17,"Tarantulas":0,"Predators":10,"EggNests":0}
+{"Grasses":10053,"Insects":17,"Tarantulas":0,"Predators":10,"EggNests":0}
+{"Grasses":10047,"Insects":17,"Tarantulas":0,"Predators":10,"EggNests":0}
+{"Grasses":9314,"Insects":17,"Tarantulas":0,"Predators":10,"EggNests":0}
+{"Grasses":8634,"Insects":17,"Tarantulas":0,"Predators":10,"EggNests":0}
+{"Grasses":7990,"Insects":16,"Tarantulas":0,"Predators":10,"EggNests":0}
+{"Grasses":10062,"Insects":16,"Tarantulas":0,"Predators":10,"EggNests":0}
+{"Grasses":10062,"Insects":16,"Tarantulas":0,"Predators":10,"EggNests":0}
+{"Grasses":10048,"Insects":16,"Tarantulas":0,"Predators":10,"EggNests":0}
+{"Grasses":10026,"Insects":16,"Tarantulas":0,"Predators":10,"EggNests":0}
+{"Grasses":10031,"Insects":16,"Tarantulas":0,"Predators":10,"EggNests":0}
+{"Grasses":10044,"Insects":16,"Tarantulas":0,"Predators":10,"EggNests":0}
+{"Grasses":10032,"Insects":16,"Tarantulas":0,"Predators":10,"EggNests":0}
+{"Grasses":10028,"Insects":16,"Tarantulas":0,"Predators":12,"EggNests":0}
+{"Grasses":8952,"Insects":16,"Tarantulas":0,"Predators":12,"EggNests":0}
+{"Grasses":8247,"Insects":16,"Tarantulas":0,"Predators":12,"EggNests":0}
+{"Grasses":10034,"Insects":16,"Tarantulas":0,"Predators":11,"EggNests":0}
+{"Grasses":10009,"Insects":16,"Tarantulas":0,"Predators":24,"EggNests":0}
+{"Grasses":9791,"Insects":16,"Tarantulas":0,"Predators":81,"EggNests":0}
+{"Grasses":8937,"Insects":16,"Tarantulas":0,"Predators":105,"EggNests":0,"Fire particles":196,"Soot":43}
+{"Grasses":5246,"Insects":16,"Tarantulas":0,"Predators":82,"EggNests":0,"Fire particles":1650,"Soot":2199}
+{"Grasses":1166,"Insects":15,"Tarantulas":0,"Predators":51,"EggNests":0,"Fire particles":847,"Soot":6672}
+{"Grasses":2346,"Insects":14,"Tarantulas":0,"Predators":22,"EggNests":0,"Fire particles":0,"Soot":3850}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":7261,"Insects":14,"Tarantulas":0,"Predators":22,"EggNests":0,"Fire particles":0,"Soot":211}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":8471,"Insects":14,"Tarantulas":0,"Predators":31,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":6678,"Insects":46,"Tarantulas":149,"Predators":10,"EggNests":12}
+{"Grasses":7738,"Insects":14,"Tarantulas":0,"Predators":24,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9323,"Insects":100,"Tarantulas":13,"Predators":10,"EggNests":8}
+{"Grasses":7329,"Insects":14,"Tarantulas":0,"Predators":12,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":7589,"Insects":103,"Tarantulas":3,"Predators":10,"EggNests":0}
+{"Grasses":10063,"Insects":13,"Tarantulas":0,"Predators":9,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":6045,"Insects":35,"Tarantulas":2,"Predators":10,"EggNests":0}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":10067,"Insects":13,"Tarantulas":0,"Predators":9,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":7200,"Insects":53,"Tarantulas":146,"Predators":10,"EggNests":5}
+{"Grasses":10069,"Insects":13,"Tarantulas":0,"Predators":9,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9400,"Insects":94,"Tarantulas":3,"Predators":12,"EggNests":0}
+{"Grasses":10054,"Insects":13,"Tarantulas":0,"Predators":9,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":8084,"Insects":104,"Tarantulas":2,"Predators":16,"EggNests":0}
+{"Grasses":10003,"Insects":13,"Tarantulas":0,"Predators":16,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":9913,"Insects":13,"Tarantulas":0,"Predators":27,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":7350,"Insects":51,"Tarantulas":112,"Predators":10,"EggNests":6}
+{"Grasses":7807,"Insects":51,"Tarantulas":124,"Predators":10,"EggNests":9}
+{"Grasses":9410,"Insects":79,"Tarantulas":4,"Predators":16,"EggNests":0}
+{"Grasses":9618,"Insects":87,"Tarantulas":8,"Predators":10,"EggNests":0}
+{"Grasses":8442,"Insects":54,"Tarantulas":2,"Predators":22,"EggNests":0}
+{"Grasses":8222,"Insects":103,"Tarantulas":0,"Predators":10,"EggNests":0}
+{"Grasses":7121,"Insects":23,"Tarantulas":2,"Predators":14,"EggNests":0}
+{"Grasses":6687,"Insects":37,"Tarantulas":0,"Predators":10,"EggNests":0}
+{"Grasses":6531,"Insects":17,"Tarantulas":2,"Predators":11,"EggNests":0}
+{"Grasses":5852,"Insects":26,"Tarantulas":0,"Predators":8,"EggNests":0}
+{"Grasses":10053,"Insects":12,"Tarantulas":2,"Predators":7,"EggNests":0}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":9977,"Insects":22,"Tarantulas":0,"Predators":8,"EggNests":0}
+{"Grasses":7036,"Insects":62,"Tarantulas":102,"Predators":11,"EggNests":9}
+{"Grasses":10024,"Insects":22,"Tarantulas":0,"Predators":17,"EggNests":0}
+{"Grasses":8905,"Insects":146,"Tarantulas":31,"Predators":16,"EggNests":6}
+{"Grasses":9861,"Insects":22,"Tarantulas":0,"Predators":53,"EggNests":0}
+{"Grasses":6568,"Insects":133,"Tarantulas":41,"Predators":19,"EggNests":0}
+{"Grasses":9576,"Insects":22,"Tarantulas":0,"Predators":58,"EggNests":0}
+{"Grasses":4627,"Insects":43,"Tarantulas":3,"Predators":16,"EggNests":0}
+{"Grasses":9624,"Insects":22,"Tarantulas":0,"Predators":49,"EggNests":0}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":9336,"Insects":67,"Tarantulas":0,"Predators":51,"EggNests":0}
+{"Grasses":7119,"Insects":67,"Tarantulas":178,"Predators":10,"EggNests":9}
+{"Grasses":8859,"Insects":98,"Tarantulas":0,"Predators":53,"EggNests":0}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":8336,"Insects":112,"Tarantulas":0,"Predators":54,"EggNests":0}
+{"Grasses":6818,"Insects":50,"Tarantulas":93,"Predators":10,"EggNests":10,"Fire particles":433}
+{"Grasses":6082,"Insects":70,"Tarantulas":0,"Predators":47,"EggNests":0}
+{"Grasses":8132,"Insects":50,"Tarantulas":8,"Predators":16,"EggNests":0,"Fire particles":60,"Soot":1463}
+{"Grasses":4668,"Insects":32,"Tarantulas":0,"Predators":19,"EggNests":0}
+{"Grasses":3941,"Insects":24,"Tarantulas":0,"Predators":11,"EggNests":0}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":7255,"Insects":62,"Tarantulas":83,"Predators":10,"EggNests":10}
+{"Grasses":9430,"Insects":107,"Tarantulas":1,"Predators":11,"EggNests":0}
+{"Grasses":7396,"Insects":145,"Tarantulas":0,"Predators":17,"EggNests":0}
+{"Grasses":5288,"Insects":51,"Tarantulas":0,"Predators":17,"EggNests":0}
+{"Grasses":4146,"Insects":30,"Tarantulas":0,"Predators":13,"EggNests":0}
+{"Grasses":9667,"Insects":25,"Tarantulas":0,"Predators":17,"EggNests":0}
+{"Grasses":9569,"Insects":25,"Tarantulas":0,"Predators":117,"EggNests":0}
+{"Grasses":8915,"Insects":25,"Tarantulas":0,"Predators":234,"EggNests":0}
+{"Grasses":7575,"Insects":23,"Tarantulas":0,"Predators":166,"EggNests":0,"Fire particles":271,"Soot":169}
+{"Grasses":5959,"Insects":19,"Tarantulas":0,"Predators":110,"EggNests":0,"Fire particles":766,"Soot":1330}
+{"Grasses":3392,"Insects":19,"Tarantulas":0,"Predators":101,"EggNests":0,"Fire particles":136,"Soot":4327}
+{"Grasses":3486,"Insects":15,"Tarantulas":0,"Predators":91,"EggNests":0,"Fire particles":10,"Soot":2597}
+{"Grasses":6716,"Insects":15,"Tarantulas":0,"Predators":81,"EggNests":0,"Fire particles":0,"Soot":204}
+{"Grasses":5910,"Insects":15,"Tarantulas":0,"Predators":66,"EggNests":0,"Fire particles":0,"Soot":1}
+{"Grasses":5009,"Insects":15,"Tarantulas":0,"Predators":25,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":4505,"Insects":15,"Tarantulas":0,"Predators":13,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9572,"Insects":15,"Tarantulas":0,"Predators":11,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9990,"Insects":15,"Tarantulas":0,"Predators":27,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9689,"Insects":15,"Tarantulas":0,"Predators":76,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9330,"Insects":15,"Tarantulas":0,"Predators":77,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":7740,"Insects":71,"Tarantulas":92,"Predators":10,"EggNests":4}
+{"Grasses":9220,"Insects":124,"Tarantulas":2,"Predators":11,"EggNests":0}
+{"Grasses":7161,"Insects":147,"Tarantulas":1,"Predators":11,"EggNests":0}
+{"Grasses":500,"Insects":100}
+{"Grasses":8666,"Insects":151,"Fire particles":58}
+{"Grasses":5263,"Insects":596,"Fire particles":181,"Soot":938}
+{"Grasses":1988,"Insects":463,"Fire particles":1060,"Soot":5723}
+{"Grasses":1737,"Insects":29,"Fire particles":466,"Soot":6297}
+{"Grasses":1696,"Insects":2,"Fire particles":643,"Soot":6728}
+{"Grasses":500,"Insects":100}
+{"Grasses":8897,"Insects":141}
+{"Grasses":6656,"Insects":466}
+{"Grasses":2038,"Insects":391,"Fire particles":2308,"Radioactive particles":2145}
+{"Grasses":23,"Insects":1,"Fire particles":1,"Radioactive particles":1917}
+{"Grasses":23,"Insects":1,"Fire particles":0,"Radioactive particles":0}
+{"Grasses":291,"Insects":1,"Fire particles":0,"Radioactive particles":0}
+{"Grasses":1865,"Insects":1,"Fire particles":0,"Radioactive particles":0}
+{"Grasses":4252,"Insects":1,"Fire particles":0,"Radioactive particles":0}
+{"Grasses":5201,"Insects":1,"Fire particles":405,"Radioactive particles":0,"Soot":189}
+{"Grasses":4012,"Insects":1,"Fire particles":878,"Radioactive particles":0,"Soot":2044}
+{"Grasses":2856,"Insects":1,"Fire particles":99,"Radioactive particles":0,"Soot":3984}
+{"Grasses":4625,"Insects":1,"Fire particles":21,"Radioactive particles":0,"Soot":1864}
+{"Grasses":8763,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":130}
+{"Grasses":9180,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":1}
+{"Grasses":9180,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":9180,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":9974,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":9973,"Insects":1,"Fire particles":45,"Radioactive particles":0,"Soot":4}
+{"Grasses":8763,"Insects":1,"Fire particles":510,"Radioactive particles":0,"Soot":749}
+{"Grasses":6491,"Insects":1,"Fire particles":923,"Radioactive particles":0,"Soot":2358}
+{"Grasses":4681,"Insects":1,"Fire particles":85,"Radioactive particles":0,"Soot":3625}
+{"Grasses":5899,"Insects":1,"Fire particles":10,"Radioactive particles":0,"Soot":1308}
+{"Grasses":8930,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":117}
+{"Grasses":8930,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":12}
+{"Grasses":8930,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":9832,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":9823,"Insects":1,"Fire particles":150,"Radioactive particles":0,"Soot":49}
+{"Grasses":8565,"Insects":1,"Fire particles":591,"Radioactive particles":0,"Soot":864}
+{"Grasses":6358,"Insects":1,"Fire particles":878,"Radioactive particles":0,"Soot":2439}
+{"Grasses":5803,"Insects":1,"Fire particles":46,"Radioactive particles":0,"Soot":2904}
+{"Grasses":8628,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":702}
+{"Grasses":9874,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":54}
+{"Grasses":9874,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":9874,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":9727,"Insects":1,"Fire particles":247,"Radioactive particles":0,"Soot":48}
+{"Grasses":7899,"Insects":1,"Fire particles":810,"Radioactive particles":0,"Soot":1307}
+{"Grasses":4408,"Insects":1,"Fire particles":1323,"Radioactive particles":0,"Soot":3817}
+{"Grasses":4020,"Insects":1,"Fire particles":50,"Radioactive particles":0,"Soot":3902}
+{"Grasses":7182,"Insects":1,"Fire particles":3,"Radioactive particles":0,"Soot":646}
+{"Grasses":9342,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":84}
+{"Grasses":9342,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":9342,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":9906,"Insects":1,"Fire particles":91,"Radioactive particles":0,"Soot":25}
+{"Grasses":8446,"Insects":1,"Fire particles":719,"Radioactive particles":0,"Soot":854}
+{"Grasses":5981,"Insects":1,"Fire particles":991,"Radioactive particles":0,"Soot":2768}
+{"Grasses":5281,"Insects":1,"Fire particles":32,"Radioactive particles":0,"Soot":2858}
+{"Grasses":8254,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":446}
+{"Grasses":9460,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":17}
+{"Grasses":9460,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":9460,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":9992,"Insects":1,"Fire particles":26,"Radioactive particles":0,"Soot":4}
+{"Grasses":8173,"Insects":1,"Fire particles":833,"Radioactive particles":0,"Soot":1016}
+{"Grasses":5542,"Insects":1,"Fire particles":999,"Radioactive particles":0,"Soot":3206}
+{"Grasses":4163,"Insects":1,"Fire particles":112,"Radioactive particles":0,"Soot":4021}
+{"Grasses":6153,"Insects":1,"Fire particles":37,"Radioactive particles":0,"Soot":1626}
+{"Grasses":9587,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":344}
+{"Grasses":9587,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":49}
+{"Grasses":9587,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":9964,"Insects":1,"Fire particles":52,"Radioactive particles":0,"Soot":6}
+{"Grasses":7848,"Insects":1,"Fire particles":1002,"Radioactive particles":0,"Soot":1171}
+{"Grasses":4196,"Insects":1,"Fire particles":1069,"Radioactive particles":0,"Soot":4436}
+{"Grasses":2991,"Insects":1,"Fire particles":75,"Radioactive particles":0,"Soot":4217}
+{"Grasses":4457,"Insects":1,"Fire particles":13,"Radioactive particles":0,"Soot":1027}
+{"Grasses":8220,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":114}
+{"Grasses":8220,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":10}
+{"Grasses":8220,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":9784,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":9681,"Insects":1,"Fire particles":283,"Radioactive particles":0,"Soot":58}
+{"Grasses":7732,"Insects":1,"Fire particles":761,"Radioactive particles":0,"Soot":1525}
+{"Grasses":4566,"Insects":1,"Fire particles":1320,"Radioactive particles":0,"Soot":3483}
+{"Grasses":3492,"Insects":1,"Fire particles":22,"Radioactive particles":0,"Soot":3761}
+{"Grasses":5899,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":600}
+{"Grasses":7558,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":14}
+{"Grasses":7558,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":7558,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":9158,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":9977,"Insects":1,"Fire particles":39,"Radioactive particles":0,"Soot":6}
+{"Grasses":7192,"Insects":1,"Fire particles":1666,"Radioactive particles":0,"Soot":1164}
+{"Grasses":784,"Insects":1,"Fire particles":1955,"Radioactive particles":0,"Soot":7009}
+{"Grasses":910,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":5944}
+{"Grasses":4483,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":556}
+{"Grasses":9353,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":9353,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":9353,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":9934,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":9672,"Insects":1,"Fire particles":278,"Radioactive particles":0,"Soot":72}
+{"Grasses":6689,"Insects":1,"Fire particles":1335,"Radioactive particles":0,"Soot":1989}
+{"Grasses":2779,"Insects":1,"Fire particles":1085,"Radioactive particles":0,"Soot":5437}
+{"Grasses":2770,"Insects":1,"Fire particles":27,"Radioactive particles":0,"Soot":4235}
+{"Grasses":7629,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":533}
+{"Grasses":9853,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":3}
+{"Grasses":9853,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":9853,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":9970,"Insects":1,"Fire particles":43,"Radioactive particles":0,"Soot":9}
+{"Grasses":8595,"Insects":1,"Fire particles":494,"Radioactive particles":0,"Soot":933}
+{"Grasses":6718,"Insects":1,"Fire particles":666,"Radioactive particles":0,"Soot":2360}
+{"Grasses":5136,"Insects":1,"Fire particles":98,"Radioactive particles":0,"Soot":3303}
+{"Grasses":7084,"Insects":1,"Fire particles":41,"Radioactive particles":0,"Soot":1625}
+{"Grasses":9465,"Insects":1,"Fire particles":17,"Radioactive particles":0,"Soot":535}
+{"Grasses":9465,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":152}
+{"Grasses":9465,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":9567,"Insects":1,"Fire particles":388,"Radioactive particles":0,"Soot":67}
+{"Grasses":6675,"Insects":1,"Fire particles":1141,"Radioactive particles":0,"Soot":2199}
+{"Grasses":3364,"Insects":1,"Fire particles":960,"Radioactive particles":0,"Soot":4782}
+{"Grasses":2858,"Insects":1,"Fire particles":71,"Radioactive particles":0,"Soot":3764}
+{"Grasses":6983,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":859}
+{"Grasses":9399,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":72}
+{"Grasses":9399,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":9399,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":9145,"Insects":1,"Fire particles":616,"Radioactive particles":0,"Soot":261}
+{"Grasses":5811,"Insects":1,"Fire particles":1328,"Radioactive particles":0,"Soot":2841}
+{"Grasses":3639,"Insects":1,"Fire particles":85,"Radioactive particles":0,"Soot":5296}
+{"Grasses":5533,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":2081}
+{"Grasses":9663,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":83}
+{"Grasses":9953,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":9953,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":9953,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":9727,"Insects":1,"Fire particles":231,"Radioactive particles":0,"Soot":64}
+{"Grasses":7863,"Insects":1,"Fire particles":782,"Radioactive particles":0,"Soot":1367}
+{"Grasses":4849,"Insects":1,"Fire particles":1150,"Radioactive particles":0,"Soot":3450}
+{"Grasses":4484,"Insects":1,"Fire particles":41,"Radioactive particles":0,"Soot":3209}
+{"Grasses":7670,"Insects":1,"Fire particles":11,"Radioactive particles":0,"Soot":453}
+{"Grasses":9430,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":155}
+{"Grasses":9430,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":44}
+{"Grasses":9430,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":9589,"Insects":1,"Fire particles":310,"Radioactive particles":0,"Soot":123}
+{"Grasses":7724,"Insects":1,"Fire particles":889,"Radioactive particles":0,"Soot":1387}
+{"Grasses":4694,"Insects":1,"Fire particles":90,"Radioactive particles":0,"Soot":4553}
+{"Grasses":5068,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":2378}
+{"Grasses":9586,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":62}
+{"Grasses":9901,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":9901,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":9901,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":9665,"Insects":1,"Fire particles":311,"Radioactive particles":0,"Soot":46}
+{"Grasses":5247,"Insects":1,"Fire particles":2145,"Radioactive particles":0,"Soot":2623}
+{"Grasses":411,"Insects":1,"Fire particles":860,"Radioactive particles":0,"Soot":7952}
+{"Grasses":1735,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":4060}
+{"Grasses":7923,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":89}
+{"Grasses":10017,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10017,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10017,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":8971,"Insects":1,"Fire particles":669,"Radioactive particles":0,"Soot":382}
+{"Grasses":4263,"Insects":1,"Fire particles":1870,"Radioactive particles":0,"Soot":3817}
+{"Grasses":775,"Insects":1,"Fire particles":44,"Radioactive particles":0,"Soot":7474}
+{"Grasses":2314,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":2644}
+{"Grasses":8011,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":7}
+{"Grasses":8749,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":8749,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":8749,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":9944,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":9546,"Insects":1,"Fire particles":397,"Radioactive particles":0,"Soot":79}
+{"Grasses":5759,"Insects":1,"Fire particles":1588,"Radioactive particles":0,"Soot":2667}
+{"Grasses":2660,"Insects":1,"Fire particles":909,"Radioactive particles":0,"Soot":5366}
+{"Grasses":2510,"Insects":1,"Fire particles":36,"Radioactive particles":0,"Soot":3534}
+{"Grasses":7090,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":565}
+{"Grasses":9478,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":23}
+{"Grasses":9478,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":9478,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":9973,"Insects":1,"Fire particles":41,"Radioactive particles":0,"Soot":8}
+{"Grasses":8477,"Insects":1,"Fire particles":632,"Radioactive particles":0,"Soot":913}
+{"Grasses":6063,"Insects":1,"Fire particles":1020,"Radioactive particles":0,"Soot":2603}
+{"Grasses":4129,"Insects":1,"Fire particles":60,"Radioactive particles":0,"Soot":4101}
+{"Grasses":6262,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":1406}
+{"Grasses":9862,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":39}
+{"Grasses":9862,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":9862,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":0}
+{"Grasses":8976,"Insects":1,"Fire particles":717,"Radioactive particles":0,"Soot":329}
+{"Grasses":5241,"Insects":1,"Fire particles":1167,"Radioactive particles":0,"Soot":3553}
+{"Grasses":2393,"Insects":1,"Fire particles":121,"Radioactive particles":0,"Soot":5953}
+{"Grasses":3865,"Insects":1,"Fire particles":0,"Radioactive particles":0,"Soot":2536}
+{"Grasses":500,"Insects":100}
+{"Grasses":9030,"Insects":139}
+{"Grasses":6735,"Insects":455}
+{"Grasses":2632,"Insects":382}
+{"Grasses":970,"Insects":47}
+{"Grasses":572,"Insects":15}
+{"Grasses":5425,"Insects":5}
+{"Grasses":9147,"Insects":5}
+{"Grasses":10016,"Insects":5}
+{"Grasses":10015,"Insects":5}
+{"Grasses":10009,"Insects":5}
+{"Grasses":10009,"Insects":5}
+{"Grasses":10009,"Insects":5}
+{"Grasses":10012,"Insects":5}
+{"Grasses":9800,"Insects":5}
+{"Grasses":9608,"Insects":5}
+{"Grasses":9369,"Insects":5}
+{"Grasses":10016,"Insects":5}
+{"Grasses":10016,"Insects":5}
+{"Grasses":9966,"Insects":5,"Fire particles":40,"Soot":5}
+{"Grasses":8911,"Insects":5,"Fire particles":586,"Soot":515}
+{"Grasses":6044,"Insects":5,"Fire particles":1151,"Soot":2667}
+{"Grasses":4463,"Insects":3,"Fire particles":97,"Soot":4148}
+{"Grasses":6150,"Insects":3,"Fire particles":15,"Soot":1443}
+{"Grasses":9813,"Insects":3,"Fire particles":0,"Soot":201}
+{"Grasses":9679,"Insects":3,"Fire particles":0,"Soot":27}
+{"Grasses":9584,"Insects":3,"Fire particles":0,"Soot":0}
+{"Grasses":10020,"Insects":3,"Fire particles":0,"Soot":0}
+{"Grasses":10019,"Insects":3,"Fire particles":0,"Soot":0}
+{"Grasses":10018,"Insects":3,"Fire particles":0,"Soot":0}
+{"Grasses":9636,"Insects":3,"Fire particles":305,"Soot":77}
+{"Grasses":6949,"Insects":3,"Fire particles":1149,"Soot":1897}
+{"Grasses":3670,"Insects":2,"Fire particles":1070,"Soot":4446}
+{"Grasses":3056,"Insects":1,"Fire particles":46,"Soot":3525}
+{"Grasses":6524,"Insects":1,"Fire particles":16,"Soot":643}
+{"Grasses":8817,"Insects":1,"Fire particles":0,"Soot":189}
+{"Grasses":8817,"Insects":1,"Fire particles":0,"Soot":22}
+{"Grasses":8817,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":8614,"Insects":1,"Fire particles":906,"Soot":502}
+{"Grasses":5343,"Insects":1,"Fire particles":1224,"Soot":3360}
+{"Grasses":2074,"Insects":1,"Fire particles":263,"Soot":6172}
+{"Grasses":3796,"Insects":1,"Fire particles":0,"Soot":2927}
+{"Grasses":9346,"Insects":1,"Fire particles":0,"Soot":82}
+{"Grasses":9939,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":9939,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":9939,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":9973,"Insects":1,"Fire particles":47,"Soot":2}
+{"Grasses":8834,"Insects":1,"Fire particles":520,"Soot":668}
+{"Grasses":6994,"Insects":1,"Fire particles":724,"Soot":2126}
+{"Grasses":5735,"Insects":1,"Fire particles":110,"Soot":3053}
+{"Grasses":7975,"Insects":1,"Fire particles":0,"Soot":1317}
+{"Grasses":9879,"Insects":1,"Fire particles":0,"Soot":141}
+{"Grasses":9879,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":9879,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":9569,"Insects":1,"Fire particles":399,"Soot":54}
+{"Grasses":6936,"Insects":1,"Fire particles":1055,"Soot":2019}
+{"Grasses":3651,"Insects":1,"Fire particles":1136,"Soot":4438}
+{"Grasses":3750,"Insects":1,"Fire particles":8,"Soot":3644}
+{"Grasses":8012,"Insects":1,"Fire particles":0,"Soot":507}
+{"Grasses":9662,"Insects":1,"Fire particles":0,"Soot":20}
+{"Grasses":9662,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":9662,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":9986,"Insects":1,"Fire particles":32,"Soot":4}
+{"Grasses":7470,"Insects":1,"Fire particles":1422,"Soot":1130}
+{"Grasses":3296,"Insects":1,"Fire particles":1094,"Soot":5351}
+{"Grasses":1957,"Insects":1,"Fire particles":52,"Soot":5255}
+{"Grasses":4533,"Insects":1,"Fire particles":3,"Soot":1402}
+{"Grasses":9614,"Insects":1,"Fire particles":0,"Soot":135}
+{"Grasses":9614,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":9614,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":9770,"Insects":1,"Fire particles":195,"Soot":57}
+{"Grasses":7753,"Insects":1,"Fire particles":868,"Soot":1394}
+{"Grasses":4148,"Insects":1,"Fire particles":1160,"Soot":4195}
+{"Grasses":4337,"Insects":1,"Fire particles":24,"Soot":3655}
+{"Grasses":7908,"Insects":1,"Fire particles":0,"Soot":445}
+{"Grasses":9867,"Insects":1,"Fire particles":0,"Soot":31}
+{"Grasses":9867,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":9867,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":9747,"Insects":1,"Fire particles":213,"Soot":62}
+{"Grasses":7295,"Insects":1,"Fire particles":1155,"Soot":1564}
+{"Grasses":2879,"Insects":1,"Fire particles":1741,"Soot":4824}
+{"Grasses":3100,"Insects":1,"Fire particles":3,"Soot":4211}
+{"Grasses":8504,"Insects":1,"Fire particles":0,"Soot":288}
+{"Grasses":9714,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":9714,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":9714,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":8991,"Insects":1,"Fire particles":741,"Soot":290}
+{"Grasses":4790,"Insects":1,"Fire particles":1580,"Soot":3599}
+{"Grasses":1630,"Insects":1,"Fire particles":60,"Soot":6882}
+{"Grasses":3538,"Insects":1,"Fire particles":0,"Soot":2683}
+{"Grasses":9365,"Insects":1,"Fire particles":0,"Soot":75}
+{"Grasses":9981,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":9981,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":9981,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":9984,"Insects":1,"Fire particles":31,"Soot":7}
+{"Grasses":8477,"Insects":1,"Fire particles":802,"Soot":742}
+{"Grasses":5662,"Insects":1,"Fire particles":1017,"Soot":3139}
+{"Grasses":3615,"Insects":1,"Fire particles":109,"Soot":4575}
+{"Grasses":6857,"Insects":1,"Fire particles":11,"Soot":1759}
+{"Grasses":9802,"Insects":1,"Fire particles":0,"Soot":219}
+{"Grasses":9802,"Insects":1,"Fire particles":0,"Soot":8}
+{"Grasses":9802,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":500,"Insects":100}
+{"Grasses":8852,"Insects":138}
+{"Grasses":6884,"Insects":419}
+{"Grasses":2510,"Insects":419}
+{"Grasses":1039,"Insects":46}
+{"Grasses":117,"Insects":2,"Fire particles":1268,"Radioactive particles":6402}
+{"Grasses":22,"Insects":1,"Fire particles":0,"Radioactive particles":247}
+{"Grasses":500,"Insects":100}
+{"Grasses":8648,"Insects":165}
+{"Grasses":5874,"Insects":552}
+{"Grasses":2071,"Insects":402}
+{"Grasses":799,"Insects":35}
+{"Grasses":676,"Insects":4}
+{"Grasses":5676,"Insects":4}
+{"Grasses":10017,"Insects":4}
+{"Grasses":9820,"Insects":4,"Fire particles":0,"Soot":198}
+{"Grasses":8556,"Insects":4,"Fire particles":748,"Soot":677}
+{"Grasses":4825,"Insects":3,"Fire particles":1328,"Soot":3430}
+{"Grasses":2427,"Insects":1,"Fire particles":710,"Soot":5807}
+{"Grasses":2482,"Insects":1,"Fire particles":627,"Soot":6219}
+{"Grasses":3926,"Insects":1,"Fire particles":0,"Soot":3864}
+{"Grasses":4662,"Insects":1,"Fire particles":1323,"Soot":3041}
+{"Grasses":4662,"Insects":1,"Fire particles":0,"Soot":4364}
+{"Grasses":4657,"Insects":1,"Fire particles":1212,"Soot":3178}
+{"Grasses":5687,"Insects":1,"Fire particles":0,"Soot":3625}
+{"Grasses":9066,"Insects":1,"Fire particles":209,"Soot":639}
+{"Grasses":9398,"Insects":1,"Fire particles":0,"Soot":534}
+{"Grasses":9983,"Insects":1,"Fire particles":0,"Soot":36}
+{"Grasses":10022,"Insects":1,"Fire particles":0,"Soot":0}
+{"Grasses":9767,"Insects":1,"Fire particles":0,"Soot":255}
+{"Grasses":9880,"Insects":1,"Fire particles":0,"Soot":94}
+{"Grasses":9333,"Insects":1,"Fire particles":0,"Soot":0,"Radioactive particles":684}
+{"Grasses":4595,"Insects":1,"Fire particles":0,"Soot":0,"Radioactive particles":2341}
+{"Grasses":681,"Insects":1,"Fire particles":0,"Soot":0,"Radioactive particles":1623}
+{"Grasses":23,"Insects":1,"Fire particles":0,"Soot":0,"Radioactive particles":141}
+{"Grasses":500,"Insects":100}
+{"Grasses":8578,"Insects":131,"Fire particles":47,"Soot":341}
+{"Grasses":6263,"Insects":369,"Fire particles":0,"Soot":192,"Radioactive particles":802}
+{"Grasses":992,"Insects":207,"Fire particles":0,"Soot":0,"Radioactive particles":1753}
+{"Grasses":229,"Insects":9,"Fire particles":0,"Soot":0,"Radioactive particles":47}
+{"Grasses":203,"Insects":1,"Fire particles":0,"Soot":0,"Radioactive particles":3}
+{"Grasses":1534,"Insects":1,"Fire particles":1200,"Soot":0,"Radioactive particles":4277}
+{"Grasses":412,"Insects":1,"Fire particles":7,"Soot":0,"Radioactive particles":1930}
+{"Grasses":22,"Insects":1,"Fire particles":0,"Soot":0,"Radioactive particles":30}
+{"Grasses":500,"Insects":100}
+{"Grasses":8827,"Insects":148}
+{"Grasses":5689,"Insects":472,"Fire particles":527,"Soot":1571}
+{"Grasses":3310,"Insects":308,"Fire particles":132,"Soot":5042}
+{"Grasses":2535,"Insects":16,"Fire particles":826,"Soot":5282}
+{"Grasses":2464,"Insects":5,"Fire particles":89,"Soot":6498}
+{"Grasses":7248,"Insects":1,"Fire particles":11,"Soot":2266}
+{"Grasses":9785,"Insects":1,"Fire particles":0,"Soot":216}
+{"Grasses":10021,"Insects":1,"Fire particles":0,"Soot":1}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":7120,"Insects":75,"Tarantulas":121,"Predators":10,"EggNests":9}
+{"Grasses":9410,"Insects":91,"Tarantulas":3,"Predators":10,"EggNests":1}
+{"Grasses":7382,"Insects":88,"Tarantulas":35,"Predators":9,"EggNests":0,"Fire particles":251,"Radioactive particles":772}
+{"Grasses":723,"Insects":21,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":1,"Radioactive particles":4017}
+{"Grasses":293,"Insects":17,"Tarantulas":0,"Predators":1,"EggNests":0,"Fire particles":0,"Radioactive particles":3}
+{"Grasses":788,"Insects":17,"Tarantulas":0,"Predators":1,"EggNests":0,"Fire particles":1530,"Radioactive particles":0,"Soot":2457}
+{"Grasses":796,"Insects":17,"Tarantulas":0,"Predators":1,"EggNests":0,"Fire particles":198,"Radioactive particles":0,"Soot":8751}
+{"Grasses":2008,"Insects":17,"Tarantulas":0,"Predators":1,"EggNests":0,"Fire particles":172,"Radioactive particles":0,"Soot":2703}
+{"Grasses":1452,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":208,"Radioactive particles":0,"Soot":7873}
+{"Grasses":908,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":383,"Radioactive particles":0,"Soot":4189}
+{"Grasses":1335,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":500,"Radioactive particles":0,"Soot":1521}
+{"Grasses":1782,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":356,"Radioactive particles":0,"Soot":7834}
+{"Grasses":2648,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":217,"Radioactive particles":0,"Soot":4721}
+{"Grasses":3092,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1240,"Radioactive particles":0,"Soot":4361}
+{"Grasses":2759,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":104,"Radioactive particles":0,"Soot":5395}
+{"Grasses":2407,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":203,"Radioactive particles":0,"Soot":1764}
+{"Grasses":5015,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":971,"Radioactive particles":0,"Soot":2811}
+{"Grasses":5763,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":177,"Radioactive particles":0,"Soot":3588}
+{"Grasses":2957,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":14,"Radioactive particles":3073,"Soot":439}
+{"Grasses":355,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":294,"Radioactive particles":3843,"Soot":0}
+{"Grasses":66,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":678,"Radioactive particles":4083,"Soot":0}
+{"Grasses":66,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1090,"Radioactive particles":4281,"Soot":1385}
+{"Grasses":66,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":766,"Radioactive particles":5260,"Soot":6}
+{"Grasses":66,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":804,"Radioactive particles":5224,"Soot":0}
+{"Grasses":66,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1329,"Radioactive particles":5047,"Soot":0}
+{"Grasses":66,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":837,"Radioactive particles":6353,"Soot":0}
+{"Grasses":66,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":911,"Radioactive particles":4981,"Soot":8}
+{"Grasses":66,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":907,"Radioactive particles":5610,"Soot":7}
+{"Grasses":66,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1024,"Radioactive particles":4670,"Soot":1584}
+{"Grasses":66,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1246,"Radioactive particles":4502,"Soot":860}
+{"Grasses":66,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":592,"Radioactive particles":6488,"Soot":298}
+{"Grasses":66,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":640,"Radioactive particles":5498,"Soot":421}
+{"Grasses":66,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":323,"Radioactive particles":6338,"Soot":718}
+{"Grasses":66,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Radioactive particles":325,"Soot":0}
+{"Grasses":66,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1639,"Radioactive particles":4183,"Soot":0}
+{"Grasses":66,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":5,"Radioactive particles":2020,"Soot":0}
+{"Grasses":66,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1808,"Radioactive particles":5452,"Soot":0}
+{"Grasses":66,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Radioactive particles":920,"Soot":0}
+{"Grasses":66,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1218,"Radioactive particles":0,"Soot":7372}
+{"Grasses":66,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":408,"Radioactive particles":0,"Soot":7349}
+{"Grasses":66,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":413,"Radioactive particles":4407,"Soot":351}
+{"Grasses":66,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1619,"Radioactive particles":35,"Soot":0}
+{"Grasses":66,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":581,"Radioactive particles":0,"Soot":9327}
+{"Grasses":66,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Radioactive particles":0,"Soot":4740}
+{"Grasses":66,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Radioactive particles":0,"Soot":53}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":6833,"Insects":61,"Tarantulas":167,"Predators":10,"EggNests":5}
+{"Grasses":5824,"Insects":28,"Tarantulas":4,"Predators":10,"EggNests":0,"Fire particles":1,"Radioactive particles":2893}
+{"Grasses":665,"Insects":39,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Radioactive particles":2090}
+{"Grasses":66,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Radioactive particles":29}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":7519,"Insects":79,"Tarantulas":97,"Predators":10,"EggNests":11}
+{"Grasses":4764,"Insects":125,"Tarantulas":12,"Predators":7,"EggNests":0,"Fire particles":0,"Radioactive particles":2950}
+{"Grasses":266,"Insects":51,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":273,"Radioactive particles":5557,"Soot":332}
+{"Grasses":70,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":237,"Radioactive particles":6195,"Soot":103}
+{"Grasses":68,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":546,"Radioactive particles":5439,"Soot":451}
+{"Grasses":68,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":690,"Radioactive particles":5309,"Soot":163}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":6792,"Insects":42,"Tarantulas":59,"Predators":10,"EggNests":3,"Fire particles":484,"Radioactive particles":1538}
+{"Grasses":2066,"Insects":19,"Tarantulas":3,"Predators":6,"EggNests":0,"Fire particles":1,"Radioactive particles":2577}
+{"Grasses":139,"Insects":18,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1119,"Radioactive particles":1561,"Soot":5794}
+{"Grasses":66,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Radioactive particles":3612,"Soot":563}
+{"Grasses":66,"Insects":17,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Radioactive particles":10,"Soot":0}
+{"Grasses":50,"Insects":30,"Tarantulas":10,"Predators":10}
+{"Grasses":542,"Insects":2,"Tarantulas":0,"Predators":10}
+{"Grasses":785,"Insects":2,"Tarantulas":0,"Predators":12}
+{"Grasses":513,"Insects":2,"Tarantulas":0,"Predators":15}
+{"Grasses":236,"Insects":2,"Tarantulas":0,"Predators":13}
+{"Grasses":156,"Insects":2,"Tarantulas":0,"Predators":5}
+{"Grasses":901,"Insects":2,"Tarantulas":0,"Predators":2}
+{"Grasses":903,"Insects":2,"Tarantulas":0,"Predators":2}
+{"Grasses":771,"Insects":2,"Tarantulas":0,"Predators":1,"Fire particles":0,"Soot":134}
+{"Grasses":461,"Insects":2,"Tarantulas":0,"Predators":1,"Fire particles":195,"Soot":225}
+{"Grasses":8,"Insects":2,"Tarantulas":0,"Predators":1,"Fire particles":34,"Soot":815}
+{"Grasses":17,"Insects":2,"Tarantulas":0,"Predators":0,"Fire particles":0,"Soot":391}
+{"Grasses":244,"Insects":2,"Tarantulas":0,"Predators":0,"Fire particles":0,"Soot":8}
+{"Grasses":804,"Insects":2,"Tarantulas":0,"Predators":0,"Fire particles":0,"Soot":0}
+{"Grasses":16,"Insects":2,"Tarantulas":0,"Predators":0,"Fire particles":0,"Soot":0,"Radioactive particles":346}
+{"Grasses":50,"Insects":30,"Tarantulas":10,"Predators":10}
+{"Grasses":50,"Insects":30,"Tarantulas":10,"Predators":10}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":250,"Insects":530,"Tarantulas":36,"Predators":10}
+{"Grasses":1640,"Insects":33,"Tarantulas":269,"Predators":10,"EggNests":11}
+{"Grasses":8004,"Insects":22,"Tarantulas":0,"Predators":8,"EggNests":0}
+{"Grasses":8969,"Insects":40,"Tarantulas":0,"Predators":8,"EggNests":0,"Fire particles":252,"Radioactive particles":113}
+{"Grasses":4253,"Insects":26,"Tarantulas":0,"Predators":4,"EggNests":0,"Fire particles":0,"Radioactive particles":2452}
+{"Grasses":35,"Insects":16,"Tarantulas":0,"Predators":1,"EggNests":0,"Fire particles":0,"Radioactive particles":1422}
+{"Grasses":284,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Radioactive particles":0}
+{"Grasses":1606,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Radioactive particles":0}
+{"Grasses":3256,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Radioactive particles":0,"Soot":200}
+{"Grasses":3346,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":758,"Radioactive particles":0,"Soot":755}
+{"Grasses":2377,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":922,"Radioactive particles":0,"Soot":2709}
+{"Grasses":2150,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":104,"Radioactive particles":1521,"Soot":2569}
+{"Grasses":2794,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Radioactive particles":1421,"Soot":700}
+{"Grasses":363,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Radioactive particles":2058,"Soot":0}
+{"Grasses":11,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Radioactive particles":88,"Soot":0}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":2027,"Radioactive particles":5324,"Soot":0}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Radioactive particles":920,"Soot":0}
+{"Grasses":250,"Insects":530,"Tarantulas":36,"Predators":10}
+{"Grasses":1723,"Insects":50,"Tarantulas":60,"Predators":9,"EggNests":1}
+{"Grasses":6944,"Insects":49,"Tarantulas":0,"Predators":5,"EggNests":0}
+{"Grasses":7372,"Insects":107,"Tarantulas":0,"Predators":5,"EggNests":0}
+{"Grasses":5979,"Insects":46,"Tarantulas":0,"Predators":4,"EggNests":0,"Fire particles":776,"Soot":1247}
+{"Grasses":5620,"Insects":24,"Tarantulas":0,"Predators":4,"EggNests":0,"Fire particles":0,"Soot":2333}
+{"Grasses":9301,"Insects":19,"Tarantulas":0,"Predators":2,"EggNests":0,"Fire particles":0,"Soot":435}
+{"Grasses":9676,"Insects":19,"Tarantulas":0,"Predators":2,"EggNests":0,"Fire particles":0,"Soot":314}
+{"Grasses":9672,"Insects":19,"Tarantulas":0,"Predators":2,"EggNests":0,"Fire particles":0,"Soot":310}
+{"Grasses":9597,"Insects":19,"Tarantulas":0,"Predators":2,"EggNests":0,"Fire particles":0,"Soot":349}
+{"Grasses":9535,"Insects":19,"Tarantulas":0,"Predators":2,"EggNests":0,"Fire particles":0,"Soot":398}
+{"Grasses":9271,"Insects":19,"Tarantulas":0,"Predators":2,"EggNests":0,"Fire particles":52,"Soot":371}
+{"Grasses":9335,"Insects":19,"Tarantulas":0,"Predators":2,"EggNests":0,"Fire particles":248,"Soot":313}
+{"Grasses":9418,"Insects":19,"Tarantulas":0,"Predators":2,"EggNests":0,"Fire particles":237,"Soot":329}
+{"Grasses":7371,"Insects":19,"Tarantulas":0,"Predators":2,"EggNests":0,"Fire particles":0,"Soot":265,"Radioactive particles":1605}
+{"Grasses":1866,"Insects":18,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":5,"Radioactive particles":2446}
+{"Grasses":14,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1675,"Soot":0,"Radioactive particles":476}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1088,"Soot":0,"Radioactive particles":3507}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0,"Radioactive particles":204}
+{"Grasses":250,"Insects":530,"Tarantulas":36,"Predators":10}
+{"Grasses":1518,"Insects":35,"Tarantulas":123,"Predators":10,"EggNests":7}
+{"Grasses":6797,"Insects":27,"Tarantulas":1,"Predators":6,"EggNests":0}
+{"Grasses":8494,"Insects":26,"Tarantulas":0,"Predators":6,"EggNests":0}
+{"Grasses":7702,"Insects":25,"Tarantulas":0,"Predators":6,"EggNests":0}
+{"Grasses":7174,"Insects":24,"Tarantulas":0,"Predators":6,"EggNests":0}
+{"Grasses":9995,"Insects":23,"Tarantulas":0,"Predators":6,"EggNests":0}
+{"Grasses":9993,"Insects":23,"Tarantulas":0,"Predators":6,"EggNests":0}
+{"Grasses":9992,"Insects":23,"Tarantulas":0,"Predators":6,"EggNests":0}
+{"Grasses":9430,"Insects":23,"Tarantulas":0,"Predators":6,"EggNests":0,"Fire particles":374,"Soot":177}
+{"Grasses":5208,"Insects":23,"Tarantulas":0,"Predators":6,"EggNests":0,"Fire particles":1464,"Soot":3255}
+{"Grasses":1683,"Insects":21,"Tarantulas":0,"Predators":5,"EggNests":0,"Fire particles":103,"Soot":6909}
+{"Grasses":3554,"Insects":17,"Tarantulas":0,"Predators":1,"EggNests":0,"Fire particles":10,"Soot":2825}
+{"Grasses":9728,"Insects":17,"Tarantulas":0,"Predators":1,"EggNests":0,"Fire particles":0,"Soot":107}
+{"Grasses":9876,"Insects":17,"Tarantulas":0,"Predators":1,"EggNests":0,"Fire particles":0,"Soot":1}
+{"Grasses":9777,"Insects":17,"Tarantulas":0,"Predators":1,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9703,"Insects":17,"Tarantulas":0,"Predators":1,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10005,"Insects":17,"Tarantulas":0,"Predators":1,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10003,"Insects":17,"Tarantulas":0,"Predators":1,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9998,"Insects":17,"Tarantulas":0,"Predators":1,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10001,"Insects":17,"Tarantulas":0,"Predators":1,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":250,"Insects":530,"Tarantulas":36,"Predators":10}
+{"Grasses":2026,"Insects":32,"Tarantulas":102,"Predators":10,"EggNests":0}
+{"Grasses":7864,"Insects":27,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":880,"Soot":420}
+{"Grasses":7719,"Insects":26,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":355,"Soot":1424}
+{"Grasses":6799,"Insects":24,"Tarantulas":0,"Predators":3,"EggNests":0,"Fire particles":130,"Soot":520}
+{"Grasses":6414,"Insects":23,"Tarantulas":0,"Predators":2,"EggNests":0,"Fire particles":0,"Soot":499}
+{"Grasses":9343,"Insects":22,"Tarantulas":0,"Predators":2,"EggNests":0,"Fire particles":139,"Soot":461,"Radioactive particles":55}
+{"Grasses":3595,"Insects":18,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":166,"Soot":123,"Radioactive particles":4743}
+{"Grasses":33,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":576,"Soot":0,"Radioactive particles":6155}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":399,"Soot":0,"Radioactive particles":5340}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":811,"Soot":0,"Radioactive particles":5779}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1406,"Soot":0,"Radioactive particles":4845}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1353,"Soot":0,"Radioactive particles":5178}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":607,"Soot":9,"Radioactive particles":5451}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1238,"Soot":499,"Radioactive particles":5097}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":915,"Soot":64,"Radioactive particles":6639}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1764,"Soot":270,"Radioactive particles":4933}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":844,"Soot":252,"Radioactive particles":5922}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":745,"Soot":110,"Radioactive particles":5815}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":943,"Soot":240,"Radioactive particles":5227}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":769,"Soot":234,"Radioactive particles":3938}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":198,"Radioactive particles":791}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":493,"Soot":0,"Radioactive particles":3559}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":878,"Soot":0,"Radioactive particles":1485}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":358,"Soot":2894,"Radioactive particles":2500}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1053,"Soot":1373,"Radioactive particles":1181}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1110,"Soot":7798,"Radioactive particles":42}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":555,"Soot":5741,"Radioactive particles":615}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1429,"Soot":483,"Radioactive particles":3388}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1473,"Soot":3253,"Radioactive particles":1104}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":310,"Soot":8058,"Radioactive particles":272}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":961,"Soot":3497,"Radioactive particles":1355}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":792,"Soot":3918,"Radioactive particles":1710}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":1874,"Radioactive particles":1540}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1005,"Soot":2212,"Radioactive particles":202}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1021,"Soot":7814,"Radioactive particles":548}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":1062,"Radioactive particles":1618}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":0,"Radioactive particles":16}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1630,"Soot":1402,"Radioactive particles":6503}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":6,"Radioactive particles":321}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":509,"Soot":445,"Radioactive particles":0}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":424,"Radioactive particles":5357}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1034,"Soot":0,"Radioactive particles":1660}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":299,"Soot":0,"Radioactive particles":4291}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":822,"Soot":0,"Radioactive particles":1161}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":23,"Soot":0,"Radioactive particles":3668}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1233,"Soot":0,"Radioactive particles":5755}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1405,"Soot":2554,"Radioactive particles":1883}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":19,"Soot":1898,"Radioactive particles":2786}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1332,"Soot":3097,"Radioactive particles":566}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":269,"Soot":9209,"Radioactive particles":2}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":35,"Soot":2124,"Radioactive particles":871}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1108,"Soot":0,"Radioactive particles":2117}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1,"Soot":1633,"Radioactive particles":2418}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":762,"Soot":1362,"Radioactive particles":552}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1145,"Soot":6572,"Radioactive particles":486}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":6093,"Radioactive particles":78}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1132,"Soot":8131,"Radioactive particles":244}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":5389,"Radioactive particles":1748}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":610,"Soot":5023,"Radioactive particles":3348}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":553,"Radioactive particles":1525}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":526,"Soot":6315,"Radioactive particles":2437}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":24,"Soot":1346,"Radioactive particles":2350}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1472,"Soot":6286,"Radioactive particles":1592}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":4128,"Radioactive particles":1839}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1242,"Soot":3553,"Radioactive particles":272}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":2519,"Radioactive particles":3710}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":659,"Soot":831,"Radioactive particles":1269}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":200,"Soot":4992,"Radioactive particles":1747}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":461,"Soot":4506,"Radioactive particles":3208}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":681,"Soot":546,"Radioactive particles":3473}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":309,"Soot":93,"Radioactive particles":5048}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1031,"Soot":565,"Radioactive particles":5515}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1334,"Soot":99,"Radioactive particles":3156}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1114,"Soot":908,"Radioactive particles":5837}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1632,"Soot":196,"Radioactive particles":3814}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":969,"Soot":486,"Radioactive particles":6135}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":339,"Soot":2,"Radioactive particles":5122}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":835,"Soot":237,"Radioactive particles":4561}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1077,"Soot":12,"Radioactive particles":4422}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":797,"Soot":961,"Radioactive particles":5619}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":820,"Soot":1796,"Radioactive particles":4826}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":891,"Soot":1254,"Radioactive particles":3683}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":463,"Soot":1332,"Radioactive particles":4895}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":972,"Soot":326,"Radioactive particles":4210}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1669,"Soot":564,"Radioactive particles":4120}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":668,"Soot":625,"Radioactive particles":5914}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1168,"Soot":116,"Radioactive particles":5501}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":710,"Soot":42,"Radioactive particles":5932}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":604,"Soot":83,"Radioactive particles":4303}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":666,"Soot":813,"Radioactive particles":5545}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":491,"Soot":92,"Radioactive particles":6068}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1473,"Soot":149,"Radioactive particles":5034}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":604,"Soot":12,"Radioactive particles":4707}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":893,"Soot":109,"Radioactive particles":5056}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":609,"Soot":30,"Radioactive particles":6493}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":766,"Soot":22,"Radioactive particles":5729}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":588,"Soot":30,"Radioactive particles":5518}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1485,"Soot":207,"Radioactive particles":4648}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":459,"Soot":9,"Radioactive particles":6938}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":216,"Soot":2,"Radioactive particles":5810}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":614,"Soot":12,"Radioactive particles":4408}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":980,"Soot":101,"Radioactive particles":5213}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1530,"Soot":611,"Radioactive particles":4863}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":805,"Soot":3,"Radioactive particles":5515}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":519,"Soot":123,"Radioactive particles":6270}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":847,"Soot":151,"Radioactive particles":5998}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":855,"Soot":53,"Radioactive particles":5325}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1366,"Soot":3,"Radioactive particles":4884}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1590,"Soot":21,"Radioactive particles":5372}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1027,"Soot":6,"Radioactive particles":6054}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":477,"Soot":0,"Radioactive particles":5879}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":862,"Soot":41,"Radioactive particles":5499}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":1744,"Soot":886,"Radioactive particles":3315}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":752,"Radioactive particles":2027}
+{"Grasses":9,"Insects":16,"Tarantulas":0,"Predators":0,"EggNests":0,"Fire particles":0,"Soot":8,"Radioactive particles":111}
+{"Grasses":250,"Insects":530,"Tarantulas":36,"Predators":10}
+{"Grasses":2194,"Insects":41,"Tarantulas":104,"Predators":10,"EggNests":1}
+{"Grasses":250,"Insects":530,"Tarantulas":36,"Predators":10}
+{"Grasses":250,"Insects":530,"Tarantulas":36,"Predators":10}
+{"Grasses":250,"Insects":530,"Tarantulas":36,"Predators":10}
+{"Grasses":1591,"Insects":39,"Tarantulas":61,"Predators":10,"EggNests":3}
+{"Grasses":6797,"Insects":60,"Tarantulas":1,"Predators":10,"EggNests":0}
+{"Grasses":7580,"Insects":118,"Tarantulas":0,"Predators":13,"EggNests":0}
+{"Grasses":6338,"Insects":49,"Tarantulas":0,"Predators":13,"EggNests":0,"Fire particles":161,"Soot":2360}
+{"Grasses":6089,"Insects":18,"Tarantulas":0,"Predators":6,"EggNests":0,"Fire particles":0,"Soot":1813}
+{"Grasses":9956,"Insects":17,"Tarantulas":0,"Predators":4,"EggNests":0,"Fire particles":0,"Soot":36}
+{"Grasses":10003,"Insects":17,"Tarantulas":0,"Predators":4,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10002,"Insects":17,"Tarantulas":0,"Predators":4,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9993,"Insects":17,"Tarantulas":0,"Predators":4,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10001,"Insects":17,"Tarantulas":0,"Predators":4,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10000,"Insects":17,"Tarantulas":0,"Predators":4,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10000,"Insects":16,"Tarantulas":0,"Predators":4,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9989,"Insects":16,"Tarantulas":0,"Predators":4,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9802,"Insects":16,"Tarantulas":0,"Predators":4,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9639,"Insects":16,"Tarantulas":0,"Predators":4,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9456,"Insects":16,"Tarantulas":0,"Predators":4,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10003,"Insects":16,"Tarantulas":0,"Predators":4,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10005,"Insects":16,"Tarantulas":0,"Predators":4,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9970,"Insects":16,"Tarantulas":0,"Predators":4,"EggNests":0,"Fire particles":24,"Soot":4}
+{"Grasses":9131,"Insects":16,"Tarantulas":0,"Predators":4,"EggNests":0,"Fire particles":423,"Soot":450}
+{"Grasses":7227,"Insects":16,"Tarantulas":0,"Predators":4,"EggNests":0,"Fire particles":784,"Soot":1874}
+{"Grasses":5664,"Insects":16,"Tarantulas":0,"Predators":4,"EggNests":0,"Fire particles":105,"Soot":3517}
+{"Grasses":7247,"Insects":16,"Tarantulas":0,"Predators":4,"EggNests":0,"Fire particles":0,"Soot":1457}
+{"Grasses":9923,"Insects":16,"Tarantulas":0,"Predators":4,"EggNests":0,"Fire particles":0,"Soot":72}
+{"Grasses":9656,"Insects":16,"Tarantulas":0,"Predators":4,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9524,"Insects":16,"Tarantulas":0,"Predators":4,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10004,"Insects":16,"Tarantulas":0,"Predators":4,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10002,"Insects":16,"Tarantulas":0,"Predators":4,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10002,"Insects":16,"Tarantulas":0,"Predators":4,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9995,"Insects":16,"Tarantulas":0,"Predators":4,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10001,"Insects":16,"Tarantulas":0,"Predators":4,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10002,"Insects":16,"Tarantulas":0,"Predators":4,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9997,"Insects":16,"Tarantulas":0,"Predators":4,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":10004,"Insects":16,"Tarantulas":0,"Predators":4,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9871,"Insects":16,"Tarantulas":0,"Predators":4,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":9623,"Insects":16,"Tarantulas":0,"Predators":4,"EggNests":0,"Fire particles":0,"Soot":0}
+{"Grasses":250,"Insects":530,"Tarantulas":36,"Predators":10}
+{"Grasses":250,"Insects":530,"Tarantulas":36,"Predators":10}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":7175,"Insects":74,"Tarantulas":114,"Predators":10,"EggNests":11}
+{"Grasses":9141,"Insects":100,"Tarantulas":23,"Predators":10,"EggNests":5}
+{"Grasses":7395,"Insects":141,"Tarantulas":0,"Predators":10,"EggNests":0}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":7405,"Insects":72,"Tarantulas":99,"Predators":9,"EggNests":7}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":7605,"Insects":66,"Tarantulas":72,"Predators":10,"EggNests":2}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":7083,"Insects":64,"Tarantulas":63,"Predators":10,"EggNests":9}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":7715,"Insects":79,"Tarantulas":97,"Predators":10,"EggNests":16}
+{"Grasses":9294,"Insects":71,"Tarantulas":17,"Predators":10,"EggNests":13}
+{"Grasses":8145,"Insects":51,"Tarantulas":60,"Predators":10,"EggNests":1}
+{"Grasses":6704,"Insects":27,"Tarantulas":5,"Predators":10,"EggNests":0}
+{"Grasses":6019,"Insects":20,"Tarantulas":1,"Predators":10,"EggNests":0}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":7277,"Insects":74,"Tarantulas":89,"Predators":10,"EggNests":10}
+{"Grasses":9481,"Insects":64,"Tarantulas":20,"Predators":20,"EggNests":0}
+{"Grasses":7819,"Insects":103,"Tarantulas":1,"Predators":30,"EggNests":0}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":7543,"Insects":77,"Tarantulas":62,"Predators":10,"EggNests":10}
+{"Grasses":8674,"Insects":190,"Tarantulas":4,"Predators":15,"EggNests":0}
+{"Grasses":5973,"Insects":209,"Tarantulas":1,"Predators":17,"EggNests":0}
+{"Grasses":3796,"Insects":59,"Tarantulas":1,"Predators":14,"EggNests":0}
+{"Grasses":3056,"Insects":26,"Tarantulas":1,"Predators":7,"EggNests":0}
+{"Grasses":9406,"Insects":25,"Tarantulas":1,"Predators":2,"EggNests":0}
+{"Grasses":10050,"Insects":25,"Tarantulas":1,"Predators":2,"EggNests":0}
+{"Grasses":10052,"Insects":25,"Tarantulas":1,"Predators":2,"EggNests":0}
+{"Grasses":9885,"Insects":47,"Tarantulas":1,"Predators":2,"EggNests":0}
+{"Grasses":9542,"Insects":81,"Tarantulas":1,"Predators":2,"EggNests":0}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":7103,"Insects":89,"Tarantulas":83,"Predators":10,"EggNests":1}
+{"Grasses":9210,"Insects":123,"Tarantulas":1,"Predators":10,"EggNests":0}
+{"Grasses":6490,"Insects":197,"Tarantulas":1,"Predators":10,"EggNests":0,"Fire particles":207}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":800,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":7635,"Insects":58,"Tarantulas":105,"Predators":10,"EggNests":8}
+{"Grasses":9226,"Insects":131,"Tarantulas":1,"Predators":13,"EggNests":0}
+{"Grasses":6690,"Insects":175,"Tarantulas":0,"Predators":16,"EggNests":0}
+{"Grasses":4588,"Insects":45,"Tarantulas":0,"Predators":13,"EggNests":0}
+{"Grasses":3811,"Insects":24,"Tarantulas":0,"Predators":12,"EggNests":0}
+{"Grasses":9481,"Insects":20,"Tarantulas":0,"Predators":11,"EggNests":0}
+{"Grasses":5,"Predators":3}
+{"Grasses":57,"Predators":5}
+{"Grasses":17,"Predators":8}
+{"Grasses":0,"Predators":8}
+{"Grasses":5,"Predators":3}
+{"Grasses":18,"Predators":3}
+{"Grasses":47,"Predators":3}
+{"Grasses":33,"Predators":3}
+{"Grasses":0,"Predators":2}
+{"Grasses":5,"Predators":3}
+{"Grasses":5,"Predators":3}
+{"Grasses":5,"Predators":3}
+{"Grasses":69,"Predators":2}
+{"Grasses":81,"Predators":2}
+{"Grasses":51,"Predators":2}
+{"Grasses":21,"Predators":2}
+{"Grasses":11,"Predators":1}
+{"Grasses":5,"Predators":3}
+{"Grasses":5,"Predators":3}
+{"Grasses":5,"Predators":3}
+{"Grasses":46,"Predators":2}
+{"Grasses":5,"Predators":3}
+{"Grasses":5,"Predators":3}
+{"Grasses":5,"Predators":3}
+{"Grasses":47,"Predators":3}
+{"Grasses":28,"Predators":6}
+{"Grasses":0,"Predators":8}
+{"Grasses":80,"Insects":400,"Tarantulas":100,"Predators":10}
+{"Grasses":80,"Insects":366,"Tarantulas":45,"Predators":2}
+{"Grasses":80,"Insects":366,"Tarantulas":45,"Predators":2}
+{"Grasses":80,"Insects":366,"Tarantulas":45,"Predators":2}
+{"Grasses":80,"Insects":366,"Tarantulas":45,"Predators":2}
+{"Grasses":80,"Insects":366,"Tarantulas":45,"Predators":2}
+{"Grasses":80,"Insects":366,"Tarantulas":45,"Predators":2}
+{"Predators":1}
+{"Predators":1}
+{"Predators":1}
+{"Grasses":2,"Insects":6,"Tarantulas":2}
+{"Grasses":2,"Insects":6,"Tarantulas":2}
+{"Grasses":53,"Insects":1,"Tarantulas":0}
+{"Grasses":2,"Insects":6,"Tarantulas":2}

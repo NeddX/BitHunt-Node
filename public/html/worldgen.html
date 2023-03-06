@@ -18,11 +18,11 @@
 					<br>
                     <div id="form">
 					    <form action="game.html" method="GET">
-					    <label for="worldWidth" class="genericText" id="text">World Width: </label>
+					    <!--<label for="worldWidth" class="genericText" id="text">World Width: </label>
 					    <input type="number" id="worldWidth" name="worldWidth">
-					    <br>
-					    <label for="worldHeight" class="genericText" id="text">World Height: </label>
-					    <input type="number" id="worldHeight" name="worldHeight">
+					    <br>-->
+					    <label for="worldSize" class="genericText" id="text">World Size: </label>
+					    <input type="number" id="worldSize" name="worldSize">
 					    <br>
 					    <label for="grassCount" class="genericText" id="text">Grass Count: </label>
 					    <input type="number" id="grassCount" name="grassCount">
@@ -52,7 +52,7 @@
                     <br>
                     <div id="buttons">
 					    <button class="genericButton" onclick="sessionStorage.setItem('entityData', JSON.stringify(entities));">Start</button>
-					    <button class="genericButton">Randomize</button>
+					    <button class="genericButton" type="button" onclick="randomize()">Randomize</button>
                     </div>
                     </div>
                 </div>

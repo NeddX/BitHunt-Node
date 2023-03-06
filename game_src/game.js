@@ -65,7 +65,7 @@ class Scene
 			mouseDown:	0
 		};
 		this.eventStack = new Map();
-        this.possibleCauseOfEnd = "Natural Causes";
+        this.possibleCauseOfEnd = "Natural Selection";
 	}
 
     worldGen(

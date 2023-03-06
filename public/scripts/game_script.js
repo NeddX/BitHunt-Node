@@ -290,14 +290,36 @@ function onButtonClick(eventArgs)
             activeElement = GElement.Bomb;
         else if (eventArgs.srcElement.id == "resetBtn")
             location.reload();
-        
+		else if (eventArgs.srcElement.id == "backBtn")
+		{
+			document.querySelector("#background")
+                .querySelectorAll("img")
+                .forEach(e => 
+				{ 
+					e.style.transitionDuration = "0.3s";
+					e.style.opacity = 0; 
+				});
+			setTimeout(() => 
+			{
+				window.location.href = "../html/worldgen.html";
+			}, 300);	
+        }
+
         document.getElementById("elementIndicator").textContent = `Active element: ${GElementStr[activeElement]}`;
     }, 100);
 }
 
 function gameOver(reasoning)
 {
-    renderer.clear();
+	document.querySelector("#background")
+		.querySelectorAll("img")
+        .forEach(e => 
+		{ 
+			e.style.transitionDuration = "5s";
+			e.style.opacity = 0; 
+		});
+
+	renderer.clear();
     run = false;
     const music = soundBank.get("defeat");
     music.loop = false;
@@ -338,12 +360,10 @@ function soundInit()
 }
 
 function main()
-{	
+{
     const jsonData = sessionStorage.getItem("entityData").toString();
-    const encodedData = encoder.encode(jsonData);
-    const entCompressed = pako.deflate(encodedData);
-
-    debugger;
+	const entCompressed = pako.deflate(jsonData);
+	
 	socket.on("render_update", renderPacketHandler);
     socket.on("stat_update", statPacketHandler);
     socket.on("init_finished", () =>
@@ -389,8 +409,8 @@ function main()
     
     socket.emit("init_game", 
     {
-        worldWidth:     urlParams.get("worldWidth"),
-        worldHeight:    urlParams.get("worldHeight"),
+        worldWidth:     urlParams.get("worldSize"),
+        worldHeight:    urlParams.get("worldSize"),
         pixelSize:      8,
         /*grassCount:     urlParams.get("grassCount"),
         insectCount:    urlParams.get("insectCount"),
@@ -398,7 +418,6 @@ function main()
         predatorCount: urlParams.get("predatorCount")*/
         entityData:     entCompressed
     });
-    debugger;
 }
 
 window.onload = main;
