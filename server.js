@@ -19,6 +19,22 @@ socketIO.on("connection", (socket) =>
 {
     console.log(`Client: '${socket.id}' connected!`);
 
+    const arr = 
+    [
+        {
+            id: 0,
+            mass: 255
+        },
+        {
+            id: 2,
+            mass: 255
+        },
+        {
+            id: 3,
+            mass: 255
+        },
+    ];
+
     socket.on("init_game", (gameProperties) =>
     {
         let fps = 0;
@@ -31,8 +47,9 @@ socketIO.on("connection", (socket) =>
             gameProperties.pixelSize
         );
         gameInstances[socket.id.toString()] = gameInst;
-        const buffer = Object.values(gameProperties.entityData);
-        gameInst.init(zlib.inflateSync(buffer).toString());
+
+        // decompress here
+
         socket.emit("init_finished");
 
 		const engineThread = setInterval(function updateThread()

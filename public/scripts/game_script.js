@@ -1,4 +1,5 @@
 const socket = io();
+const encoder = new TextEncoder();
 const urlParams = new URLSearchParams(window.location.search);
 const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
 
@@ -338,8 +339,11 @@ function soundInit()
 
 function main()
 {	
-    const entCompressed = pako.deflate(sessionStorage.getItem("entityData"));
+    const jsonData = sessionStorage.getItem("entityData").toString();
+    const encodedData = encoder.encode(jsonData);
+    const entCompressed = pako.deflate(encodedData);
 
+    debugger;
 	socket.on("render_update", renderPacketHandler);
     socket.on("stat_update", statPacketHandler);
     socket.on("init_finished", () =>
@@ -383,7 +387,6 @@ function main()
         gameOver(reasoning);
     });
     
-    debugger;
     socket.emit("init_game", 
     {
         worldWidth:     urlParams.get("worldWidth"),
@@ -395,6 +398,7 @@ function main()
         predatorCount: urlParams.get("predatorCount")*/
         entityData:     entCompressed
     });
+    debugger;
 }
 
 window.onload = main;
