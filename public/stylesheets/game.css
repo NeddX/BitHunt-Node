@@ -128,7 +128,6 @@
     position: relative;
     display: flex;
     background-color: #ffffff;
-	align-self: auto;
 }
 
 #gameCanvas

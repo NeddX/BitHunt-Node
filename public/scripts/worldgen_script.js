@@ -1,5 +1,6 @@
 const renderer = new Renderer();
 const backgroundMusic = new Audio("../assets/music/dbSoundworks/thisworld5.ogg");
+const clickSfx = new Audio("../assets/sfx/click.wav");
 const pixelSize = 8;
 const templates =
 [   
@@ -212,6 +213,11 @@ function worldGen()
     }
 }
 
+function onButtonClick(eventArgs)
+{
+    clickSfx.play();
+}
+
 function main()
 {
     gameCanvasContainer = document.getElementById("gameCanvasContainer");
@@ -230,7 +236,12 @@ function main()
     UpdateFormInputFields();
 	backgroundMusic.loop = true;
 	backgroundMusic.volume = 0.3;
+    clickSfx.volume = 0.1;
 	backgroundMusic.play();
+
+    const buttons = document.getElementsByTagName("button");
+    for (let i = 0; i < buttons.length; ++i)
+        buttons[i].addEventListener("click", onButtonClick);
 
     // trigger fake event
     const changeEvent = new Event("change");
