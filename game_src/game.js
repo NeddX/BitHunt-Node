@@ -188,7 +188,7 @@ class Scene
 
     onMouseDown(eventArgs)
     {
-        const mX = Math.round(eventArgs.x / (this.renderer.width		/ this.width));
+        const mX = Math.round(eventArgs.x / (this.renderer.width	/ this.width));
 		const mY = Math.round(eventArgs.y / (this.renderer.height	/ this.height));
         
         switch (eventArgs.element)
@@ -196,34 +196,31 @@ class Scene
             case this.GElement.Bomb:
             {
                 const radius = 10;
-                const minVec =
-                {
-                    x:	mX - radius,
-                    y:	mY - radius
-                };
-                const maxVec =
-                {
-                    x:	mX + radius,
-                    y:	mY + radius
-                };
-                const lenX = maxVec.x - minVec.x;
-                const lenY = maxVec.y - minVec.y;
-                const maxOneFX = Math.round(lenX * 0.25);
-                const maxOneFY = Math.round(lenY * 0.25);
-                let i = maxOneFY;
-                let j = maxOneFX;
-                for (let y = minVec.y; y < maxVec.y; ++y)
-                {
-                    for (let x = minVec.x + j; x < maxVec.x - j; ++x)
-                    {
-                        const entity = this.getEntityAtLocation(x, y);
-                        if (entity) this.remove(entity);
-                    }
-                    if (y > maxVec.y / 2)
-                        j = (j > 0) ? j - 1 : 0;
-                    else 
-                        j = (j < maxOneFX) ? j + 1 : j; 
-                }
+				const minVec = 
+				{
+					x:	mX - (radius / 2),
+					y:	mY - (radius / 2)
+				};
+				const maxVec =
+				{
+					x:	mX + (radius / 2),
+					y:	mY + (radius / 2)
+				};
+				
+				let max = Math.round(radius * 0.16);
+				let i = max;
+				for (let y = 10; y < radius; ++y)
+				{
+					for (let x = 10 + i; x < radius - i; ++x)
+					{
+						const ent = this.getEntityAtLocation(x, y);
+						if (ent) this.remove(ent);
+					}
+					
+					if (radius - y - 1 <= max ) i++;
+					else if (i > 0) i--;
+				}
+				
                 this.add(
                     entities.Explosion, 
                     mX, 

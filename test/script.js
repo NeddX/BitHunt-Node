@@ -1,4 +1,44 @@
 const renderer = new Renderer();
+const pixelSize = 8;
+const centerX = 10;
+const centerY = 10;
+const radius = 5;
+
+function drawCircle(renderer, x, y)
+{
+    renderer.renderRect(x * pixelSize, y * pixelSize, pixelSize, pixelSize);
+    renderer.renderRect(x * pixelSize, (2 * centerY - y) * pixelSize, pixelSize, pixelSize);
+    renderer.renderRect((2 * centerX - x) * pixelSize, y * pixelSize, pixelSize, pixelSize);
+    renderer.renderRect((2 * centerX - x) * pixelSize, (2 * centerY - y) * pixelSize, pixelSize, pixelSize);
+}
+
+function kirkler()
+{
+	let x = 0;
+	let y = radius;
+	let d = 1 - radius;
+while (x <= y)
+{
+    drawCircle(renderer, centerX + x, centerY + y);
+    drawCircle(renderer, centerX + y, centerY + x);
+    drawCircle(renderer, centerX - x, centerY + y);
+    drawCircle(renderer, centerX - y, centerY + x);
+    drawCircle(renderer, centerX + x, centerY - y);
+    drawCircle(renderer, centerX + y, centerY - x);
+    drawCircle(renderer, centerX - x, centerY - y);
+    drawCircle(renderer, centerX - y, centerY - x);
+    if (d < 0)
+    {
+        d += 2 * x + 3;
+    }
+    else
+    {
+        d += 2 * (x - y) + 5;
+        y--;
+    }
+    x++;
+}
+}
 
 function main()
 {
@@ -7,22 +47,24 @@ function main()
 	renderer.clear();
 	document.body.appendChild(renderer.canvas);
 	
-	const pixelSize = 8;
-	const x1 = 10;
-	const y1 = 10;
-	const radius = 30;
+	kirkler();
+	return;
 	
-	let i = radius * 0.5;
-	for (let y = y1; y < y1 + radius; ++y)
+	
+	/*
+	let max = Math.round(radius * 0.16);
+	let i = max;
+	for (let y = 0; y < radius; ++y)
 	{
-		for (let x = x1 + i; x < x1 + radius - i; ++x)
+		for (let x = i; x < radius - i; ++x)
 		{
-			renderer.renderRect(
-				x * pixelSize, 
-				y * pixelSize, 
-				pixelSize,
-				pixelSize);
+			renderer.renderRect(x * pixelSize, y * pixelSize, pixelSize, pixelSize); 
 		}
+		
+		
+		if (radius - y - 1 <= max ) i++;
+		else if (i > 0) i--;
 	}
+	*/
 }
 window.onload = main;
