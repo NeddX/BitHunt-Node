@@ -195,7 +195,8 @@ class Scene
         {
             case this.GElement.Bomb:
             {
-                const radius = 10;
+                const radius = 20;
+                const borderRadius = 0.25;
 				const minVec = 
 				{
 					x:	mX - (radius / 2),
@@ -206,20 +207,20 @@ class Scene
 					x:	mX + (radius / 2),
 					y:	mY + (radius / 2)
 				};
-				
-				let max = Math.round(radius * 0.16);
+
+				const max = Math.round(radius * borderRadius);
 				let i = max;
-				for (let y = 10; y < radius; ++y)
-				{
-					for (let x = 10 + i; x < radius - i; ++x)
-					{
-						const ent = this.getEntityAtLocation(x, y);
-						if (ent) this.remove(ent);
-					}
-					
-					if (radius - y - 1 <= max ) i++;
-					else if (i > 0) i--;
-				}
+                for (let y = minVec.y; y < maxVec.y; ++y)
+                {
+                    for (let x = minVec.x + i; x < maxVec.x - i; ++x)
+                    {
+                        const entity = this.getEntityAtLocation(x, y);
+                        if (entity) this.remove(entity);
+                    }
+
+                    if (maxVec.y - y - 1 <= max) i++;
+                    else if (i > 0) i--;
+                }
 				
                 this.add(
                     entities.Explosion, 
@@ -233,35 +234,33 @@ class Scene
             }
             case this.GElement.Radiation:
             {
-                const radius = 10;
-                const minVec =
-                {
-                    x:	mX - radius,
-                    y:	mY - radius
-                };
-                const maxVec =
-                {
-                    x:	mX + radius,
-                    y:	mY + radius
-                };
-                const lenX = maxVec.x - minVec.x;
-                const lenY = maxVec.y - minVec.y;
-                const maxOneFX = Math.round(lenX * 0.25);
-                const maxOneFY = Math.round(lenY * 0.25);
-                let i = maxOneFY;
-                let j = maxOneFX;
+                const radius = 20;
+                const borderRadius = 0.25;
+				const minVec = 
+				{
+					x:	mX - (radius / 2),
+					y:	mY - (radius / 2)
+				};
+				const maxVec =
+				{
+					x:	mX + (radius / 2),
+					y:	mY + (radius / 2)
+				};
+
+				const max = Math.round(radius * borderRadius);
+				let i = max;
                 for (let y = minVec.y; y < maxVec.y; ++y)
                 {
-                    for (let x = minVec.x + j; x < maxVec.x - j; ++x)
+                    for (let x = minVec.x + i; x < maxVec.x - i; ++x)
                     {
                         const entity = this.getEntityAtLocation(x, y);
                         if (entity) this.remove(entity);
                     }
-                    if (y > maxVec.y / 2)
-                        j = (j > 0) ? j - 1 : 0;
-                    else 
-                        j = (j < maxOneFX) ? j + 1 : j; 
+
+                    if (maxVec.y - y - 1 <= max) i++;
+                    else if (i > 0) i--;
                 }
+                
                 this.add(
                     entities.Explosion, 
                     mX, 
