@@ -23,7 +23,7 @@ Download all of the necessary dependencies for this to work!
 The main file is `server.js` so run it by typing `node server.js` into your shell.
 The server listens on the port 80 so you can just type `localhost` in your browser and connect to it.
 
-# Credit
+# Credits
 - Relogic for the background pictures located in `public/assets/images`.
 - The two unknown guys whom I stole the Nuke and Bomb pictures from.
 - Data Realms and dbSoundworks for the music located in `public/assets/music`.
