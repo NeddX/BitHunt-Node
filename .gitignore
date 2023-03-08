@@ -1,5 +1,5 @@
+node_modules/
 .ignore/
 .vscode/
-.vs/
-.node_modules/
+.vs/z
 .test/
