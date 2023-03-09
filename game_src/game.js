@@ -178,6 +178,7 @@ class Scene
                     break;
             }
         }
+        if (deltaTime > 0) arr.push(`FPS: ${Math.round(1 / deltaTime)}`);
         arr.push(`Season: ${this.SeasonStr[this.currentSeason]}`);
         const jsonData = JSON.stringify(arr);
         this.socket.emit("stat_update", jsonData);

@@ -46,12 +46,11 @@ socketIO.on("connection", (socket) =>
                 const deltaTime = lastUpdateTime ? (now - lastUpdateTime) / 1000 : 0;
                 lastUpdateTime = now;
                 fps = Math.round(1 / deltaTime);
-                //gameInst.render();
                 gameInst.update(deltaTime);
                 //process.stdout.write(`\rfps: ${fps}     `);
             }
             else clearInterval(engineThread);
-        }, 50);
+        }, 40);
     });
 
     socket.on("disconnect", () =>
