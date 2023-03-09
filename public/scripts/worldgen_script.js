@@ -3,49 +3,49 @@ const backgroundMusic = new Audio("../assets/music/dbSoundworks/thisworld5.ogg")
 const clickSfx = new Audio("../assets/sfx/click.wav");
 const pixelSize = 8;
 const templates =
-[   
-    // Grass,       Insect,     Tarantula,      Predator
-    [ 0.08,         0.04,       0.01,           0.001               ],
-    [ 0.05,         0.04,       0.001,          0.0005              ],
-    [ 0.1,          0.03,       0.03,           0.001               ],
-    [ 0.05,         0.05,       0.01,           0.03                ],
-    [ 0.05,         0.01,       0.0,            0.0                 ],
-	[ 0.0,			0.0,		0.0,			0.0					]
-];
+    [
+        // Grass,       Insect,     Tarantula,      Predator
+        [0.08, 0.04, 0.01, 0.001],
+        [0.05, 0.04, 0.001, 0.0005],
+        [0.1, 0.03, 0.03, 0.001],
+        [0.05, 0.05, 0.01, 0.03],
+        [0.05, 0.01, 0.0, 0.0],
+        [0.0, 0.0, 0.0, 0.0]
+    ];
 
-const Tags = 
+const Tags =
 {
-    nullobj:       -1,
-    Floor:          0,
-    Grass:          1,
-    Predator:       2,
-    Insect:         3,
-    Tarantula:      4,
-    EggNest:        5,
-    Fire:           6,
-    Uran:           7,
-    Soot:           8
+    nullobj: -1,
+    Floor: 0,
+    Grass: 1,
+    Predator: 2,
+    Insect: 3,
+    Tarantula: 4,
+    EggNest: 5,
+    Fire: 6,
+    Uran: 7,
+    Soot: 8
 };
 
 const Colours =
-[
-    "#ffffff",
-    "#32a846",
-    "#c40017",
-    "#f2ca35",
-    "#000f4d",
-];
+    [
+        "#ffffff",
+        "#32a846",
+        "#c40017",
+        "#f2ca35",
+        "#000f4d",
+    ];
 
 let entities = [];
-let templateSelector    = null;
-let form                = null;
+let templateSelector = null;
+let form = null;
 let gameCanvasContainer = null;
 let propertyFields = new Map();
-propertyFields.set("worldSize",       0);
-propertyFields.set("grassCount",       0);
-propertyFields.set("insectCount",      0);
-propertyFields.set("tarantulaCount",   0);
-propertyFields.set("predatorCount",    0);
+propertyFields.set("worldSize", 0);
+propertyFields.set("grassCount", 0);
+propertyFields.set("insectCount", 0);
+propertyFields.set("tarantulaCount", 0);
+propertyFields.set("predatorCount", 0);
 
 function UpdateFormInputFields()
 {
@@ -59,7 +59,7 @@ function OnTemplateSelect(eventArgs)
     const currentTemplate = templates[this.selectedIndex];
     if (propertyFields.get("worldSize") == 0)
     {
-        propertyFields.set("worldSize",   100);
+        propertyFields.set("worldSize", 100);
         UpdateFormInputFields();
     }
     const size = propertyFields.get("worldSize") * propertyFields.get("worldSize");
@@ -67,7 +67,7 @@ function OnTemplateSelect(eventArgs)
     let i = -1;
     const newMap = new Map(propertyFields);
     for (const [key, value] of propertyFields)
-    {   
+    {
         if (i >= 0)
         {
             lastSize = Math.round(size * currentTemplate[i] / 1.0);//Math.round(Math.random() * ((size - lastSize) * currentTemplate[i] / 1.0));
@@ -87,20 +87,20 @@ function OnInputTextChange(eventArgs)
 
 function randomize()
 {
-	let max = Math.random() * (0.4 - 0.01) + 0.01;
-	const currentTemplate = templates[templates.length - 1];	
+    let max = Math.random() * (0.4 - 0.01) + 0.01;
+    const currentTemplate = templates[templates.length - 1];
     for (let i = 0; i < currentTemplate.length; ++i)
-	{
-		currentTemplate[i] = Math.random() * max;
-		max -= currentTemplate[i];
-	}
+    {
+        currentTemplate[i] = Math.random() * max;
+        max -= currentTemplate[i];
+    }
 
-	const size = propertyFields.get("worldSize") * propertyFields.get("worldSize");
+    const size = propertyFields.get("worldSize") * propertyFields.get("worldSize");
     let lastSize = 0;
     let i = -1;
     const newMap = new Map(propertyFields);
     for (const [key, value] of propertyFields)
-    {   
+    {
         if (i >= 0)
         {
             lastSize = Math.round(size * currentTemplate[i] / 1.0);//Math.round(Math.random() * ((size - lastSize) * currentTemplate[i] / 1.0));
@@ -109,7 +109,18 @@ function randomize()
         i++;
     }
     propertyFields = newMap;
-    UpdateFormInputFields();	
+    UpdateFormInputFields();
+}
+
+function isEmpty(x, y)
+{
+    for (let i = 0; i < entities.length; ++i)
+    {
+        const data = entities[i];
+        if (data.x == x && data.y == y)
+            return false;
+    }
+    return true;
 }
 
 function worldGen()
@@ -131,85 +142,101 @@ function worldGen()
     // Spawn Grass
     for (let i = 0; i < grassCount; ++i)
     {
-        const data = 
-        { 
+        const data =
+        {
             tag: Tags.Grass,
-            x: Math.round(Math.random() * (size	- 1)), 
-            y: Math.round(Math.random() * (size	- 1)),
+            x: Math.round(Math.random() * (size - 1)),
+            y: Math.round(Math.random() * (size - 1)),
             w: pixelSize,
             h: pixelSize
         };
-        entities.push(data);
-        renderer.renderRect(
-            data.x * pixelSize, 
-            data.y * pixelSize, 
-            pixelSize, 
-            pixelSize, 
-            Colours[Tags.Grass]
-        );
+        if (isEmpty(data.x, data.y))
+        {
+            entities.push(data);
+            renderer.renderRect(
+                data.x * pixelSize,
+                data.y * pixelSize,
+                pixelSize,
+                pixelSize,
+                Colours[Tags.Grass]
+            );
+        }
+        else i--;
     }
-    
+
     // Spawn Insects
     for (let i = 0; i < insectCount; ++i)
     {
-        const data = 
-        { 
+        const data =
+        {
             tag: Tags.Insect,
-            x: Math.round(Math.random() * (size	- 1)), 
-            y: Math.round(Math.random() * (size	- 1)),
+            x: Math.round(Math.random() * (size - 1)),
+            y: Math.round(Math.random() * (size - 1)),
             w: pixelSize,
             h: pixelSize
         };
-        entities.push(data);
-        renderer.renderRect(
-            data.x * pixelSize, 
-            data.y * pixelSize, 
-            pixelSize, 
-            pixelSize, 
-            Colours[Tags.Insect]
-        );
+        if (isEmpty(data.x, data.y))
+        {
+            entities.push(data);
+            renderer.renderRect(
+                data.x * pixelSize,
+                data.y * pixelSize,
+                pixelSize,
+                pixelSize,
+                Colours[Tags.Insect]
+            );
+        }
+        else i--;
     }
 
     // Spawn Tarantulas
     for (let i = 0; i < tarantulaCount; ++i)
     {
-        const data = 
-        { 
+        const data =
+        {
             tag: Tags.Tarantula,
-            x: Math.round(Math.random() * (size	- 1)), 
-            y: Math.round(Math.random() * (size	- 1)),
+            x: Math.round(Math.random() * (size - 1)),
+            y: Math.round(Math.random() * (size - 1)),
             w: pixelSize,
             h: pixelSize
         };
-        entities.push(data);
-        renderer.renderRect(
-            data.x * pixelSize, 
-            data.y * pixelSize, 
-            pixelSize, 
-            pixelSize, 
-            Colours[Tags.Tarantula]
-        );
+        if (isEmpty(data.x, data.y))
+        {
+            entities.push(data);
+            renderer.renderRect(
+                data.x * pixelSize,
+                data.y * pixelSize,
+                pixelSize,
+                pixelSize,
+                Colours[Tags.Tarantula]
+            );
+        }
+        else i--;
     }
 
     // Spawn predators
     for (let i = 0; i < predatorCount; ++i)
     {
-        const data = 
-        { 
+        const data =
+        {
             tag: Tags.Predator,
-            x: Math.round(Math.random() * (size	- 1)), 
-            y: Math.round(Math.random() * (size	- 1)),
+            x: Math.round(Math.random() * (size - 1)),
+            y: Math.round(Math.random() * (size - 1)),
             w: pixelSize,
             h: pixelSize
         };
-        entities.push(data);
-        renderer.renderRect(
-            data.x * pixelSize, 
-            data.y * pixelSize, 
-            pixelSize, 
-            pixelSize, 
-            Colours[Tags.Predator]
-        );
+        if (isEmpty(data.x, data.y))
+        {
+            entities.push(data);
+            renderer.renderRect(
+                data.x * pixelSize,
+                data.y * pixelSize,
+                pixelSize,
+                pixelSize,
+                Colours[Tags.Predator]
+            );
+        }
+        else i--;
     }
 }
 
@@ -234,10 +261,10 @@ function main()
     fields.forEach(e => { e.addEventListener("change", OnInputTextChange); });
 
     UpdateFormInputFields();
-	backgroundMusic.loop = true;
-	backgroundMusic.volume = 0.3;
+    backgroundMusic.loop = true;
+    backgroundMusic.volume = 0.3;
     clickSfx.volume = 0.1;
-	backgroundMusic.play();
+    backgroundMusic.play();
 
     const buttons = document.getElementsByTagName("button");
     for (let i = 0; i < buttons.length; ++i)

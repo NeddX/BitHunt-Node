@@ -21,21 +21,21 @@ class Entity
         this.renderer = null;
         this.colour = "#000000";
     }
-    
+
     init()
     {
         this.Tags = this.currentScene.Tags;
-        this.range = 
-        [
-            { x: this.x - 1,    y: this.y - 1 },
-            { x: this.x,        y: this.y - 1 },
-            { x: this.x + 1,    y: this.y - 1 },
-            { x: this.x - 1,    y: this.y     },
-            { x: this.x + 1,    y: this.y     },
-            { x: this.x - 1,    y: this.y + 1 },
-            { x: this.x,        y: this.y + 1 },
-            { x: this.x + 1,    y: this.y + 1 },
-        ];
+        this.range =
+            [
+                { x: this.x - 1, y: this.y - 1 },
+                { x: this.x, y: this.y - 1 },
+                { x: this.x + 1, y: this.y - 1 },
+                { x: this.x - 1, y: this.y },
+                { x: this.x + 1, y: this.y },
+                { x: this.x - 1, y: this.y + 1 },
+                { x: this.x, y: this.y + 1 },
+                { x: this.x + 1, y: this.y + 1 },
+            ];
         this.tags = this.Tags.nullobj;
         this.Season = this.currentScene.Season;
         this.currentSeason = this.currentScene.currentSeason;
@@ -43,28 +43,28 @@ class Entity
 
     checkFor(tags = [])
     {
-        this.range = 
-        [
-            { x: this.x - 1,    y: this.y - 1 },
-            { x: this.x,        y: this.y - 1 },
-            { x: this.x + 1,    y: this.y - 1 },
-            { x: this.x - 1,    y: this.y     },
-            { x: this.x + 1,    y: this.y     },
-            { x: this.x - 1,    y: this.y + 1 },
-            { x: this.x,        y: this.y + 1 },
-            { x: this.x + 1,    y: this.y + 1 },
-        ];
+        this.range =
+            [
+                { x: this.x - 1, y: this.y - 1 },
+                { x: this.x, y: this.y - 1 },
+                { x: this.x + 1, y: this.y - 1 },
+                { x: this.x - 1, y: this.y },
+                { x: this.x + 1, y: this.y },
+                { x: this.x - 1, y: this.y + 1 },
+                { x: this.x, y: this.y + 1 },
+                { x: this.x + 1, y: this.y + 1 },
+            ];
 
         const found = [];
         for (let i = 0; i < this.range.length; ++i)
         {
-            if (this.range[i].x <= this.currentScene.width - 1 
+            if (this.range[i].x <= this.currentScene.width - 1
                 && this.range[i].y <= this.currentScene.height - 1
-                && this.range[i].x >= 0 
+                && this.range[i].x >= 0
                 && this.range[i].y >= 0)
             {
                 const obj = this.currentScene.getEntityAtLocation(
-                    this.range[i].x, 
+                    this.range[i].x,
                     this.range[i].y);
                 if (obj)
                 {
@@ -76,10 +76,10 @@ class Entity
                         }
                     }
                 }
-                else if (!obj 
+                else if (!obj
                     && (tags.includes(this.Tags.Floor)
-					|| tags.includes(this.Tags.nullobj))) 
-                {  
+                        || tags.includes(this.Tags.nullobj))) 
+                {
                     found.push(this.range[i]);
                 }
             }
@@ -89,35 +89,35 @@ class Entity
 
     checkForAny(checkForEmpty = false)
     {
-        this.range = 
-        [
-            { x: this.x - 1,    y: this.y - 1 },
-            { x: this.x,        y: this.y - 1 },
-            { x: this.x + 1,    y: this.y - 1 },
-            { x: this.x - 1,    y: this.y     },
-            { x: this.x + 1,    y: this.y     },
-            { x: this.x - 1,    y: this.y + 1 },
-            { x: this.x,        y: this.y + 1 },
-            { x: this.x + 1,    y: this.y + 1 },
-        ];
+        this.range =
+            [
+                { x: this.x - 1, y: this.y - 1 },
+                { x: this.x, y: this.y - 1 },
+                { x: this.x + 1, y: this.y - 1 },
+                { x: this.x - 1, y: this.y },
+                { x: this.x + 1, y: this.y },
+                { x: this.x - 1, y: this.y + 1 },
+                { x: this.x, y: this.y + 1 },
+                { x: this.x + 1, y: this.y + 1 },
+            ];
 
         const found = [];
         for (let i = 0; i < this.range.length; ++i)
         {
-            if (this.range[i].x <= this.currentScene.width - 1 
+            if (this.range[i].x <= this.currentScene.width - 1
                 && this.range[i].y <= this.currentScene.height - 1
-                && this.range[i].x >= 0 
+                && this.range[i].x >= 0
                 && this.range[i].y >= 0)
             {
                 const obj = this.currentScene.getEntityAtLocation(
-                    this.range[i].x, 
+                    this.range[i].x,
                     this.range[i].y);
                 if (obj)
                 {
                     found.push(this.range[i]);
                 }
                 else if (checkForEmpty) 
-                {  
+                {
                     found.push(this.range[i]);
                 }
             }
@@ -127,28 +127,28 @@ class Entity
 
     checkForAnyExcept(tags, checkForEmpty = false)
     {
-        this.range = 
-        [
-            { x: this.x - 1,    y: this.y - 1 },
-            { x: this.x,        y: this.y - 1 },
-            { x: this.x + 1,    y: this.y - 1 },
-            { x: this.x - 1,    y: this.y     },
-            { x: this.x + 1,    y: this.y     },
-            { x: this.x - 1,    y: this.y + 1 },
-            { x: this.x,        y: this.y + 1 },
-            { x: this.x + 1,    y: this.y + 1 },
-        ];
+        this.range =
+            [
+                { x: this.x - 1, y: this.y - 1 },
+                { x: this.x, y: this.y - 1 },
+                { x: this.x + 1, y: this.y - 1 },
+                { x: this.x - 1, y: this.y },
+                { x: this.x + 1, y: this.y },
+                { x: this.x - 1, y: this.y + 1 },
+                { x: this.x, y: this.y + 1 },
+                { x: this.x + 1, y: this.y + 1 },
+            ];
 
         const found = [];
         for (let i = 0; i < this.range.length; ++i)
         {
-            if (this.range[i].x <= this.currentScene.width - 1 
+            if (this.range[i].x <= this.currentScene.width - 1
                 && this.range[i].y <= this.currentScene.height - 1
-                && this.range[i].x >= 0 
+                && this.range[i].x >= 0
                 && this.range[i].y >= 0)
             {
                 const obj = this.currentScene.getEntityAtLocation(
-                    this.range[i].x, 
+                    this.range[i].x,
                     this.range[i].y);
                 if (obj)
                 {
@@ -173,7 +173,7 @@ class Entity
         }
         return found;
     }
-    
+
     setPosition(x, y)
     {
         this.currentScene.setEntityLocation(this, x, y);
@@ -181,16 +181,16 @@ class Entity
 
     update(deltaTime)
     {
-        
+
     }
 
     render(deltaTime)
     {
         this.renderer.renderRect(
-            this.x * this.w, 
-            this.y * this.h, 
-            this.w, 
-            this.h, 
+            this.x * this.w,
+            this.y * this.h,
+            this.w,
+            this.h,
             this.colour);
     }
 
@@ -198,11 +198,11 @@ class Entity
     {
         const data =
         {
-            tag:    this.tag,
-            x:      this.x,
-            y:      this.y,
-            w:      this.w,
-            h:      this.h
+            tag: this.tag,
+            x: this.x,
+            y: this.y,
+            w: this.w,
+            h: this.h
         };
         ostream.push(data);
     }
@@ -236,7 +236,7 @@ class Grass extends Entity
                 this.colour = "#94e8ff";
                 break;
             case this.Season.Summer:
-                this.colour = "#a18b00"
+                this.colour = "#a18b00";
                 break;
             default:
                 this.colour = "#32a846";
@@ -254,17 +254,17 @@ class Grass extends Entity
                 this.colour = "#94e8ff";
                 break;
             case this.Season.Spring:
-                    this.colour = "#32a846";
-                    if (this.lifeTime >= this.requiredTime - this.requiredTime / 2)
+                this.colour = "#32a846";
+                if (this.lifeTime >= this.requiredTime - this.requiredTime / 2)
+                {
+                    const freeCells = this.checkFor([this.Tags.Floor]);
+                    if (freeCells.length > 0 && freeCells)
                     {
-                        const freeCells = this.checkFor([this.Tags.Floor]);
-                        if (freeCells.length > 0 && freeCells)
-                        {
-                            const cell = freeCells[Math.round(Math.random() * (freeCells.length - 1))];
-                            this.currentScene.add(Grass, cell.x, cell.y, this.w, this.h);
-                        }
-                        this.lifeTime = 0;
+                        const cell = freeCells[Math.round(Math.random() * (freeCells.length - 1))];
+                        this.currentScene.add(Grass, cell.x, cell.y, this.w, this.h);
                     }
+                    this.lifeTime = 0;
+                }
                 break;
             case this.Season.Summer:
                 this.colour = "#a18b00";
@@ -311,17 +311,17 @@ class Predator extends Entity
         this.requiredEnergy = 7;
         this.lifeExpectancy = 80;
         this.lifeTime = this.lifeExpectancy;
-        this.food = 
-        [
-            this.Tags.Grass, 
-            this.Tags.Insect, 
-            this.Tags.Tarantula, 
-            this.Tags.EggNest
-        ];
+        this.food =
+            [
+                this.Tags.Grass,
+                this.Tags.Insect,
+                this.Tags.Tarantula,
+                this.Tags.EggNest
+            ];
         this.canWalkOn =
-        [
-            this.Tags.Floor
-        ];
+            [
+                this.Tags.Floor
+            ];
         this.colour = "#c40017";
         this.gender = Math.round(Math.random());
     }
@@ -469,7 +469,7 @@ class EggNest extends Entity
             {
                 const obj = this.currentScene.getEntityAtLocation(cells[i].x, cells[i].y);
                 if (obj)
-                    this.currentScene.remove(obj); 
+                    this.currentScene.remove(obj);
                 this.currentScene.add(this.entityType, cells[i].x, cells[i].y, this.w, this.h);
             }
             this.currentScene.remove(this);
@@ -493,11 +493,11 @@ class Tarantula extends Predator
         this.lifeExpectancy = 50;
         this.lifeTime = this.lifeExpectancy;
         this.food = [this.Tags.Insect];
-        this.canWalkOn = 
-        [
-            this.Tags.Floor,
-            this.Tags.Grass
-        ];
+        this.canWalkOn =
+            [
+                this.Tags.Floor,
+                this.Tags.Grass
+            ];
         this.eggHatchTime = 30;
         this.eggColour = "#969696";
         this.colour = "#000f4d";
@@ -522,15 +522,15 @@ class Tarantula extends Predator
         if (cell && this.gender == 0)
         {
             this.currentScene.add(
-                EggNest, 
+                EggNest,
                 cell.x,
-                cell.y, 
+                cell.y,
                 this.w,
                 this.h,
-                this.constructor, 
-                this.breedCount, 
-                this.eggHatchTime, 
-                this.canWalkOn, 
+                this.constructor,
+                this.breedCount,
+                this.eggHatchTime,
+                this.canWalkOn,
                 this.eggColour);
         }
     }
@@ -574,12 +574,12 @@ class Fire extends Predator
         super.init();
         this.tag = this.Tags.Fire;
         this.food = [this.Tags.Grass, this.Tags.EggNest];
-        this.colours = 
-        [
-            "#f23535",
-            "#f27735",
-            "#f2b335"
-        ];
+        this.colours =
+            [
+                "#f23535",
+                "#f27735",
+                "#f2b335"
+            ];
         this.currentColourID = 0;
         this.colour = this.colours[this.currentColourID];
         this.currentFrame = 0;
@@ -609,7 +609,7 @@ class Fire extends Predator
             // ghetto fire effect
             this.currentColourID = (this.currentColourID + 1 <= this.colours.length - 1) ? ++this.currentColourID : 0;
             this.colour = this.colours[this.currentColourID];
-            
+
             switch (this.currentScene.currentSeason)
             {
                 case this.Season.Summer:
@@ -647,11 +647,11 @@ class Uranium extends Entity
         super.init();
         this.tag = this.Tags.Uran;
         this.colours =
-        [
-            "#411496",
-            "#5c24c7",
-            "#300582"
-        ];
+            [
+                "#411496",
+                "#5c24c7",
+                "#300582"
+            ];
         this.currentColourID = 0;
         this.colour = this.colours[this.currentColourID];
         this.currentFrame = 0;
@@ -742,7 +742,7 @@ class Explosion extends Fire
     }
 }
 
-module.exports = 
+module.exports =
 {
     Grass,
     Predator,

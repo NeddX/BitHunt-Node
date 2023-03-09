@@ -22,36 +22,36 @@ socketIO.on("connection", (socket) =>
     socket.on("init_game", (gameProperties) =>
     {
         let fps = 0;
-		let lastUpdateTime = null;
-		const gameInst = new game.Scene(
+        let lastUpdateTime = null;
+        const gameInst = new game.Scene(
             socket,
-            gameProperties.worldWidth, 
-            gameProperties.worldHeight, 
+            gameProperties.worldWidth,
+            gameProperties.worldHeight,
             "#344459",
             gameProperties.pixelSize
         );
         gameInstances[socket.id.toString()] = gameInst;
 
-		const entityDataBuffer = Buffer.from(Object.values(gameProperties.entityData));
-		const entityData = zlib.inflateSync(entityDataBuffer).toString();
-		gameInst.init(entityData);;
+        const entityDataBuffer = Buffer.from(Object.values(gameProperties.entityData));
+        const entityData = zlib.inflateSync(entityDataBuffer).toString();
+        gameInst.init(entityData);;
 
         socket.emit("init_finished");
 
-		const engineThread = setInterval(function updateThread()
-		{
+        const engineThread = setInterval(function updateThread()
+        {
             if (gameInst.run)
             {
-			    const now = Date.now();
-			    const deltaTime = lastUpdateTime ? (now - lastUpdateTime) / 1000 : 0;
-			    lastUpdateTime = now;
+                const now = Date.now();
+                const deltaTime = lastUpdateTime ? (now - lastUpdateTime) / 1000 : 0;
+                lastUpdateTime = now;
                 fps = Math.round(1 / deltaTime);
-                gameInst.render();
-			    gameInst.update(deltaTime);
+                //gameInst.render();
+                gameInst.update(deltaTime);
                 //process.stdout.write(`\rfps: ${fps}     `);
             }
             else clearInterval(engineThread);
-		}, 50);
+        }, 50);
     });
 
     socket.on("disconnect", () =>
@@ -66,7 +66,7 @@ socketIO.on("connection", (socket) =>
         }
     });
 });
-  
+
 httpServer.listen(80, () => 
 {
     console.log("listening on localhost:80");

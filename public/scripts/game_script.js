@@ -5,49 +5,49 @@ const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
 
 const PacketType =
 {
-    CREATE_CANVAS:              0,
-    RENDER_RECT:                1,
-    CLEAR_CALL:                 2,
-    CLEAR_COLOUR_CALL:          3,
-    BATCH_RENDER_BEGIN:         4,
-    BATCH_RENDER_END:           5,
-    ATTACH_TO_CANVAS:           6,
-    DETACH_CANVAS:              7,
-    CANVAS_ALIGNMENT:           8,
-    RENDER_TEXT:                9
+    CREATE_CANVAS: 0,
+    RENDER_RECT: 1,
+    CLEAR_CALL: 2,
+    CLEAR_COLOUR_CALL: 3,
+    BATCH_RENDER_BEGIN: 4,
+    BATCH_RENDER_END: 5,
+    ATTACH_TO_CANVAS: 6,
+    DETACH_CANVAS: 7,
+    CANVAS_ALIGNMENT: 8,
+    RENDER_TEXT: 9
 };
 
 const GElement =
 {
-    Radiation:          0,
-    Virus:              1,
-    Fire:               2,
-    Bomb:               3
+    Radiation: 0,
+    Virus: 1,
+    Fire: 2,
+    Bomb: 3
 };
 
 const GElementStr =
-[
-    "Radiation",
-    "Virus",
-    "Fire",
-    "Small Bomb"
-];
+    [
+        "Radiation",
+        "Virus",
+        "Fire",
+        "Small Bomb"
+    ];
 
 const Season =
 {
-    Autumn:			0,
-    Winter:			1,
-    Spring:			2,
-    Summer:			3
+    Autumn: 0,
+    Winter: 1,
+    Spring: 2,
+    Summer: 3
 };
 
 const SeasonStr =
-[
-    "Autumn",
-    "Winter",
-    "Spring",
-    "Summer"
-];
+    [
+        "Autumn",
+        "Winter",
+        "Spring",
+        "Summer"
+    ];
 
 const renderer = new Renderer();
 
@@ -108,20 +108,20 @@ function renderPacketHandler(packet)
             const renderData = JSON.parse(pako.inflate(data.data, { to: "string" }));
             for (let i = 0; i < renderData.length; ++i)
                 renderPacketHandler(renderData[i]);
-			//frameCount++;
-			//document.getElementById("fr").textContent = `Frame count: ${frameCount}`;
-			break;
+            //frameCount++;
+            //document.getElementById("fr").textContent = `Frame count: ${frameCount}`;
+            break;
     }
 }
 
 function statPacketHandler(packet)
-{	
+{
     const data = JSON.parse(packet);
-    
-	// i know but performance is not critical in this case
+
+    // i know but performance is not critical in this case
     const elementsToRemove = document.querySelectorAll(".__stat_text");
     elementsToRemove.forEach((element) => { element.remove(); });
-	
+
     const textContainer = document.getElementById("statText");
     for (let i = 0; i < data.length; ++i)
     {
@@ -141,140 +141,140 @@ function onMouseClick(eventArgs)
         return;
     }
 
-	const mulX = renderer.canvas.width  / renderer.canvas.offsetWidth;
-	const mulY = renderer.canvas.height / renderer.canvas.offsetHeight;
-	const x = Math.round(eventArgs.offsetX  * mulX);
-    const y = Math.round(eventArgs.offsetY  * mulY);
+    const mulX = renderer.canvas.width / renderer.canvas.offsetWidth;
+    const mulY = renderer.canvas.height / renderer.canvas.offsetHeight;
+    const x = Math.round(eventArgs.offsetX * mulX);
+    const y = Math.round(eventArgs.offsetY * mulY);
     const mEventArgs =
-	{
-		x:		        x,
-		y:		        y,
-        element:        activeElement
-	};
+    {
+        x: x,
+        y: y,
+        element: activeElement
+    };
 
     switch (activeElement)
     {
         case GElement.Bomb:
-        {
-            // perform a little nice animation
-            soundBank.get("nuke_drop").play();
-            soundBank.get("fuse").play();
-            
-            const cntr = document.getElementById("bombImgContainer");
-            const img = document.getElementById("bombImg");
-            cntr.style.transform = "rotate(0deg)";
-            img.width = 50;
-            img.height = 50;
-            document.getElementById("bombImg").setAttribute("src", "../assets/images/bomb.png");
-            
-            const mY = eventArgs.clientY - (30 / 2);
-            const mX = eventArgs.clientX - (50 / 2);
-            let iY = mY - 400;
-
-            cntr.style.top = mY;
-            cntr.style.left = mX;
-            cntr.style.opacity = 1;
-
-            let speed = 1;
-
-            onWait = true;
-            function animation()
             {
-                if (iY != mY - 20)
-                {
-                    iY += speed;
-                    iY = clamp(iY, mY - 150, mY - 20);
-                    cntr.style.top = iY;
-                }
+                // perform a little nice animation
+                soundBank.get("nuke_drop").play();
+                soundBank.get("fuse").play();
 
-                speed += 0.8;
+                const cntr = document.getElementById("bombImgContainer");
+                const img = document.getElementById("bombImg");
+                cntr.style.transform = "rotate(0deg)";
+                img.width = 50;
+                img.height = 50;
+                document.getElementById("bombImg").setAttribute("src", "../assets/images/bomb.png");
 
-                if (iY == mY - 20)
+                const mY = eventArgs.clientY - (30 / 2);
+                const mX = eventArgs.clientX - (50 / 2);
+                let iY = mY - 400;
+
+                cntr.style.top = mY;
+                cntr.style.left = mX;
+                cntr.style.opacity = 1;
+
+                let speed = 1;
+
+                onWait = true;
+                function animation()
                 {
-                    setTimeout(() => 
+                    if (iY != mY - 20)
                     {
-                        soundBank.get("fuse").pause();
-                        soundBank.get("explode").play();
-                        cntr.style.opacity = 0;
-                        socket.emit("interactions_mouseDown", mEventArgs);
-                        gameCanvasContainer.classList.add("genericShake");
+                        iY += speed;
+                        iY = clamp(iY, mY - 150, mY - 20);
+                        cntr.style.top = iY;
+                    }
+
+                    speed += 0.8;
+
+                    if (iY == mY - 20)
+                    {
                         setTimeout(() => 
-                        { 
-                            gameCanvasContainer.classList.remove("genericShake");
-                            onWait = false;
-                        }, elementTimeout); 
-                    }, fuseTime);
-                    return;
-                }
+                        {
+                            soundBank.get("fuse").pause();
+                            soundBank.get("explode").play();
+                            cntr.style.opacity = 0;
+                            socket.emit("interactions_mouseDown", mEventArgs);
+                            gameCanvasContainer.classList.add("genericShake");
+                            setTimeout(() => 
+                            {
+                                gameCanvasContainer.classList.remove("genericShake");
+                                onWait = false;
+                            }, elementTimeout);
+                        }, fuseTime);
+                        return;
+                    }
 
+                    window.requestAnimationFrame(animation);
+                }
                 window.requestAnimationFrame(animation);
+                break;
             }
-            window.requestAnimationFrame(animation);
-            break;
-        }
         case GElement.Radiation:
-        {
-            // perform a little nice animation
-            soundBank.get("nuke_drop").play();
-            
-            const cntr = document.getElementById("bombImgContainer");
-            const img = document.getElementById("bombImg");
-            cntr.style.transform = "rotate(90deg)";
-            img.width = 50;
-            img.height = 30;
-            img.setAttribute("src", "../assets/images/nuke.png");
-            
-            const mY = eventArgs.clientY - (30 / 2);
-            const mX = eventArgs.clientX - (50 / 2);
-            let iY = mY - 400;
-
-            cntr.style.top = mY;
-            cntr.style.left = mX;
-            cntr.style.opacity = 1;
-
-            let rot = 90;
-            let speed = 1;
-            
-            onWait = true;
-            function animation()
             {
-                if (rot >= -90)
-                {
-                    rot -= speed;
-                    rot = clamp(rot, -90, 90);
-                    cntr.style.transform = `rotate(${rot}deg)`;
-                }
+                // perform a little nice animation
+                soundBank.get("nuke_drop").play();
 
-                if (iY != mY - 20)
-                {
-                    iY += speed;
-                    iY = clamp(iY, mY - 150, mY - 20);
-                    cntr.style.top = iY;
-                }
+                const cntr = document.getElementById("bombImgContainer");
+                const img = document.getElementById("bombImg");
+                cntr.style.transform = "rotate(90deg)";
+                img.width = 50;
+                img.height = 30;
+                img.setAttribute("src", "../assets/images/nuke.png");
 
-                speed += 0.8;
-                
-                if (rot <= -90 && iY == mY - 20)
+                const mY = eventArgs.clientY - (30 / 2);
+                const mX = eventArgs.clientX - (50 / 2);
+                let iY = mY - 400;
+
+                cntr.style.top = mY;
+                cntr.style.left = mX;
+                cntr.style.opacity = 1;
+
+                let rot = 90;
+                let speed = 1;
+
+                onWait = true;
+                function animation()
                 {
-                    // flash
-                    gameCanvasContainer.classList.add("genericShake");
-                    renderer.canvas.style.opacity = 0;
-                    cntr.style.opacity = 0;
-                    soundBank.get("nuke_explode_v" + Math.round(Math.random() * 3).toString()).play();
-                    setTimeout(() => 
+                    if (rot >= -90)
                     {
-                        socket.emit("interactions_mouseDown", mEventArgs); 
-                        renderer.canvas.style.opacity = 1; 
-                        setTimeout(() => { onWait = false; }, elementTimeout);
-                        gameCanvasContainer.classList.remove("genericShake"); 
-                    }, 300);
-                    return;
+                        rot -= speed;
+                        rot = clamp(rot, -90, 90);
+                        cntr.style.transform = `rotate(${rot}deg)`;
+                    }
+
+                    if (iY != mY - 20)
+                    {
+                        iY += speed;
+                        iY = clamp(iY, mY - 150, mY - 20);
+                        cntr.style.top = iY;
+                    }
+
+                    speed += 0.8;
+
+                    if (rot <= -90 && iY == mY - 20)
+                    {
+                        // flash
+                        gameCanvasContainer.classList.add("genericShake");
+                        renderer.canvas.style.opacity = 0;
+                        cntr.style.opacity = 0;
+                        soundBank.get("nuke_explode_v" + Math.round(Math.random() * 3).toString()).play();
+                        setTimeout(() => 
+                        {
+                            socket.emit("interactions_mouseDown", mEventArgs);
+                            renderer.canvas.style.opacity = 1;
+                            setTimeout(() => { onWait = false; }, elementTimeout);
+                            gameCanvasContainer.classList.remove("genericShake");
+                        }, 300);
+                        return;
+                    }
+                    window.requestAnimationFrame(animation);
                 }
                 window.requestAnimationFrame(animation);
+                break;
             }
-            window.requestAnimationFrame(animation);
-            break;
-        }
     }
 }
 
@@ -290,19 +290,19 @@ function onButtonClick(eventArgs)
             activeElement = GElement.Bomb;
         else if (eventArgs.srcElement.id == "resetBtn")
             location.reload();
-		else if (eventArgs.srcElement.id == "backBtn")
-		{
-			document.querySelector("#background")
+        else if (eventArgs.srcElement.id == "backBtn")
+        {
+            document.querySelector("#background")
                 .querySelectorAll("img")
                 .forEach(e => 
-				{ 
-					e.style.transitionDuration = "0.3s";
-					e.style.opacity = 0; 
-				});
-			setTimeout(() => 
-			{
-				window.location.href = "../html/worldgen.html";
-			}, 300);	
+                {
+                    e.style.transitionDuration = "0.3s";
+                    e.style.opacity = 0;
+                });
+            setTimeout(() => 
+            {
+                window.location.href = "../html/worldgen.html";
+            }, 300);
         }
 
         document.getElementById("elementIndicator").textContent = `Active element: ${GElementStr[activeElement]}`;
@@ -311,15 +311,15 @@ function onButtonClick(eventArgs)
 
 function gameOver(reasoning)
 {
-	document.querySelector("#background")
-		.querySelectorAll("img")
+    document.querySelector("#background")
+        .querySelectorAll("img")
         .forEach(e => 
-		{ 
-			e.style.transitionDuration = "5s";
-			e.style.opacity = 0; 
-		});
+        {
+            e.style.transitionDuration = "5s";
+            e.style.opacity = 0;
+        });
 
-	renderer.clear();
+    renderer.clear();
     run = false;
     const music = soundBank.get("defeat");
     music.loop = false;
@@ -330,10 +330,10 @@ function gameOver(reasoning)
         const div = document.getElementById("endGameStuff");
         div.style.opacity = 1;
         setTimeout(() => 
-        { 
+        {
             const p = document.getElementById("endQuote");
             p.textContent = reasoning;
-            p.style.opacity = 1; 
+            p.style.opacity = 1;
 
             setTimeout(() => 
             {
@@ -362,9 +362,9 @@ function soundInit()
 function main()
 {
     const jsonData = sessionStorage.getItem("entityData").toString();
-	const entCompressed = pako.deflate(jsonData);
-	
-	socket.on("render_update", renderPacketHandler);
+    const entCompressed = pako.deflate(jsonData);
+
+    socket.on("render_update", renderPacketHandler);
     socket.on("stat_update", statPacketHandler);
     socket.on("init_finished", () =>
     {
@@ -385,11 +385,11 @@ function main()
         if (!fallout)
         {
             const img = document.getElementsByClassName(SeasonStr[seasonID].toLowerCase())[0];
-            
+
             document.querySelector("#background")
                 .querySelectorAll("img")
                 .forEach(e => { e.style.opacity = 0; });
-    
+
             img.style.opacity = 1;
         }
     });
@@ -406,18 +406,18 @@ function main()
     {
         gameOver(reasoning);
     });
-    
-    socket.emit("init_game", 
-    {
-        worldWidth:     urlParams.get("worldSize"),
-        worldHeight:    urlParams.get("worldSize"),
-        pixelSize:      8,
-        /*grassCount:     urlParams.get("grassCount"),
-        insectCount:    urlParams.get("insectCount"),
-        tarantulaCount: urlParams.get("tarantulaCount"),
-        predatorCount: urlParams.get("predatorCount")*/
-        entityData:     entCompressed
-    });
+
+    socket.emit("init_game",
+        {
+            worldWidth: urlParams.get("worldSize"),
+            worldHeight: urlParams.get("worldSize"),
+            pixelSize: 8,
+            /*grassCount:     urlParams.get("grassCount"),
+            insectCount:    urlParams.get("insectCount"),
+            tarantulaCount: urlParams.get("tarantulaCount"),
+            predatorCount: urlParams.get("predatorCount")*/
+            entityData: entCompressed
+        });
 }
 
 window.onload = main;

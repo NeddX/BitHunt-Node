@@ -20,7 +20,7 @@ class Renderer
         this.ctx.fillRect(0, 0, this.width, this.height);
         return this.canvas;
     }
-    
+
     clear()
     {
         this.ctx.fillStyle = this.mClearColour;
