@@ -50,7 +50,7 @@ socketIO.on("connection", (socket) =>
                 //process.stdout.write(`\rfps: ${fps}     `);
             }
             else clearInterval(engineThread);
-        }, 40);
+        }, 30);
     });
 
     socket.on("disconnect", () =>
