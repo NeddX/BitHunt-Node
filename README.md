@@ -5,7 +5,7 @@ Assignment project.
 - Customize your simulation using The Editor.
 - Interact with the game by selecting an element and clicking on the game canvas. Note that there's a cooldown between each interaction!
 - See the current statistics, e.g., how many insects are alive at the current moment, and so on.
-- Statistics get saved into a file called `stat.json` which is in the root folder.
+- Statistics get saved into a file called `stats.json` which is in the root folder.
 - On each season, a special occurence can occur, e.g., there's a chance that the grass might catch fire in the summer.
 
 # Structure
