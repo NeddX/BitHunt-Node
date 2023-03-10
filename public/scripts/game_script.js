@@ -26,12 +26,12 @@ const GElement =
 };
 
 const GElementStr =
-    [
-        "Radiation",
-        "Virus",
-        "Fire",
-        "Small Bomb"
-    ];
+[
+    "Radiation",
+    "Virus",
+    "Fire",
+    "Small Bomb"
+];
 
 const Season =
 {
@@ -42,12 +42,12 @@ const Season =
 };
 
 const SeasonStr =
-    [
-        "Autumn",
-        "Winter",
-        "Spring",
-        "Summer"
-    ];
+[
+    "Autumn",
+    "Winter",
+    "Spring",
+    "Summer"
+];
 
 const renderer = new Renderer();
 
@@ -408,16 +408,12 @@ function main()
     });
 
     socket.emit("init_game",
-        {
-            worldWidth: urlParams.get("worldSize"),
-            worldHeight: urlParams.get("worldSize"),
-            pixelSize: 8,
-            /*grassCount:     urlParams.get("grassCount"),
-            insectCount:    urlParams.get("insectCount"),
-            tarantulaCount: urlParams.get("tarantulaCount"),
-            predatorCount: urlParams.get("predatorCount")*/
-            entityData: entCompressed
-        });
+    {
+        worldWidth:     urlParams.get("worldSize"),
+        worldHeight:    urlParams.get("worldSize"),
+        pixelSize:      8,
+        entityData:     entCompressed
+    });
 }
 
 window.onload = main;

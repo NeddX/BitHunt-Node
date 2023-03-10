@@ -25,23 +25,23 @@ class Scene
         this.pool = new pool.EntityPool();
         this.Tags =
         {
-            nullobj: -1,
-            Floor: 0,
-            Grass: 1,
-            Predator: 2,
-            Insect: 3,
-            Tarantula: 4,
-            EggNest: 5,
-            Fire: 6,
-            Uran: 7,
-            Soot: 8
+            nullobj:    -1,
+            Floor:      0,
+            Grass:      1,
+            Predator:   2,
+            Insect:     3,
+            Tarantula:  4,
+            EggNest:    5,
+            Fire:       6,
+            Uran:       7,
+            Soot:       8
         };
         this.Season =
         {
-            Autumn: 0,
-            Winter: 1,
-            Spring: 2,
-            Summer: 3
+            Autumn:     0,
+            Winter:     1,
+            Spring:     2,
+            Summer:     3
         };
         this.SeasonStr =
         [
@@ -66,74 +66,6 @@ class Scene
         };
         this.eventStack = new Map();
         this.possibleCauseOfEnd = "Natural Selection";
-    }
-
-    worldGen(
-        grassCount = 0,
-        insectCount = 0,
-        predatorCount = 0,
-        tarantulaCount = 0,
-    )
-    {
-        // Spawn Grass
-        for (let i = 0; i < grassCount; ++i)
-        {
-            const vec =
-            {
-                x: Math.round(Math.random() * (this.width - 1)),
-                y: Math.round(Math.random() * (this.height - 1))
-            };
-            if (this.getEntityAtLocation(vec.x, vec.y) == null)
-            {
-                this.add(entities.Grass, vec.x, vec.y, this.pixelSize, this.pixelSize);
-            }
-            else i--;
-        }
-
-        // Spawn Insects
-        for (let i = 0; i < insectCount; ++i)
-        {
-            const vec =
-            {
-                x: Math.round(Math.random() * (this.width - 1)),
-                y: Math.round(Math.random() * (this.height - 1))
-            };
-            if (this.getEntityAtLocation(vec.x, vec.y) == null)
-            {
-                this.add(entities.Insect, vec.x, vec.y, this.pixelSize, this.pixelSize);
-            }
-            else i--;
-        }
-
-        // Spawn Tarantulas
-        for (let i = 0; i < tarantulaCount; ++i)
-        {
-            const vec =
-            {
-                x: Math.round(Math.random() * (this.width - 1)),
-                y: Math.round(Math.random() * (this.height - 1))
-            };
-            if (this.getEntityAtLocation(vec.x, vec.y) == null)
-            {
-                this.add(entities.Tarantula, vec.x, vec.y, this.pixelSize, this.pixelSize);
-            }
-            else i--;
-        }
-
-        // Spawn predators
-        for (let i = 0; i < predatorCount; ++i)
-        {
-            const vec =
-            {
-                x: Math.round(Math.random() * (this.width - 1)),
-                y: Math.round(Math.random() * (this.height - 1))
-            };
-            if (this.getEntityAtLocation(vec.x, vec.y) == null)
-            {
-                this.add(entities.Predator, vec.x, vec.y, this.pixelSize, this.pixelSize);
-            }
-            else i--;
-        }
     }
 
     updateStatistics(deltaTime)
