@@ -49,7 +49,7 @@ const SeasonStr =
         "Summer"
     ];
 
-const renderer = new GLRenderer();
+const renderer = new Renderer();
 
 const soundBank = new Map();
 soundBank.set("background", new Audio("../assets/music/dBSoundworks/cc2g.ogg"));
