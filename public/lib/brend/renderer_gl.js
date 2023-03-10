@@ -75,71 +75,81 @@ class GLRenderer
         this.canvas.width = this.width;
         this.canvas.height = this.height;
         this.gl = this.canvas.getContext("webgl");
+
 		if (!this.gl)
 		{
 			alert("ERROR: OpenGL is not supported on this browser!");
 			return null;
 		}
+
+		this.gl.viewport(0, 0, this.width, this.height);
+		this.gl.clearColor(0.2, 0.2, 0.2, 1.0);
+		this.gl.clear(this.gl.COLOR_BUFFER_BIT);
+
 		this.vertexShaderSource = `
-			attribute vec4 a_Pos;
-			attribute vec4 a_Colour;
-			varying vec4 v_Colour;
+			attribute vec2 a_Pos;
+
+            uniform vec2 u_Viewport;
+            uniform vec2 u_Translation;
+            uniform mat4 u_ViewMatrix;
+            uniform vec2 u_Scale;
 			
 			void main()
 			{
-				v_Colour = a_Colour;
-				gl_Position = a_Pos;
+                vec2 clipSpace = ((u_ViewMatrix * vec4(a_Pos * u_Scale, 0, 1)).xy / u_Viewport * 2.0) - 1.0;
+                gl_Position = vec4(clipSpace * vec2(1, -1), 0, 1);
+				//gl_Position = vec4(a_Pos + u_Translation, 0.0, 1.0);
 			}
 		`;
 		this.fragmentShaderSource = `
 			precision mediump float;
-			varying vec4 v_Colour;
 			
+            uniform vec4 u_Colour;
+
 			void main()
 			{
-				gl_FragColor = v_Colour;
+				gl_FragColor = u_Colour;
 			}
 		`;
+
 		this.vertexShaderID = -1;
 		this.fragmentShaderID = -1;
 		this.shaderProgramID = -1;
-		this.rectVertexBuffer = 
+
+		this.vertexBuffer = 
 		[
-			// Vertex						// Colour
-			-0.5,	 0.5,	0.0,			1.0, 0.0, 0.0, 1.0, // Top left, White
-			 0.5,	 0.5,	0.0,			0.0, 1.0, 0.0, 1.0,	// Top right, White
-			-0.5,	-0.5,	0.0,			0.0, 0.0, 1.0, 1.0, // Bottom left, White
-			 0.5,	-0.5,	0.0,			1.0, 1.0, 0.0, 1.0, // Bottom right, White
+			// Vertex
+			0.0,    0.0,    // Top left, White
+			1.0,    0.0,    // Top right, White
+			0.0,    1.0,    // Bottom left, White
+			1.0,    1.0     // Bottom right, White
 			
 		];
-		this.rectIndexBuffer =
+		this.indexBuffer =
 		[
 			0, 1, 3,
-			0, 2, 3
+            3, 2, 0
 		];
-		this.gl.viewport(0, 0, this.width, this.height);
-		this.gl.clearColor(0.2, 0.2, 0.2, 1.0);
-		this.gl.clear(this.gl.COLOR_BUFFER_BIT);
 		
 		// init shaders
 		this.__createShaderProgram();
 		this.gl.useProgram(this.shaderProgramID);
 		
-		// craate the vertex buffer
+		// craate the vertex buffer and push our array
 		this.vboID = this.gl.createBuffer();
 		this.gl.bindBuffer(this.gl.ARRAY_BUFFER, this.vboID);
 		this.gl.bufferData(
 			this.gl.ARRAY_BUFFER, 
-			new Float32Array(this.rectVertexBuffer),
-			this.gl.DYNAMIC_DRAW
+			new Float32Array(this.vertexBuffer),
+			this.gl.STATIC_DRAW
 		);
 		
-		// create the index buffer
+		// create the index buffer and push our array
 		this.eboID = this.gl.createBuffer();
 		this.gl.bindBuffer(this.gl.ELEMENT_ARRAY_BUFFER, this.eboID);
 		this.gl.bufferData(
 			this.gl.ELEMENT_ARRAY_BUFFER,
-			new Uint16Array(this.rectIndexBuffer),
+			new Uint16Array(this.indexBuffer),
 			this.gl.STATIC_DRAW
 		);
 		
@@ -148,63 +158,57 @@ class GLRenderer
 		this.gl.bindBuffer(this.gl.ARRAY_BUFFER, this.vboID);
 		this.gl.vertexAttribPointer(
 			this.vertexAttribLoc,
-			3,
+			2,
 			this.gl.FLOAT,
 			false,
-			7 * 4,
+			2 * 4,
 			0
 		);
 		this.gl.enableVertexAttribArray(this.vertexAttribLoc);
-		
-		// configure attributes for the colour
-		this.colourAttribLoc = this.gl.getAttribLocation(this.shaderProgramID, "a_Colour");
-		this.gl.bindBuffer(this.gl.ARRAY_BUFFER, this.vboID);
-		this.gl.vertexAttribPointer(
-			this.colourAttribLoc,
-			3,
-			this.gl.FLOAT,
-			false,
-			7 * 4,
-			3 * 4
-		);
-		this.gl.enableVertexAttribArray(this.colourAttribLoc);
-		
+
+        // Get our uniforms and their IDs
+        this.colourUniformLoc       = this.gl.getUniformLocation(this.shaderProgramID, "u_Colour");
+        this.translationUniformLoc  = this.gl.getUniformLocation(this.shaderProgramID, "u_Translation");
+        this.viewportUniformLoc     = this.gl.getUniformLocation(this.shaderProgramID, "u_Viewport");
+        this.scaleUniformLoc        = this.gl.getUniformLocation(this.shaderProgramID, "u_Scale");
+
+        if (this.viewportUniformLoc != -1) this.gl.uniform2i(this.viewportUniformLoc, this.width, this.height);
+
         return this.canvas;
     }
 
     clear()
     {
-		this.gl.clearDepth(1.0);
-		this.gl.enable(this.gl.DEPTH_TEST);
-		this.gl.depthFunc(this.gl.LEQUAL);
-		this.gl.clear(this.gl.COLOR_BUFFER_BIT | this.gl.DEPTH_BUFFER_BIT);
+		//this.gl.clearDepth(1.0);
+		//this.gl.enable(this.gl.DEPTH_TEST);
+		//this.gl.depthFunc(this.gl.LEQUAL);
+		//this.gl.clear(this.gl.COLOR_BUFFER_BIT | this.gl.DEPTH_BUFFER_BIT);
+        this.gl.clear(this.gl.COLOR_BUFFER_BIT);
     }
 
     renderRect(x = 0, y = 0, w = 1, h = 1, colour = "#ffffff")
     {
-		const normX = x / this.width;
-		const normY = y / this.height;
-		
-		const normColour = __renderer_gl__internals.hexToNormRgb(colour);
-		
-		const x1 = x / (this.width / 2) - 1;
-		const x2 = (x + w) / (this.width / 2) - 1;
-		const y1 = -y / (this.height / 2) + 1;
-		const y2 = -(y + h) / (this.height / 2) + 1;
-		this.rectVertexBuffer = 
-		[
-			// Vertex						// Colour
-			x1,  y1, 	0.0,               normColour.r, normColour.g, normColour.b, 1.0, // Top left
-			x2,  y1, 	0.0,               normColour.r, normColour.g, normColour.b, 1.0, // Top right
-			x1,  y2, 	0.0,               normColour.r, normColour.g, normColour.b, 1.0, // Bottom left
-			x2,  y2, 	0.0,               normColour.r, normColour.g, normColour.b, 1.0  // Bottom right
-		];
-		this.gl.bindBuffer(this.gl.ARRAY_BUFFER, this.vboID);
-		this.gl.bufferData(
-			this.gl.ARRAY_BUFFER, 
-			new Float32Array(this.rectVertexBuffer),
-			this.gl.DYNAMIC_DRAW
-		);
+        this.gl.uniformMatrix4fv(
+            this.viewportUniformLoc,
+            false,
+            this.modelViewMatrix
+        );
+
+		/*const normX = x / (this.width   / 2) - 1;
+		const normY = y / (this.height  / 2) - 1;
+        const normW = w * 2 / this.width;
+        const normH = h * 2 / this.height;
+
+		//const normColour = __renderer_gl__internals.hexToNormRgb(colour);
+        this.gl.uniform4f(this.colourUniformLoc, 1.0, 0.0, 0.0, 1.0);
+        this.gl.uniform2i(this.translationUniformLoc, x, y);
+        this.vertexBuffer =
+        [
+            normX,          normY,          0.0,    // Top left
+            normX + normW,  normY,          0.0,    // Top right
+            normX,          normY - normH,  0.0,    // Bottom left
+            normX + normW,  normY - normH,  0.0     // Bottom right
+        ];*/
 		
 		this.gl.bindBuffer(this.gl.ELEMENT_ARRAY_BUFFER, this.eboID);
 		this.gl.drawElements(this.gl.TRIANGLES, 6, this.gl.UNSIGNED_SHORT, 0);
